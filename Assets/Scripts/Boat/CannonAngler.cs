@@ -11,6 +11,8 @@ public class CannonAngler : MonoBehaviour
     private GameObject _leftUIArrow;
     [SerializeField]
     private GameObject _rightUIArrow;
+    [SerializeField]
+    private GameObject _angleIndicator;
 
     private BoatManager _manager;
     private float _currentAngle;
@@ -24,6 +26,7 @@ public class CannonAngler : MonoBehaviour
     void Start()
     {
         _manager = GetComponent<BoatManager>();
+        
     }
 
     void Update()
@@ -42,6 +45,8 @@ public class CannonAngler : MonoBehaviour
         {
             _currentAngle = cannon.ApplyRotation(angle);
         }
+        _angleIndicator.GetComponent<AngleIndicator>().IndicateNewAngle(_currentAngle);
+
     }
 
     #endregion

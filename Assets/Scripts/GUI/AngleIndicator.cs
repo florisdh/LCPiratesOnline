@@ -20,7 +20,8 @@ public class AngleIndicator : MonoBehaviour
 
     public void IndicateNewAngle(float angle)
     {
-        _leftArrow.transform.localRotation = Quaternion.Euler(0, 0, angle);
+        _leftArrow.transform.localRotation = Quaternion.Euler(0, 0, this.transform.rotation.z + _maxAngle * angle * 4);
+        _rightArrow.transform.localRotation = Quaternion.Euler(0, 0, this.transform.rotation.z + _maxAngle * angle * 4 * -1);
     }
 
     #endregion
