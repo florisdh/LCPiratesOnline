@@ -1,8 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &173770
+--- !u!1 &150400
 GameObject:
   m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 451350}
+  m_Layer: 0
+  m_Name: BarrelHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &173770
+GameObject:
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -61,7 +76,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 444584}
-  - 114: {fileID: 11477464}
+  - 114: {fileID: 11450656}
   m_Layer: 0
   m_Name: SmallCannon
   m_TagString: Boat
@@ -111,13 +126,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173770}
-  m_LocalRotation: {x: .405580223, y: .579227805, z: .405580163, w: .579227626}
-  m_LocalPosition: {x: -.267883301, y: .498001099, z: .0545654297}
+  m_LocalRotation: {x: .353553474, y: .612372518, z: .353553414, w: .612372398}
+  m_LocalPosition: {x: -.00999999978, y: .469999999, z: 1.00600004}
   m_LocalScale: {x: .5, y: 1, z: .5}
   m_Children:
   - {fileID: 466900}
-  m_Father: {fileID: 444584}
-  m_RootOrder: 3
+  m_Father: {fileID: 451350}
+  m_RootOrder: 0
 --- !u!4 &425088
 Transform:
   m_ObjectHideFlags: 1
@@ -125,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199082}
   m_LocalRotation: {x: 0, y: .707106709, z: 0, w: .707106888}
-  m_LocalPosition: {x: .172088623, y: .147994995, z: -.559570312}
+  m_LocalPosition: {x: .430000007, y: .147994995, z: .00100000005}
   m_LocalScale: {x: 1, y: .543970406, z: .430303574}
   m_Children: []
   m_Father: {fileID: 444584}
@@ -137,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195588}
   m_LocalRotation: {x: 0, y: .707106709, z: 0, w: .707106888}
-  m_LocalPosition: {x: -.298034668, y: -.141998291, z: -.559753418}
+  m_LocalPosition: {x: -.0399999991, y: -.141998291, z: .00100000005}
   m_LocalScale: {x: 1, y: .417931229, z: 1.34415281}
   m_Children: []
   m_Father: {fileID: 444584}
@@ -149,15 +164,28 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.52427578, y: 2.30446672, z: 1.25748348}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 432650}
   - {fileID: 425088}
   - {fileID: 464790}
-  - {fileID: 408264}
+  - {fileID: 451350}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &451350
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150400}
+  m_LocalRotation: {x: .00820295606, y: 0, z: 0, w: .999966383}
+  m_LocalPosition: {x: 0, y: .125, z: -.389999986}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 408264}
+  m_Father: {fileID: 444584}
+  m_RootOrder: 3
 --- !u!4 &464790
 Transform:
   m_ObjectHideFlags: 1
@@ -165,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181826}
   m_LocalRotation: {x: 0, y: .707106709, z: 0, w: .707106888}
-  m_LocalPosition: {x: -.757293701, y: .147994995, z: -.559936523}
+  m_LocalPosition: {x: -.5, y: .147994995, z: .00100000005}
   m_LocalScale: {x: 1, y: .543970406, z: .430303574}
   m_Children: []
   m_Father: {fileID: 444584}
@@ -342,7 +370,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11477464
+--- !u!114 &11450656
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -350,13 +378,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 190210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9de7e3508ce2a747baaf7c8cfa6e279, type: 3}
+  m_Script: {fileID: 11500000, guid: c5fa0a8575480de4dbc703cb5edcbc92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Barrel: {fileID: 173770}
-  CannonBall: {fileID: 161646, guid: 058945a8190ac8f459f5e42625711c03, type: 2}
-  Force: 25000
-  MinForce: 5000
+  _barrel: {fileID: 150400}
+  _maxAngle: 30
+  _minAngle: 0
 --- !u!136 &13669214
 CapsuleCollider:
   m_ObjectHideFlags: 1
