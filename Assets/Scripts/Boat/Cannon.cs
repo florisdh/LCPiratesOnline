@@ -12,15 +12,12 @@ public class Cannon : MonoBehaviour
     [SerializeField]
     private float _minAngle;
 
-    private float _currentRotation;
-
     #endregion
 
     #region Methods
 
     void Start()
     {
-        _currentRotation = _barrel.transform.rotation.eulerAngles.z;
     }
 
     void Update()
@@ -28,11 +25,14 @@ public class Cannon : MonoBehaviour
         
     }
 
-    public float ApplyRotation(float angle)
+    public void ApplyRotation(float angleNormal)
     {
-        _currentRotation = Mathf.Clamp(_currentRotation + angle, _minAngle, _maxAngle);
-        _barrel.transform.localRotation = Quaternion.Euler(_currentRotation, 0, 0);
-        return _barrel.transform.localRotation.x; 
+        // Bound to 0f and 1f
+        angleNormal = Mathf.Clamp01(angleNormal);
+
+        // Apply angle
+        float desiredRotation = _minAngle + (_maxAngle - _minAngle) * angleNormal;
+        _barrel.transform.localRotation = Quaternion.Euler(desiredRotation, 0, 0);
     }
 
     #endregion
