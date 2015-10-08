@@ -30,7 +30,7 @@ public class CameraZoom : MonoBehaviour
 
         if (Mathf.Abs(zoomAxis) >= 0.1f)
         {
-            _targetRange = Mathf.Clamp(_currentRange + _zoomSpeed * zoomAxis, _minRange, _maxRange);
+            _targetRange = Mathf.Clamp(_targetRange + _zoomSpeed * zoomAxis, _minRange, _maxRange);
         }
 
         if (Mathf.Abs(_targetRange - _currentRange) >= 0.1f)
