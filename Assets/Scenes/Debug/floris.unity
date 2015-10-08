@@ -282,8 +282,7 @@ MonoBehaviour:
   Target: {fileID: 1809594214}
   HorizontalInput: Mouse X
   VerticalInput: Mouse Y
-  _horizontalRotationSpeed: 200
-  _verticalRotationSpeed: 150
+  _rotationSpeed: 200
   _minVerticalRotation: 0
   _maxVerticalRotation: 90
   _targetOffset: {x: 0, y: 10, z: 0}
@@ -769,7 +768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZoomAxis: Mouse ScrollWheel
-  _zoomSpeed: 100
+  _zoomSpeed: 300
   _minRange: 20
   _maxRange: 100
 --- !u!1 &144235870

@@ -12,9 +12,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     public string VerticalInput;
     [SerializeField]
-    private float _horizontalRotationSpeed = 200f;
-    [SerializeField]
-    private float _verticalRotationSpeed = 150f;
+    private float _rotationSpeed = 60; // Deg per second max
     [SerializeField]
     private float _minVerticalRotation;
     [SerializeField]
@@ -53,11 +51,11 @@ public class CameraMovement : MonoBehaviour
         // Calculate Target Rotation
         if (Mathf.Abs(horizontal) > 0f)
         {
-            _targetRotation.y = (_currentRotation.y + horizontal * _horizontalRotationSpeed * Time.deltaTime) % 360;
+            _targetRotation.y = (_currentRotation.y + horizontal * _rotationSpeed * Time.deltaTime) % 360;
         }
         if (Mathf.Abs(vertical) > 0f)
         {
-            _targetRotation.x = Mathf.Clamp((_currentRotation.x + vertical * _verticalRotationSpeed * Time.deltaTime) % 360, _minVerticalRotation, _maxVerticalRotation);
+            _targetRotation.x = Mathf.Clamp((_currentRotation.x + vertical * _rotationSpeed * Time.deltaTime) % 360, _minVerticalRotation, _maxVerticalRotation);
         }
         
         // Apply Rotation
