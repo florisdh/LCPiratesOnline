@@ -5,43 +5,47 @@ public class CannonAngler : MonoBehaviour
 {
     #region Vars
 
-    [SerializeField]
-    private int _angleSpeed;
-    [SerializeField]
-    private GameObject _leftUIArrow;
-    [SerializeField]
-    private GameObject _rightUIArrow;
-
-    private BoatManager _manager;
-    private float _currentAngle;
     public string InputAxis;
-    
+
+    [SerializeField]
+    private float _angleSpeed;
+    private BoatManager _manager;
+    private float _currentAngleNormal; // Current angle between 0f and 1f
 
     #endregion
 
     #region Methods
 
-    void Start()
+    private void Start()
     {
         _manager = GetComponent<BoatManager>();
     }
 
-    void Update()
+    private void Update()
     {
         float change = Input.GetAxis(InputAxis);
-        if(Mathf.Abs(change) > 0.1f)
+        if (change != 0f)
         {
-            ChangeCannonAngle(_angleSpeed * Time.deltaTime * change);
+            _currentAngleNormal = Mathf.Clamp01(_currentAngleNormal + _angleSpeed * Time.deltaTime * change);
+            ApplyCannonsAngle();
         }
-        
     }
 
-    void ChangeCannonAngle(float angle)
+    private void ApplyCannonsAngle()
     {
         foreach (Cannon cannon in _manager.Cannons)
         {
-            _currentAngle = cannon.ApplyRotation(angle);
+            cannon.ApplyRotation(_currentAngleNormal);
         }
+    }
+
+    #endregion
+
+    #region Properties
+
+    public float AngleNormal
+    {
+        get { return _currentAngleNormal; }
     }
 
     #endregion
