@@ -20,15 +20,14 @@ public class GameSession : MonoBehaviour
         ServerConnection = new ClientToServerConnection();
     }
 
+    private void OnApplicationQuit()
+    {
+        ServerConnection.Disconnect();
+    }
+
     private void Start()
     {
         //_serverConnection.Connect(System.Net.IPAddress.Parse("127.0.0.1"), 1337);
-        
-    }
-
-    private void Update()
-    {
-
     }
 
     #endregion

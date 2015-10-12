@@ -227,4 +227,23 @@ public class NetworkClient
     }
 
     #endregion
+
+    #region Properties
+
+    public bool IsConnected
+    {
+        get { return _connected; }
+    }
+
+    public bool IsConnecting
+    {
+        get { return _connecting; }
+    }
+
+    public bool IsConnectionSecured
+    {
+        get { return _connectionSecured; }
+    }
+
+    #endregion
 }

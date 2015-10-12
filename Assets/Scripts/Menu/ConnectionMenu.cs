@@ -23,13 +23,32 @@ public class ConnectionMenu : Menu
 
     #region Methods
 
-    private void Start()
+    private void OnEnable()
     {
         _session = GameSession.CURRENT;
+        if (_session.ServerConnection.IsConnected)
+        {
+            _session = null;
+            _loginMenu.Show(this);
+            return;
+        }
+
         _session.ServerConnection.Connected += ServerConnection_Connected;
         _session.ServerConnection.ConnectFailed += ServerConnection_ConnectFailed;
         _session.ServerConnection.ConnectionSecured += ServerConnection_ConnectionSecured;
-        _session.ServerConnection.Connect(ClientToServerConnection.DEFAULT_IP, ClientToServerConnection.DEFAULT_PORT);
+
+        if (!_session.ServerConnection.IsConnecting)
+            _session.ServerConnection.Connect(ClientToServerConnection.DEFAULT_IP, ClientToServerConnection.DEFAULT_PORT);
+    }
+
+    private void OnDisable()
+    {
+        if (_session != null)
+        {
+            _session.ServerConnection.Connected -= ServerConnection_Connected;
+            _session.ServerConnection.ConnectFailed -= ServerConnection_ConnectFailed;
+            _session.ServerConnection.ConnectionSecured -= ServerConnection_ConnectionSecured;
+        }
     }
 
     private void FixedUpdate()

@@ -5,7 +5,7 @@ public class Menu : MonoBehaviour
 {
     #region Vars
 
-    public Menu PrevousMenu;
+    private Menu _previousMenu;
     
     #endregion
 
@@ -15,8 +15,8 @@ public class Menu : MonoBehaviour
     {
         if (caller != null)
         {
-            PrevousMenu = caller;
-            PrevousMenu.Hide();
+            _previousMenu = caller;
+            _previousMenu.Hide();
         }
         gameObject.SetActive(true);
     }
@@ -29,7 +29,7 @@ public class Menu : MonoBehaviour
     public void ShowPrevious()
     {
         Hide();
-        PrevousMenu.Show();
+        _previousMenu.Show();
     }
 
     #endregion

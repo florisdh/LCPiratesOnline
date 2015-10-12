@@ -4,6 +4,25 @@ using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
 
+public enum PackageType
+{
+    // General Packages
+    Error = 0,
+
+    // Client Packages
+    RequestSecureConnection = 8,
+    LoginAttempt = 9,
+    CreateRoom = 10,
+
+    // Server Packages
+    SetupSecureConnection = 64,
+    LoginSucceed = 65,
+    LoginFailed = 66,
+    RoomCreated = 67
+}
+
+#region BasePackages
+
 public interface PackageData
 {
     #region Vars
@@ -49,6 +68,10 @@ public struct TypedPackage
         Data = data;
     }
 }
+
+#endregion
+
+#region ClientPackages
 
 public class SecurityRequestData : PackageData
 {
@@ -124,6 +147,50 @@ public class LoginData : PackageData
     #endregion
 }
 
+public class CreateGameData : PackageData
+{
+    #region Vars
+
+    public string Name;
+    public int MaxPlayers;
+    public int MapID;
+
+    #endregion
+
+    #region Construct
+
+    public CreateGameData(string name, int maxPlayers, int mapID)
+    {
+        Name = name;
+        MaxPlayers = maxPlayers;
+        MapID = mapID;
+    }
+
+    #endregion
+
+    #region Methods
+
+    public byte[] ToBytes()
+    {
+        List<byte> total = new List<byte>();
+        total.Add((byte)Name.Length);
+        total.AddRange(Encoding.UTF8.GetBytes(Name));
+        total.Add((byte)MaxPlayers);
+        total.Add((byte)MapID);
+        return total.ToArray();
+    }
+
+    public void FromBytes(byte[] data, int offset = 0)
+    {
+    }
+
+    #endregion
+}
+
+#endregion
+
+#region ServerPackages
+
 public class SecuritySetupData : PackageData
 {
     #region Vars
@@ -164,17 +231,36 @@ public class SecuritySetupData : PackageData
     #endregion
 }
 
-public enum PackageType
+public class LoginSucceedData : PackageData
 {
-    // General Packages
-    Error = 0,
+    #region Vars
 
-    // Client Packages
-    RequestSecureConnection = 8,
-    LoginAttempt = 9,
+    public int PlayerID;
 
-    // Server Packages
-    SetupSecureConnection = 64,
-    LoginSucceed = 65,
-    LoginFailed = 66
+    #endregion
+
+    #region Construct
+
+    public LoginSucceedData(byte[] data, int offset = 0)
+    {
+        FromBytes(data, offset);
+    }
+
+    #endregion
+
+    #region Methods
+
+    public byte[] ToBytes()
+    {
+        return null;
+    }
+
+    public void FromBytes(byte[] data, int offset = 0)
+    {
+        PlayerID = BitConverter.ToInt32(data, offset);
+    }
+
+    #endregion
 }
+
+#endregion
