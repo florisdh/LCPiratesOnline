@@ -17,6 +17,8 @@ public class Cannon : MonoBehaviour
     private float _force;
     private ParticleSystem Particles;
 
+    public int row;
+
     #endregion
 
     #region Methods

@@ -44,10 +44,12 @@ public class BoatMovement : MonoBehaviour
             }
             
         }
+
         if (inputRight != 0f)
         {
             _rigid.AddTorque(0, inputRight * TurnSpeed, 0f);
         }
+        
     }
 
     #endregion
