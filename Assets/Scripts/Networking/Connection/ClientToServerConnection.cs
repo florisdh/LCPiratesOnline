@@ -14,10 +14,16 @@ public class ClientToServerConnection : NetworkClient
 
     public event EventHandler LogedIn;
     public event EventHandler LoginFailed;
+    public event EventHandler CreatedRoom;
+    public event EventHandler JoinedRoom;
+	public event EventHandler ReceivedRooms;
 
     #endregion
 
     #region Vars
+
+	public GameRoom ConnectedRoom;
+	public GameRoom[] OpenRooms;
 
     private bool _loggingIn = false;
     private bool _logedIn = false;
@@ -52,11 +58,17 @@ public class ClientToServerConnection : NetworkClient
         BeginSend(PackageFactory.Pack(PackageType.CreateRoom, new CreateGameData(name, max, mapID)));
     }
 
+	public void RequestRooms()
+	{
+		BeginSend(PackageFactory.Pack(PackageType.RequestRooms, null));
+	}
+
     protected override void HandleMessage(TypedPackage message)
     {
         if (message.Type == PackageType.LoginSucceed)
-        {
-            LoginSucceedData data = new LoginSucceedData(message.Data);
+		{
+			int offset = 0;
+            LoginSucceedData data = new LoginSucceedData(message.Data, ref offset);
             _playerID = data.PlayerID;
             OnLogedIn();
         }
@@ -66,12 +78,34 @@ public class ClientToServerConnection : NetworkClient
         }
         else if (message.Type == PackageType.RoomCreated)
         {
-            Debug.Log("Room Created!");
+            OnCreatedRoom();
         }
-        else
-        {
-            base.HandleMessage(message);
-        }
+        else if (message.Type == PackageType.JoinedRoom)
+		{
+			JoinedRoomInfoData data;
+			int offset = 0;
+			try
+			{
+				data = new JoinedRoomInfoData(message.Data, ref offset);
+				ConnectedRoom = data.Room;
+				OnJoinedRoom();
+			}
+			catch (Exception e)
+			{
+				Debug.Log("Failed to parse data: " + e.Message);
+			}
+		}
+		else if (message.Type == PackageType.RoomList)
+		{
+			int offset = 0;
+			RoomListData data = new RoomListData(message.Data, ref offset);
+			OpenRooms = data.Rooms;
+			OnReceivedRooms();
+		}
+		else
+		{
+			base.HandleMessage(message);
+		}
     }
 
     private void OnLogedIn()
@@ -89,6 +123,21 @@ public class ClientToServerConnection : NetworkClient
         if (LoginFailed != null) LoginFailed(this, null);
     }
 
+    private void OnCreatedRoom()
+    {
+        if (CreatedRoom != null) CreatedRoom(this, null);
+    }
+
+    private void OnJoinedRoom()
+    {
+        if (JoinedRoom != null) JoinedRoom(this, null);
+    }
+
+	private void OnReceivedRooms()
+	{
+		if (ReceivedRooms != null) ReceivedRooms(this, null);
+	}
+    
     #endregion
 
     #region Properties

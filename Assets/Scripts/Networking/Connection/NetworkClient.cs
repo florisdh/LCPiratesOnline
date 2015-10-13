@@ -99,8 +99,9 @@ public class NetworkClient
         if (message.Type == PackageType.SetupSecureConnection)
         {
             try
-            {
-                _aes = new SecuritySetupData(message.Data).AES;
+			{
+				int offset = 0;
+                _aes = new SecuritySetupData(message.Data, ref offset).AES;
                 _encrypter = _aes.CreateEncryptor();
                 _decrypter = _aes.CreateDecryptor();
             }

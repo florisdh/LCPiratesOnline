@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameSession : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GameSession : MonoBehaviour
     #region Vars
 
     public ClientToServerConnection ServerConnection;
+	public GameRoom CurrentRoom;
 
     #endregion
 
@@ -23,11 +25,6 @@ public class GameSession : MonoBehaviour
     private void OnApplicationQuit()
     {
         ServerConnection.Disconnect();
-    }
-
-    private void Start()
-    {
-        //_serverConnection.Connect(System.Net.IPAddress.Parse("127.0.0.1"), 1337);
     }
 
     #endregion
