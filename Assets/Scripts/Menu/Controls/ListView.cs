@@ -24,7 +24,7 @@ public class ListView : MonoBehaviour
 		_templateHeight = _rowTemplate.GetComponent<RectTransform>().sizeDelta.y;
 	}
 
-	public int AddRow(string[] values, int preferedIndex = -1)
+	public ListItem AddRow(string[] values, int preferedIndex = -1)
 	{
 		// Create object
 		GameObject newRow = Instantiate<GameObject>(_rowTemplate);
@@ -58,12 +58,21 @@ public class ListView : MonoBehaviour
 
 		ChangeContainerHeight();
 
-		return finalIndex;
+		return listItem;
 	}
 
 	public void RemoveRow(int rowIndex)
 	{
+		Destroy(_rows[rowIndex].gameObject);
 		_rows.RemoveAt(rowIndex);
+	}
+
+	public void Clear()
+	{
+		for (int i = _rows.Count - 1; i >= 0; i--)
+		{
+			RemoveRow(i);
+		}
 	}
 
 	public void ApplyValues(string[][] vals)
@@ -72,6 +81,7 @@ public class ListView : MonoBehaviour
 		{
 			_rows[i].ApplyNewValues(vals[i]);
 		}
+		ChangeContainerHeight();
 	}
 
 	private void ChangeContainerHeight()
@@ -83,6 +93,15 @@ public class ListView : MonoBehaviour
 	private float CalcRowY(int index, float spacing = 5f)
 	{
 		return -index * (_templateHeight + spacing);
+	}
+
+	#endregion
+
+	#region Properties
+
+	public ListItem[] Rows
+	{
+		get { return _rows.ToArray(); }
 	}
 
 	#endregion

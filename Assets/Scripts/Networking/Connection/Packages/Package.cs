@@ -12,8 +12,11 @@ public enum PackageType
     // Client Packages
     RequestSecureConnection = 8,
     LoginAttempt = 9,
-    CreateRoom = 10,
-	RequestRooms = 11,
+	Logout = 10,
+    CreateRoom = 11,
+	RequestRooms = 12,
+	RequestJoin = 13,
+	LeaveRoom = 14,
 
     // Server Packages
     SetupSecureConnection = 64,
@@ -21,7 +24,9 @@ public enum PackageType
     LoginFailed = 66,
     RoomCreated = 67,
     JoinedRoom = 68,
-	RoomList = 69
+	RoomList = 69,
+	OtherJoinedRoom = 70,
+	OtherLeftRoom = 71
 }
 
 #region BasePackages
@@ -190,6 +195,37 @@ public class CreateGameData : PackageData
     #endregion
 }
 
+public class JoinRoomData : PackageData
+{
+	#region Vars
+
+	public int RoomID;
+
+	#endregion
+
+	#region Construct
+
+	public JoinRoomData(int roomID)
+	{
+		RoomID = roomID;
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		return BitConverter.GetBytes((int)RoomID);
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+	}
+
+	#endregion
+}
+
 #endregion
 
 #region ServerPackages
@@ -234,7 +270,7 @@ public class SecuritySetupData : PackageData
     #endregion
 }
 
-public class LoginSucceedData : PackageData
+public class PlayerIDData : PackageData
 {
     #region Vars
 
@@ -244,7 +280,7 @@ public class LoginSucceedData : PackageData
 
     #region Construct
 
-    public LoginSucceedData(byte[] data, ref int offset)
+    public PlayerIDData(byte[] data, ref int offset)
     {
         FromBytes(data, ref offset);
     }
@@ -302,8 +338,8 @@ public class JoinedRoomInfoData : PackageData
 		int maxPlayers = (int)data[offset++];
 		int mapID = (int)data[offset++];
 		int creatorID = (int)data[offset++];
-		int playerAmount = (int)data[offset++];
 
+		int playerAmount = (int)data[offset++];
 		RoomPlayerInfo[] players = new RoomPlayerInfo[playerAmount];
 		for (int i = 0; i < playerAmount; i++)
 		{

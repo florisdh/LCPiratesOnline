@@ -55,7 +55,7 @@ public class NetworkClient
         _connection.BeginConnect(_serverEP, new AsyncCallback(ConnectCallBack), null);
     }
 
-    public void Disconnect()
+	public void Disconnect()
     {
         if (_connected)
         {
@@ -112,10 +112,14 @@ public class NetworkClient
             }
             OnConnectionSecured();
         }
-        else if (message.Type == PackageType.Error)
-        {
-            Debug.Log("Network_ERROR: ");
-        }
+		else if (message.Type == PackageType.Error)
+		{
+			Debug.Log("Network_ERROR: ");
+		}
+		else
+		{
+			Debug.Log(string.Format("Unhandled msg {0} with data of length {2}.", message.Type, message.Data.Length));
+		}
     }
 
     private void ConnectCallBack(IAsyncResult res)
