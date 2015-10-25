@@ -8,6 +8,11 @@ public class CannonManager : MonoBehaviour
     private List<GameObject> _rowOne;
     private List<GameObject> _rowTwo;
 
+    [SerializeField]
+    private float _coolDownTiming;
+
+    private float _coolDownTimer;
+
     void Start()
     {
         _allCannons = GameObject.FindGameObjectsWithTag("Cannon");
@@ -30,14 +35,25 @@ public class CannonManager : MonoBehaviour
 
     void Update()
     {
+        
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            fireCannons(2);
+            if (_coolDownTimer > _coolDownTiming)
+            {
+                fireCannons(1);
+                _coolDownTimer = 0;
+            }
         }
         if(Input.GetKeyDown(KeyCode.E))
         {
-            fireCannons(1);
+            if (_coolDownTimer > _coolDownTiming)
+            {
+                fireCannons(2);
+                _coolDownTimer = 0;
+            }
         }
+
+        _coolDownTimer += Time.deltaTime;
     }
 
     void fireCannons(int row)

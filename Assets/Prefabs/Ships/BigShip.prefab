@@ -65,7 +65,7 @@ GameObject:
   - 114: {fileID: 11404298}
   m_Layer: 0
   m_Name: SpawnPoint (1)
-  m_TagString: Untagged
+  m_TagString: RowOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,6 +316,7 @@ GameObject:
   - 54: {fileID: 5418278}
   - 114: {fileID: 11486762}
   - 114: {fileID: 11449196}
+  - 114: {fileID: 11448282}
   m_Layer: 0
   m_Name: BigShip
   m_TagString: Boat
@@ -514,7 +515,7 @@ GameObject:
   - 114: {fileID: 11420064}
   m_Layer: 0
   m_Name: SpawnPoint (9)
-  m_TagString: Untagged
+  m_TagString: RowTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -710,7 +711,7 @@ GameObject:
   - 114: {fileID: 11435806}
   m_Layer: 0
   m_Name: SpawnPoint (3)
-  m_TagString: Untagged
+  m_TagString: RowOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1158,7 +1159,7 @@ GameObject:
   - 114: {fileID: 11404012}
   m_Layer: 0
   m_Name: SpawnPoint (4)
-  m_TagString: Untagged
+  m_TagString: RowOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1372,7 +1373,7 @@ GameObject:
   - 114: {fileID: 11455472}
   m_Layer: 0
   m_Name: SpawnPoint (6)
-  m_TagString: Untagged
+  m_TagString: RowOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1532,7 +1533,7 @@ GameObject:
   - 114: {fileID: 11410100}
   m_Layer: 0
   m_Name: SpawnPoint (5)
-  m_TagString: Untagged
+  m_TagString: RowOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1674,7 +1675,7 @@ GameObject:
   - 114: {fileID: 11499102}
   m_Layer: 0
   m_Name: SpawnPoint (2)
-  m_TagString: Untagged
+  m_TagString: RowOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1906,7 +1907,7 @@ GameObject:
   - 114: {fileID: 11422242}
   m_Layer: 0
   m_Name: SpawnPoint (12)
-  m_TagString: Untagged
+  m_TagString: RowTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2120,7 +2121,7 @@ GameObject:
   - 114: {fileID: 11432666}
   m_Layer: 0
   m_Name: SpawnPoint
-  m_TagString: Untagged
+  m_TagString: RowOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2205,7 +2206,7 @@ GameObject:
   - 114: {fileID: 11420210}
   m_Layer: 0
   m_Name: SpawnPoint (8)
-  m_TagString: Untagged
+  m_TagString: RowTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2347,7 +2348,7 @@ GameObject:
   - 114: {fileID: 11438686}
   m_Layer: 0
   m_Name: SpawnPoint (13)
-  m_TagString: Untagged
+  m_TagString: RowTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2669,7 +2670,7 @@ GameObject:
   - 114: {fileID: 11419924}
   m_Layer: 0
   m_Name: SpawnPoint (11)
-  m_TagString: Untagged
+  m_TagString: RowTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2721,7 +2722,7 @@ GameObject:
   - 114: {fileID: 11443222}
   m_Layer: 0
   m_Name: SpawnPoint (7)
-  m_TagString: Untagged
+  m_TagString: RowTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2827,7 +2828,7 @@ GameObject:
   - 114: {fileID: 11458822}
   m_Layer: 0
   m_Name: SpawnPoint (10)
-  m_TagString: Untagged
+  m_TagString: RowTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11134,6 +11135,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 190210, guid: fd230d1291adae94c9b2209ffe1278c9, type: 2}
+--- !u!114 &11448282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4374940f8e056a546958c6ebecee7bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coolDownTiming: 2.5
 --- !u!114 &11449196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11161,6 +11174,7 @@ MonoBehaviour:
   VerticalInput: Vertical
   Speed: 8
   TurnSpeed: 20
+  _turnSlower: 0
 --- !u!114 &11455472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11196,10 +11210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3c93491d60d9947afe5494af2847bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _angleSpeed: 10
-  _leftUIArrow: {fileID: 0}
-  _rightUIArrow: {fileID: 0}
-  InputAxis: AngleAxis
+  InputAxis: CannonAngle
+  _angleSpeed: .5
 --- !u!114 &11499102
 MonoBehaviour:
   m_ObjectHideFlags: 1
