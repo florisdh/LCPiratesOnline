@@ -39,8 +39,9 @@ public class ErrorPanel : MonoBehaviour
         }
     }
 
-    public void Show(float duration = 0.5f)
+    public void Show(float duration = 0.5f, float maxLifeTime = 1f)
     {
+		_maxLifeTime = maxLifeTime;
         _fader.FadeIn(duration);
         _lifeTime = -duration;
     }
@@ -50,9 +51,11 @@ public class ErrorPanel : MonoBehaviour
         _fader.FadeOut(duration);
     }
 
-    public void ShowError(string text)
+	public void ShowError(string text, float duration = 0.5f, float maxLifeTime = 1f)
     {
-        Show();
+		if (_fader == null) Awake();
+
+        Show(duration, maxLifeTime);
         _errorIndicator.text = text;
     }
 

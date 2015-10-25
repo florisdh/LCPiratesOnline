@@ -55,7 +55,7 @@ public class NetworkClient
         _connection.BeginConnect(_serverEP, new AsyncCallback(ConnectCallBack), null);
     }
 
-    public void Disconnect()
+	public void Disconnect()
     {
         if (_connected)
         {
@@ -99,8 +99,9 @@ public class NetworkClient
         if (message.Type == PackageType.SetupSecureConnection)
         {
             try
-            {
-                _aes = new SecuritySetupData(message.Data).AES;
+			{
+				int offset = 0;
+                _aes = new SecuritySetupData(message.Data, ref offset).AES;
                 _encrypter = _aes.CreateEncryptor();
                 _decrypter = _aes.CreateDecryptor();
             }
@@ -111,10 +112,14 @@ public class NetworkClient
             }
             OnConnectionSecured();
         }
-        else if (message.Type == PackageType.Error)
-        {
-            Debug.Log("Network_ERROR: ");
-        }
+		else if (message.Type == PackageType.Error)
+		{
+			Debug.Log("Network_ERROR: ");
+		}
+		else
+		{
+			Debug.Log(string.Format("Unhandled msg {0} with data of length {2}.", message.Type, message.Data.Length));
+		}
     }
 
     private void ConnectCallBack(IAsyncResult res)

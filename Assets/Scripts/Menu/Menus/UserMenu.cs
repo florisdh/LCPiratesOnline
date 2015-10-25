@@ -17,13 +17,14 @@ public class UserMenu : Menu
     private void OnEnable()
     {
         _session = GameSession.CURRENT;
-        _header.text = "Welcome " + _session.ServerConnection.UserName;
+        _header.text = _session.ServerConnection.UserName;
     }
 
-    private void Logout()
-    {
-        
-    }
+	public void Logout()
+	{
+		_session.ServerConnection.Logout();
+		ShowPrevious();
+	}
 
     #endregion
 }
