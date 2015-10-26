@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class GameRoom
@@ -37,6 +38,7 @@ public class RoomPlayerInfo
 	public string PlayerName;
 	public int SpawnPointID;
 	public PlayerSetup Setup;
+	public EndPoint UdpEP;
 
 	#endregion
 

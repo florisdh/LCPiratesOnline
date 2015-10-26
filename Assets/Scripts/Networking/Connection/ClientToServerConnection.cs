@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using System.Timers;
 using UnityEngine;
 
 public class ClientToServerConnection : NetworkClient
@@ -19,6 +21,7 @@ public class ClientToServerConnection : NetworkClient
 	public event EventHandler ReceivedRooms;
 	public event RoomPlayerEvent OtherJoinedRoom;
 	public event RoomPlayerEvent OtherLeftRoom;
+	public event RoomPlayerEvent OtherChangedSetup;
 
 	public delegate void RoomPlayerEvent(object sender, RoomPlayerInfo player);
 
@@ -34,15 +37,25 @@ public class ClientToServerConnection : NetworkClient
 	private bool _joiningRoom = false;
 	private bool _joinedRoom = false;
 
+	private ClientToClient _clientConnection;
+	private EndPoint _udpServerEP;
     private string _userName;
     private int _playerID = -1;
+
+	private bool _udpRegistered = false;
+	private int _udpRegisterInterval = 500;
+	private Timer _udpRegisterTimer;
+	private byte[] _udpConnectionKey;
 
     #endregion
 
     #region Construct
 
-    public ClientToServerConnection()
+    public ClientToServerConnection(ClientToClient clientConnection)
     {
+		_clientConnection = clientConnection;
+		_udpRegisterTimer = new Timer(_udpRegisterInterval);
+		_udpRegisterTimer.Elapsed += UdpRegisterCallBack;
     }
 
     #endregion
@@ -52,6 +65,14 @@ public class ClientToServerConnection : NetworkClient
 	public new void Connect(string ip = DEFAULT_IP, int port = DEFAULT_PORT)
 	{
 		base.Connect(ip, port);
+		_udpServerEP = new IPEndPoint(IPAddress.Parse(ip), port + 1);
+	}
+
+	public new void Disconnect()
+	{
+		base.Disconnect();
+		if (_udpRegisterTimer.Enabled)
+			_udpRegisterTimer.Stop();
 	}
 
     public void Login(string usr, string pw)
@@ -98,15 +119,28 @@ public class ClientToServerConnection : NetworkClient
 		if (!_joinedRoom) return;
 		_joinedRoom = false;
 		ConnectedRoom = null;
+		_udpRegistered = false;
 
 		BeginSend(PackageFactory.Pack(PackageType.LeaveRoom, null));
+	}
+
+	public void LoadedGame()
+	{
+		BeginSend(PackageFactory.Pack(PackageType.GameLoaded, null));
+	}
+
+	public void ChangeSetup(PlayerSetup newSetup)
+	{
+		if (!_logedIn) return;
+
+		BeginSend(PackageFactory.Pack(PackageType.SetupChange, new PlayerSetupData(newSetup)));
 	}
 
     protected override void HandleMessage(TypedPackage message)
     {
 		int offset = 0;
 
-		//Debug.Log(string.Format("Msg: {0} of length {1}.", message.Type, message.Data.Length));
+		Debug.Log(string.Format("Msg: {0} of length {1}.", message.Type, message.Data.Length));
 
         if (message.Type == PackageType.LoginSucceed)
 		{
@@ -130,6 +164,10 @@ public class ClientToServerConnection : NetworkClient
 				data = new JoinedRoomInfoData(message.Data, ref offset);
 				ConnectedRoom = data.Room;
 				OnJoinedRoom();
+
+				// Begin udp connection
+				_udpConnectionKey = data.UdpConnectKey;
+				BeginUdpRegister();
 			}
 			catch (Exception e)
 			{
@@ -165,11 +203,65 @@ public class ClientToServerConnection : NetworkClient
 			if (player != null) OnOtherLeftRoom(player);
 			else Debug.Log("Could not find player to remove");
 		}
+		else if (message.Type == PackageType.OtherChangedSetup)
+		{
+			// Parse
+			OtherPlayerSetupData info = new OtherPlayerSetupData(message.Data, ref offset);
+			
+			// Find player of id
+			RoomPlayerInfo foundPlayer = null;
+			foreach (RoomPlayerInfo player in ConnectedRoom.Players)
+			{
+				if (player.PlayerID == info.PlayerID)
+				{
+					foundPlayer = player;
+					break;
+				}
+			}
+
+			// Change setup of player
+			if (foundPlayer != null)
+			{
+				foundPlayer.Setup = info.Setup;
+				OnOtherChangedSetup();
+			}
+			else
+			{
+				Debug.Log("Could not find player to remove");
+			}
+		}
+		else if (message.Type == PackageType.UDPRegistered)
+		{
+			_udpRegistered = true;
+		}
+		else if (message.Type == PackageType.RoomLoad)
+		{
+			RoomUdpSetupData msg = new RoomUdpSetupData(message.Data, ref offset);
+
+			GameSession.CURRENT.LoadGame(ConnectedRoom);
+		}
 		else
 		{
 			base.HandleMessage(message);
 		}
     }
+
+	private void BeginUdpRegister()
+	{
+		if (_udpRegistered || !_joinedRoom) return;
+
+		_udpRegisterTimer.Start();
+
+		_clientConnection.RegisterToServer(_udpServerEP, _playerID, _udpConnectionKey);
+	}
+
+	private void UdpRegisterCallBack(object sender, ElapsedEventArgs e)
+	{
+		if (_udpRegistered || !_joinedRoom)
+			_udpRegisterTimer.Stop();
+		else
+			BeginUdpRegister();
+	}
 
     private void OnLogedIn()
     {
@@ -212,6 +304,11 @@ public class ClientToServerConnection : NetworkClient
 	private void OnOtherLeftRoom(RoomPlayerInfo playerInfo)
 	{
 		if (OtherLeftRoom != null) OtherLeftRoom(this, playerInfo);
+	}
+	
+	private void OnOtherChangedSetup()
+	{
+		if (OtherChangedSetup != null) OtherChangedSetup(this, null);
 	}
 
     #endregion

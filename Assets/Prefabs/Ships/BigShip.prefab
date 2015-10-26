@@ -11346,7 +11346,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: InputAxis
-      value: AngleAxis
+      value: CannonAngle
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _angleSpeed
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -18,7 +18,7 @@ public class NetworkClient
     #region Vars
 
     private Socket _connection;
-    private EndPoint _serverEP;
+    protected EndPoint _serverEP;
 
     private bool _connecting = false;
     private bool _connected = false;

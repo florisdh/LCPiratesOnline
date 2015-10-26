@@ -7,11 +7,17 @@ public class RoomLobbyMenu : Menu
 
 	[SerializeField]
 	private Text _header;
-
 	[SerializeField]
 	private ListView _playerListView;
+	[SerializeField]
+	private Dropdown _boatInput;
+	[SerializeField]
+	private Dropdown _colorInput;
+	[SerializeField]
+	private Toggle _readyInput;
 
 	private GameSession _session;
+	private PlayerSetup _setup;
 
 	private bool _updateList;
 
@@ -24,10 +30,30 @@ public class RoomLobbyMenu : Menu
 		_session = GameSession.CURRENT;
 		_session.ServerConnection.OtherJoinedRoom += ServerConnection_OtherJoinedRoom;
 		_session.ServerConnection.OtherLeftRoom += ServerConnection_OtherLeftRoom;
+		_session.ServerConnection.OtherChangedSetup += ServerConnection_OtherChangedSetup;
 		_header.text = _session.ServerConnection.ConnectedRoom.Name;
+
+		// Load current setup
+		foreach (RoomPlayerInfo info in _session.ServerConnection.ConnectedRoom.Players)
+		{
+			if (info.PlayerID == _session.ServerConnection.PlayerID)
+			{
+				_setup = info.Setup;
+				_boatInput.value = _setup.BoatID;
+				_colorInput.value = _setup.FlagColorID;
+				_readyInput.isOn = _setup.Ready;
+				break;
+			}
+		}
+		if (_setup == null)
+		{
+			Debug.Log("Failed to load player setup.");
+			gameObject.SetActive(false);
+		}
+
 		_updateList = true;
 	}
-	
+
 	private void OnDisable()
 	{
 		if (_session != null)
@@ -57,6 +83,14 @@ public class RoomLobbyMenu : Menu
 		targetMenu.Show(this);
 	}
 
+	public void OnChangedSetup()
+	{
+		_setup.BoatID = _boatInput.value;
+		_setup.FlagColorID = _colorInput.value;
+		_setup.Ready = _readyInput.isOn;
+		_session.ServerConnection.ChangeSetup(_setup);
+	}
+
 	private void AddPlayerRow(RoomPlayerInfo playerInfo)
 	{
 		_playerListView.AddRow(new string[] { playerInfo.PlayerName, playerInfo.Setup.BoatID.ToString(), playerInfo.Setup.FlagColorID.ToString(), playerInfo.Setup.Ready.ToString() });
@@ -70,8 +104,12 @@ public class RoomLobbyMenu : Menu
 	private void ServerConnection_OtherLeftRoom(object sender, RoomPlayerInfo player)
 	{
 		_updateList = true;
-		Debug.Log("Player left " + player.PlayerName);
 	}
 
+	private void ServerConnection_OtherChangedSetup(object sender, RoomPlayerInfo player)
+	{
+		_updateList = true;
+	}
+	
 	#endregion
 }

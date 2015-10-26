@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using System;
+using System.Net;
 
 public enum PackageType
 {
@@ -17,6 +18,9 @@ public enum PackageType
 	RequestRooms = 12,
 	RequestJoin = 13,
 	LeaveRoom = 14,
+	SetupChange = 15,
+	RegisterUDP = 16,
+	GameLoaded = 17,
 
     // Server Packages
     SetupSecureConnection = 64,
@@ -26,7 +30,11 @@ public enum PackageType
     JoinedRoom = 68,
 	RoomList = 69,
 	OtherJoinedRoom = 70,
-	OtherLeftRoom = 71
+	OtherLeftRoom = 71,
+	OtherChangedSetup = 72,
+	RoomLoad = 73,
+	RoomStart = 74,
+	UDPRegistered = 75
 }
 
 #region BasePackages
@@ -226,6 +234,42 @@ public class JoinRoomData : PackageData
 	#endregion
 }
 
+public class UDPRegisterData : PackageData
+{
+	#region Vars
+
+	public int ClientID;
+	public byte[] SessionKey;
+
+	#endregion
+
+	#region Construct
+
+	public UDPRegisterData(int clientID, byte[] sessionKey)
+	{
+		ClientID = clientID;
+		SessionKey = sessionKey;
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		List<byte> total = new List<byte>();
+		total.AddRange(new PlayerIDData(ClientID).ToBytes());
+		total.AddRange(SessionKey);
+		return total.ToArray();
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+	}
+
+	#endregion
+}
+
 #endregion
 
 #region ServerPackages
@@ -280,6 +324,11 @@ public class PlayerIDData : PackageData
 
     #region Construct
 
+	public PlayerIDData(int playerID)
+	{
+		PlayerID = playerID;
+	}
+
     public PlayerIDData(byte[] data, ref int offset)
     {
         FromBytes(data, ref offset);
@@ -291,12 +340,13 @@ public class PlayerIDData : PackageData
 
     public byte[] ToBytes()
     {
-        return null;
+		return BitConverter.GetBytes(PlayerID);
     }
 
     public void FromBytes(byte[] data, ref int offset)
     {
         PlayerID = BitConverter.ToInt32(data, offset);
+		offset += 4;
     }
 
     #endregion
@@ -307,6 +357,7 @@ public class JoinedRoomInfoData : PackageData
 	#region Vars
 
 	public GameRoom Room;
+	public byte[] UdpConnectKey;
 
 	#endregion
 
@@ -328,6 +379,10 @@ public class JoinedRoomInfoData : PackageData
 
 	public void FromBytes(byte[] data, ref int offset)
 	{
+		UdpConnectKey = new byte[8];
+		Array.Copy(data, offset, UdpConnectKey, 0, 8);
+		offset += 8;
+		
 		int roomID = BitConverter.ToInt32(data, offset);
 		offset += 4;
 
@@ -447,6 +502,11 @@ public class PlayerSetupData : PackageData
 
 	#region Construct
 
+	public PlayerSetupData(PlayerSetup setup)
+	{
+		Setup = setup;
+	}
+
 	public PlayerSetupData(byte[] data, ref int offset)
 	{
 		FromBytes(data, ref offset);
@@ -458,7 +518,11 @@ public class PlayerSetupData : PackageData
 
 	public byte[] ToBytes()
 	{
-		return null;
+		List<byte> data = new List<byte>();
+		data.Add((byte)Setup.BoatID);
+		data.Add((byte)Setup.FlagColorID);
+		data.Add((byte)(Setup.Ready ? 1 : 0));
+		return data.ToArray();
 	}
 
 	public void FromBytes(byte[] data, ref int offset)
@@ -509,5 +573,151 @@ public class RoomListData : PackageData
 
 	#endregion
 }
+
+public class OtherPlayerSetupData : PackageData
+{
+	#region Vars
+
+	public int PlayerID = -1;
+	public PlayerSetup Setup;
+
+	#endregion
+
+	#region Construct
+
+	public OtherPlayerSetupData(byte[] data, ref int offset)
+	{
+		FromBytes(data, ref offset);
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		return null;
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+		PlayerID = new PlayerIDData(data, ref offset).PlayerID;
+		Setup = new PlayerSetupData(data, ref offset).Setup;
+	}
+
+	#endregion
+}
+
+public class RoomUdpSetupData : PackageData
+{
+	#region Vars
+
+	public PlayerUdpSetupData[] UdpPlayerList;
+
+	#endregion
+
+	#region Construct
+
+	public RoomUdpSetupData(byte[] data, ref int offset)
+	{
+		FromBytes(data, ref offset);
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		return null;
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+		int amount = (int)data[offset++];
+		UdpPlayerList = new PlayerUdpSetupData[amount];
+		for (int i = 0; i < amount; i++)
+		{
+			UdpPlayerList[i] = new PlayerUdpSetupData(data, ref offset);
+		}
+	}
+
+	#endregion
+}
+
+public class PlayerUdpSetupData : PackageData
+{
+	#region Vars
+
+	public int PlayerID = -1;
+	public IPEndPoint EP;
+
+	#endregion
+
+	#region Construct
+
+	public PlayerUdpSetupData(byte[] data, ref int offset)
+	{
+		FromBytes(data, ref offset);
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		return null;
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+		PlayerID = new PlayerIDData(data, ref offset).PlayerID;
+		EP = new IPEPData(data, ref offset).EP;
+	}
+
+	#endregion
+}
+
+public class IPEPData : PackageData
+{
+	#region Vars
+
+	public IPEndPoint EP;
+
+	#endregion
+
+	#region Construct
+
+	public IPEPData(byte[] data, ref int offset)
+	{
+		FromBytes(data, ref offset);
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		return null;
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+		int ipLength = (int)data[offset++];
+		
+		string IP = Encoding.UTF8.GetString(data, offset, ipLength);
+		offset += ipLength;
+
+		ushort Port = BitConverter.ToUInt16(data, offset);
+		offset += 2;
+
+		EP = new IPEndPoint(IPAddress.Parse(IP), (int)Port);
+	}
+
+	#endregion
+}
+
 
 #endregion

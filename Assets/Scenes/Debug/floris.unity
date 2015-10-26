@@ -539,7 +539,8 @@ MonoBehaviour:
   Target: {fileID: 0}
   HorizontalInput: Mouse X
   VerticalInput: Mouse Y
-  _rotationSpeed: 60
+  _horizontalRotationSpeed: 200
+  _verticalRotationSpeed: 150
   _minVerticalRotation: 0
   _maxVerticalRotation: 0
   _targetOffset: {x: 0, y: 0, z: 0}
