@@ -87,7 +87,147 @@ public struct TypedPackage
 
 #endregion
 
-#region ClientPackages
+#region ClientToClient
+
+public class RigidData : PackageData
+{
+	#region Vars
+
+	public PositioningData Positioning;
+	public Vector3Data Velocity;
+
+	#endregion
+
+	#region Construct
+
+	public RigidData(Vector3 position, Vector3 angle, Vector3 velo)
+	{
+		Positioning = new PositioningData(position, angle);
+		Velocity = new Vector3Data(velo);
+	}
+
+	public RigidData(byte[] data, ref int offset)
+	{
+		FromBytes(data, ref offset);
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		List<byte> total = new List<byte>();
+		total.AddRange(Positioning.ToBytes());
+		total.AddRange(Velocity.ToBytes());
+		return total.ToArray();
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+		Positioning = new PositioningData(data, ref offset);
+		Velocity = new Vector3Data(data, ref offset);
+	}
+
+	#endregion
+}
+
+public class PositioningData : PackageData
+{
+	#region Vars
+
+	public Vector3Data Position;
+	public Vector3Data Angle;
+
+    #endregion
+
+    #region Construct
+
+	public PositioningData(Vector3 position, Vector3 angle)
+	{
+		Position = new Vector3Data(position);
+		Angle = new Vector3Data(angle);
+	}
+
+	public PositioningData(byte[] data, ref int offset)
+	{
+		FromBytes(data, ref offset);
+	}
+
+    #endregion
+
+    #region Methods
+
+    public byte[] ToBytes()
+    {
+		List<byte> total = new List<byte>();
+		total.AddRange(Position.ToBytes());
+		total.AddRange(Angle.ToBytes());
+		return total.ToArray();
+    }
+
+    public void FromBytes(byte[] data, ref int offset)
+    {
+		Position = new Vector3Data(data, ref offset);
+		Angle = new Vector3Data(data, ref offset);
+    }
+
+    #endregion
+}
+
+public class Vector3Data : PackageData
+{
+	#region Vars
+
+	public Vector3 Vector;
+
+	#endregion
+
+	#region Construct
+
+	public Vector3Data(Vector3 vector)
+	{
+		Vector = vector;
+	}
+
+	public Vector3Data(byte[] data, ref int offset)
+	{
+		FromBytes(data, ref offset);
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		List<byte> total = new List<byte>();
+		total.AddRange(BitConverter.GetBytes(Vector.x));
+		total.AddRange(BitConverter.GetBytes(Vector.y));
+		total.AddRange(BitConverter.GetBytes(Vector.z));
+		return total.ToArray();
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+		Vector = Vector3.zero;
+
+		Vector.x = BitConverter.ToSingle(data, offset);
+		offset += 4;
+		
+		Vector.y = BitConverter.ToSingle(data, offset);
+		offset += 4;
+
+		Vector.z = BitConverter.ToSingle(data, offset);
+		offset += 4;
+	}
+
+	#endregion
+}
+
+#endregion
+
+#region ClientToServer
 
 public class SecurityRequestData : PackageData
 {
@@ -272,7 +412,7 @@ public class UDPRegisterData : PackageData
 
 #endregion
 
-#region ServerPackages
+#region ServerToClient
 
 public class SecuritySetupData : PackageData
 {

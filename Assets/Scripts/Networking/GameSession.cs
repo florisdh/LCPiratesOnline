@@ -27,14 +27,17 @@ public class GameSession : MonoBehaviour
     {
         CURRENT = this;
 		DontDestroyOnLoad(this);
-		_clientManager = GetComponent<ClientManager>();
 		ClientConnection = new ClientToClient();
+		_clientManager = GetComponent<ClientManager>();
 		ServerConnection = new ClientToServerConnection(ClientConnection);
+		ServerConnection.GameLoad += LoadGame;
+		ServerConnection.GameStart += StartGame;
     }
 
     private void OnApplicationQuit()
     {
         ServerConnection.Disconnect();
+		ClientConnection.Dispose();
     }
 
 	private void FixedUpdate()
@@ -44,27 +47,36 @@ public class GameSession : MonoBehaviour
 			_loadRequest = false;
 			_loadingGame = true;
 			Application.LoadLevel(_currentRoom.MapID);
-			Debug.Log("Loading");
 		}
-		else if (_loadingGame)
+		else if (_loadingGame && LevelSettings.Current != null)
 		{
 			_loadingGame = false;
 
+			// Spawn players
 			_clientManager.ConnectedPlayers = _currentRoom.Players.ToArray();
 			_clientManager.PlayerID = ServerConnection.PlayerID;
 			_clientManager.SpawnPlayers();
 
-			Debug.Log("Loaded");
+			// Send loaded to server
+			ServerConnection.LoadedGame();
 		}
 	}
 
-	public void LoadGame(GameRoom room)
+	private void LoadGame(object sender, GameRoom room)
 	{
 		if (_loadingGame || _loadRequest || _inGame) return;
 		_loadRequest = true;
 		_loadingGame = false;
 		_inGame = false;
 		_currentRoom = room;
+	}
+
+	private void StartGame(object sender, GameRoom room)
+	{
+		_loadingGame = _loadRequest = false;
+		_inGame = true;
+
+		_clientManager.StartPlayer();
 	}
 
     #endregion

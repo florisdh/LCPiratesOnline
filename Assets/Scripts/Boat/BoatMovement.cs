@@ -13,9 +13,7 @@ public class BoatMovement : MonoBehaviour
     private float Speed;
     [SerializeField]
     private float TurnSpeed;
-    [SerializeField]
-    private float _turnSlower;
-
+    
     private Rigidbody _rigid;
 
     #endregion
@@ -34,15 +32,7 @@ public class BoatMovement : MonoBehaviour
 
         if (inputForward != 0f)
         {
-            if(inputRight != 0)
-            {
-                _rigid.AddForce(transform.forward * inputForward * Speed / (Mathf.Abs(inputRight) * _turnSlower));
-            }
-            else
-            {
-                _rigid.AddForce(transform.forward * inputForward * Speed);
-            }
-            
+            _rigid.AddForce(transform.forward * inputForward * Speed);
         }
 
         if (inputRight != 0f)

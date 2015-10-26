@@ -7,7 +7,7 @@ public class ClientToServerConnection : NetworkClient
 {
     #region Defaults
 
-    public const string DEFAULT_IP = "127.0.0.1";
+	public const string DEFAULT_IP = "127.0.0.1"; // 128.199.43.145
 	public const int DEFAULT_PORT = 1337;
 
     #endregion
@@ -22,8 +22,11 @@ public class ClientToServerConnection : NetworkClient
 	public event RoomPlayerEvent OtherJoinedRoom;
 	public event RoomPlayerEvent OtherLeftRoom;
 	public event RoomPlayerEvent OtherChangedSetup;
+	public event RoomEvent GameLoad;
+	public event RoomEvent GameStart;
 
 	public delegate void RoomPlayerEvent(object sender, RoomPlayerInfo player);
+	public delegate void RoomEvent(object sender, GameRoom room);
 
     #endregion
 
@@ -238,7 +241,24 @@ public class ClientToServerConnection : NetworkClient
 		{
 			RoomUdpSetupData msg = new RoomUdpSetupData(message.Data, ref offset);
 
-			GameSession.CURRENT.LoadGame(ConnectedRoom);
+			// Assign udp settings
+			foreach (PlayerUdpSetupData playerUDP in msg.UdpPlayerList)
+			{
+				foreach (RoomPlayerInfo player in ConnectedRoom.Players)
+				{
+					if (player.PlayerID == playerUDP.PlayerID)
+					{
+						player.UdpEP = playerUDP.EP;
+						break;
+					}
+				}
+			}
+
+			OnGameLoad();
+		}
+		else if (message.Type == PackageType.RoomStart)
+		{
+			OnGameStart();
 		}
 		else
 		{
@@ -309,6 +329,16 @@ public class ClientToServerConnection : NetworkClient
 	private void OnOtherChangedSetup()
 	{
 		if (OtherChangedSetup != null) OtherChangedSetup(this, null);
+	}
+
+	private void OnGameLoad()
+	{
+		if (GameLoad != null) GameLoad(this, ConnectedRoom);
+	}
+
+	private void OnGameStart()
+	{
+		if (GameStart != null) GameStart(this, ConnectedRoom);
 	}
 
     #endregion
