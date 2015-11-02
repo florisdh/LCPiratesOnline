@@ -16,6 +16,7 @@ public class ClientToClient : IDisposable
 	private EndPoint _serverEP;
 	private byte[] _receiveBuffer;
 	private int _receiveBufferSize = 128;
+	private EndPoint _receiveEP;
 
 	#endregion
 
@@ -26,7 +27,7 @@ public class ClientToClient : IDisposable
 		_connection = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 		_connection.ExclusiveAddressUse = false;
 		_connection.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-
+		
 		_receiveBuffer = new byte[_receiveBufferSize];
 	}
 
@@ -38,7 +39,7 @@ public class ClientToClient : IDisposable
 	{
 		try
 		{
-			_connection.Shutdown(SocketShutdown.Both);
+			_connection.Close();
 		}
 		catch (Exception) { }
 	}
@@ -47,43 +48,40 @@ public class ClientToClient : IDisposable
 	{
 		_serverEP = serverEP;
 		_playerID = playerID;
+		
+		SendMessage(PackageType.RegisterUDP, new UDPRegisterData(playerID, sessionKey), _serverEP);
 
 		BeginReceive();
-
-		byte[] package = PackageFactory.Pack(PackageType.RegisterUDP, new UDPRegisterData(playerID, sessionKey));
-		Send(package, _serverEP);
 	}
 
-	public void BeginReceive(P2PConnection clientState = null)
+	public void BeginReceive()
 	{
-		if (clientState == null)
-			clientState = new P2PConnection();
-
-		_connection.BeginReceiveFrom(_receiveBuffer, 0, _receiveBufferSize, SocketFlags.None, ref clientState.EP, new AsyncCallback(ReceiveCallBack), clientState);
+		//IPEndPoint ipep = new IPEndPoint(IPAddress.Any, 0);
+		//_receiveEP = (EndPoint)ipep;
+		_receiveEP = _connection.LocalEndPoint;
+		Debug.Log("UDP begin receive at " + _receiveEP.ToString());
+		_connection.BeginReceiveFrom(_receiveBuffer, 0, _receiveBufferSize, SocketFlags.None, ref _receiveEP, new AsyncCallback(ReceiveCallBack), _receiveEP);
 	}
 
 	private void ReceiveCallBack(IAsyncResult res)
 	{
 		//if (res.IsCompleted) return;
 
-		int received = _connection.EndReceive(res);
-		P2PConnection clientState = (P2PConnection)res.AsyncState;
+		int received = _connection.EndReceiveFrom(res, ref _receiveEP);
+		EndPoint ep = _receiveEP;
 
 		try
 		{
 			int offset = 0;
 			RigidData msg = new RigidData(_receiveBuffer, ref offset);
-			Debug.Log(string.Format("Received from id {0} with addr {1} pos {2} angle {3} and velo {4}", clientState.ID, clientState.EP, msg.Positioning.Position.Vector, msg.Positioning.Angle.Vector, msg.Velocity.Vector));
+			Debug.Log(string.Format("UDP Received from addr {1} pos {2} angle {3} and velo {4}", ep, msg.Positioning.Position.Vector, msg.Positioning.Angle.Vector, msg.Velocity.Vector));
 		}
 		catch (Exception)
 		{
-			Debug.Log(string.Format("UDP Received {0}b from {1}", received, clientState.EP));
+			Debug.Log(string.Format("UDP Received {0}b from {1}", received, ep));
 		}
 
-		// Wait for more data from client
-		BeginReceive(clientState);
-
-		// Wait for new client
+		// Wait for next msg
 		BeginReceive();
 	}
 
@@ -94,6 +92,11 @@ public class ClientToClient : IDisposable
 		Debug.Log("UDP sending to " + ep.ToString());
 	}
 
+	public void SendMessage(PackageType type, PackageData data, EndPoint ep)
+	{
+		Send(PackageFactory.Pack(type, data), ep);
+	}
+
 	private void SendCallBack(IAsyncResult res)
 	{
 		//if (res.IsCompleted) return;
@@ -102,18 +105,4 @@ public class ClientToClient : IDisposable
 	}
 
 	#endregion
-}
-
-public class P2PConnection
-{
-	public static int ID_COUNT = 0;
-
-	public EndPoint EP;
-	public int ID;
-
-	public P2PConnection()
-	{
-		EP = new IPEndPoint(IPAddress.Any, 0);
-		ID = ID_COUNT++;
-	}
 }

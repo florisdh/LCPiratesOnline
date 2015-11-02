@@ -27,6 +27,9 @@ public class GameSession : MonoBehaviour
     {
         CURRENT = this;
 		DontDestroyOnLoad(this);
+
+		BindUPnP();
+
 		ClientConnection = new ClientToClient();
 		_clientManager = GetComponent<ClientManager>();
 		ServerConnection = new ClientToServerConnection(ClientConnection);
@@ -60,6 +63,11 @@ public class GameSession : MonoBehaviour
 			// Send loaded to server
 			ServerConnection.LoadedGame();
 		}
+	}
+
+	private void BindUPnP()
+	{
+		Debug.Log("res: " + UPnPHelper.BIND("192.168.0.10", 1337, 22000));
 	}
 
 	private void LoadGame(object sender, GameRoom room)

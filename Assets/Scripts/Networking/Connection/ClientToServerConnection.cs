@@ -7,7 +7,7 @@ public class ClientToServerConnection : NetworkClient
 {
     #region Defaults
 
-	public const string DEFAULT_IP = "127.0.0.1"; // 128.199.43.145
+	public const string DEFAULT_IP = "128.199.43.145"; // 128.199.43.145 // 127.0.0.1
 	public const int DEFAULT_PORT = 1337;
 
     #endregion
