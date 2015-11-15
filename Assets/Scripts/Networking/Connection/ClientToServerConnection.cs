@@ -91,7 +91,7 @@ public class ClientToServerConnection : NetworkClient
 		if (!_logedIn) return;
 		_logedIn = false;
 		_joinedRoom = _joiningRoom = false;
-		_userName = "";
+		_userName = string.Empty;
 		_playerID = -1;
 
 		BeginSend(PackageFactory.Pack(PackageType.Logout, null));
@@ -141,15 +141,23 @@ public class ClientToServerConnection : NetworkClient
 
     protected override void HandleMessage(TypedPackage message)
     {
-		int offset = 0;
-
 		Debug.Log(string.Format("Msg: {0} of length {1}.", message.Type, message.Data.Length));
 
         if (message.Type == PackageType.LoginSucceed)
 		{
-            PlayerIDData data = new PlayerIDData(message.Data, ref offset);
-            _playerID = data.PlayerID;
-            OnLogedIn();
+			try
+			{
+				LoginSucceedData data = new LoginSucceedData(message.Data, ref message.Offset);
+				_playerID = data.PlayerID;
+				_udpConnectionKey = data.UdpConnectKey;
+				OnLogedIn();
+			}
+			catch (Exception e)
+			{
+				Debug.Log("Failed to parse: " + e.ToString());
+			}
+
+			BeginUdpRegister();
         }
         else if (message.Type == PackageType.LoginFailed)
         {
@@ -164,13 +172,9 @@ public class ClientToServerConnection : NetworkClient
 			JoinedRoomInfoData data;
 			try
 			{
-				data = new JoinedRoomInfoData(message.Data, ref offset);
+				data = new JoinedRoomInfoData(message.Data, ref message.Offset);
 				ConnectedRoom = data.Room;
 				OnJoinedRoom();
-
-				// Begin udp connection
-				_udpConnectionKey = data.UdpConnectKey;
-				BeginUdpRegister();
 			}
 			catch (Exception e)
 			{
@@ -179,19 +183,19 @@ public class ClientToServerConnection : NetworkClient
 		}
 		else if (message.Type == PackageType.RoomList)
 		{
-			RoomListData data = new RoomListData(message.Data, ref offset);
+			RoomListData data = new RoomListData(message.Data, ref message.Offset);
 			OpenRooms = data.Rooms;
 			OnReceivedRooms();
 		}
 		else if (message.Type == PackageType.OtherJoinedRoom)
 		{
-			RoomPlayerInfo playerInfo = new RoomPlayerData(message.Data, ref offset).Player;
+			RoomPlayerInfo playerInfo = new RoomPlayerData(message.Data, ref message.Offset).Player;
 			ConnectedRoom.Players.Add(playerInfo);
 			OnOtherJoinedRoom(playerInfo);
 		}
 		else if (message.Type == PackageType.OtherLeftRoom)
 		{
-			PlayerIDData playerInfo = new PlayerIDData(message.Data, ref offset);
+			PlayerIDData playerInfo = new PlayerIDData(message.Data, ref message.Offset);
 			RoomPlayerInfo player = null;
 			for (int i = ConnectedRoom.Players.Count - 1; i >= 0; i--)
 			{
@@ -209,7 +213,7 @@ public class ClientToServerConnection : NetworkClient
 		else if (message.Type == PackageType.OtherChangedSetup)
 		{
 			// Parse
-			OtherPlayerSetupData info = new OtherPlayerSetupData(message.Data, ref offset);
+			OtherPlayerSetupData info = new OtherPlayerSetupData(message.Data, ref message.Offset);
 			
 			// Find player of id
 			RoomPlayerInfo foundPlayer = null;
@@ -239,7 +243,7 @@ public class ClientToServerConnection : NetworkClient
 		}
 		else if (message.Type == PackageType.RoomLoad)
 		{
-			RoomUdpSetupData msg = new RoomUdpSetupData(message.Data, ref offset);
+			RoomUdpSetupData msg = new RoomUdpSetupData(message.Data, ref message.Offset);
 
 			// Assign udp settings
 			foreach (PlayerUdpSetupData playerUDP in msg.UdpPlayerList)
@@ -268,7 +272,7 @@ public class ClientToServerConnection : NetworkClient
 
 	private void BeginUdpRegister()
 	{
-		if (_udpRegistered || !_joinedRoom) return;
+		if (_udpRegistered) return;
 
 		_udpRegisterTimer.Start();
 

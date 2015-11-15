@@ -38,20 +38,20 @@ namespace UPnPHelper
 			Console.WriteLine("UPnP has been loaded succesfully.");
 
 			// Get app task
-			int externalPort, internalPort;
+			int port, maxPort;
 			string desc, client, proto;
 
 			switch (args[0])
 			{
-				// bind [PROTO] [INTERN_PORT] [EXTERN_PORT] [CLIENT] [DESC]
+				// bind [PROTO] [MIN_PORT] [MAX_PORT] [CLIENT] [DESC]
 				case "bind":
 					if (args.Length != 6)
 					{
-						Console.WriteLine("Error: Argument mismatch. use: bind [PROTO] [INTERN_PORT] [EXTERN_PORT] [CLIENT] [DESC]");
+						Console.WriteLine("Error: Argument mismatch. use: bind [PROTO] [MIN_PORT] [MAX_PORT] [CLIENT] [DESC]");
 						return;
 					}
-					
-					if (!Int32.TryParse(args[2], out externalPort) || !Int32.TryParse(args[3], out internalPort))
+
+					if (!Int32.TryParse(args[2], out port) || !Int32.TryParse(args[3], out maxPort))
 					{
 						Console.WriteLine("Error: Failed to parse port.");
 						return;
@@ -61,9 +61,37 @@ namespace UPnPHelper
 					client = args[4];
 					desc = args[5];
 
+					// Check if port is used
+					while (true)
+					{
+						try
+						{
+							IStaticPortMapping item = PORT_MAPPING[port, proto];
+							if (item.InternalClient == client)
+							{
+								//Console.WriteLine("Error: Port {0} is already assigned to self.");
+								Console.WriteLine("Succeed. At port " + port.ToString());
+								return;
+							}
+							else
+							{
+								Console.WriteLine("Error: Port {0} is already used by other client.");
+								port++;
+								if (port > maxPort)
+									return;
+							}
+						}
+						catch (Exception e)
+						{
+							Console.WriteLine("Port is avaiable.");
+							break;
+						}	
+					}
+
+					// Add Port
 					try
 					{
-						PORT_MAPPING.Add(externalPort, proto, internalPort, client, true, desc);
+						PORT_MAPPING.Add(port, proto, port, client, true, desc);
 					}
 					catch (Exception e)
 					{
@@ -71,7 +99,7 @@ namespace UPnPHelper
 						return;
 					}
 
-					Console.WriteLine("Succeed.");
+					Console.WriteLine("Succeed. At port " + port.ToString());
 
 					break;
 				// unbind [PROTO] [EXTERN_PORT]
@@ -84,7 +112,7 @@ namespace UPnPHelper
 
 					proto = args[1];
 
-					if (!Int32.TryParse(args[2], out externalPort))
+					if (!Int32.TryParse(args[2], out port))
 					{
 						Console.WriteLine("Error: Failed to parse port.");
 						return;
@@ -92,7 +120,7 @@ namespace UPnPHelper
 
 					try
 					{
-						PORT_MAPPING.Remove(externalPort, proto);
+						PORT_MAPPING.Remove(port, proto);
 					}
 					catch (Exception e)
 					{
@@ -100,7 +128,7 @@ namespace UPnPHelper
 						return;
 					}
 
-					Console.WriteLine("Succeed.");
+					Console.WriteLine("Succeed. At port " + port.ToString());
 
 					break;
 				default:

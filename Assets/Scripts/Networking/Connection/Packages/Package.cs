@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-using System;
 using System.Net;
+using System;
 
 public enum PackageType
 {
@@ -14,27 +14,28 @@ public enum PackageType
     RequestSecureConnection = 8,
     LoginAttempt = 9,
 	Logout = 10,
-    CreateRoom = 11,
-	RequestRooms = 12,
-	RequestJoin = 13,
-	LeaveRoom = 14,
-	SetupChange = 15,
-	RegisterUDP = 16,
+	RegisterUDP = 11,
+    CreateRoom = 12,
+	RequestRooms = 13,
+	RequestJoin = 14,
+	LeaveRoom = 15,
+	SetupChange = 16,
 	GameLoaded = 17,
+	PositionUpdate = 18,
 
     // Server Packages
     SetupSecureConnection = 64,
     LoginSucceed = 65,
     LoginFailed = 66,
-    RoomCreated = 67,
-    JoinedRoom = 68,
-	RoomList = 69,
-	OtherJoinedRoom = 70,
-	OtherLeftRoom = 71,
-	OtherChangedSetup = 72,
-	RoomLoad = 73,
-	RoomStart = 74,
-	UDPRegistered = 75
+	UDPRegistered = 67,
+    RoomCreated = 68,
+    JoinedRoom = 69,
+	RoomList = 70,
+	OtherJoinedRoom = 71,
+	OtherLeftRoom = 72,
+	OtherChangedSetup = 73,
+	RoomLoad = 74,
+	RoomStart = 75
 }
 
 #region BasePackages
@@ -66,22 +67,21 @@ public class PackageFactory
 
     public static TypedPackage Unpack(byte[] data)
     {
-        int restLenght = data.Length - 1;
-        byte[] rest = new byte[restLenght];
-        Array.Copy(data, 1, rest, 0, restLenght);
-        return new TypedPackage((PackageType)(int)data[0], rest);
+        return new TypedPackage((PackageType)(int)data[0], data, 1);
     }
 }
 
 public struct TypedPackage
 {
     public PackageType Type;
+	public int Offset;
     public byte[] Data;
 
-    public TypedPackage(PackageType type, byte[] data)
+    public TypedPackage(PackageType type, byte[] data, int offset = 0)
     {
         Type = type;
         Data = data;
+		Offset = offset;
     }
 }
 
@@ -454,6 +454,43 @@ public class SecuritySetupData : PackageData
     #endregion
 }
 
+public class LoginSucceedData : PackageData
+{
+    #region Vars
+
+    public int PlayerID;
+	public byte[] UdpConnectKey;
+
+    #endregion
+
+    #region Construct
+
+    public LoginSucceedData(byte[] data, ref int offset)
+    {
+        FromBytes(data, ref offset);
+    }
+
+    #endregion
+
+    #region Methods
+
+    public byte[] ToBytes()
+    {
+		return null;
+    }
+
+    public void FromBytes(byte[] data, ref int offset)
+    {
+        PlayerID = new PlayerIDData(data, ref offset).PlayerID;
+		
+		UdpConnectKey = new byte[8];
+		Array.Copy(data, offset, UdpConnectKey, 0, 8);
+		offset += 8;
+    }
+
+    #endregion
+}
+
 public class PlayerIDData : PackageData
 {
     #region Vars
@@ -497,7 +534,6 @@ public class JoinedRoomInfoData : PackageData
 	#region Vars
 
 	public GameRoom Room;
-	public byte[] UdpConnectKey;
 
 	#endregion
 
@@ -519,10 +555,6 @@ public class JoinedRoomInfoData : PackageData
 
 	public void FromBytes(byte[] data, ref int offset)
 	{
-		UdpConnectKey = new byte[8];
-		Array.Copy(data, offset, UdpConnectKey, 0, 8);
-		offset += 8;
-		
 		int roomID = BitConverter.ToInt32(data, offset);
 		offset += 4;
 

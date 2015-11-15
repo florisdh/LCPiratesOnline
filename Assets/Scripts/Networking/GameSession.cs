@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine;
+using System.Net;
 
 public class GameSession : MonoBehaviour
 {
@@ -13,9 +14,16 @@ public class GameSession : MonoBehaviour
 	public ClientToClient ClientConnection;
 
 	private GameRoom _currentRoom;
+	private bool _UPnPLoaded = false;
+	private bool _UPnPLoading = false;
 	private bool _loadingGame = false;
 	private bool _loadRequest = false;
 	private bool _inGame = false;
+
+	private string _localIP;
+	private int _localPort;
+	private int _remotePort = 20000;
+	private int _upnpCounter = 0;
 
 	private ClientManager _clientManager;
 
@@ -28,19 +36,27 @@ public class GameSession : MonoBehaviour
         CURRENT = this;
 		DontDestroyOnLoad(this);
 
-		BindUPnP();
+		_localIP = GetIPAddress();
+
+		UPnPHelper.RESULT += BindUPnPResult;
 
 		ClientConnection = new ClientToClient();
 		_clientManager = GetComponent<ClientManager>();
 		ServerConnection = new ClientToServerConnection(ClientConnection);
 		ServerConnection.GameLoad += LoadGame;
 		ServerConnection.GameStart += StartGame;
+
+		BindUPnP();
     }
 
     private void OnApplicationQuit()
     {
         ServerConnection.Disconnect();
 		ClientConnection.Dispose();
+
+		UPnPHelper.RESULT -= BindUPnPResult;
+		if (_UPnPLoaded)
+			UPnPHelper.UNBIND(_remotePort);
     }
 
 	private void FixedUpdate()
@@ -65,9 +81,36 @@ public class GameSession : MonoBehaviour
 		}
 	}
 
-	private void BindUPnP()
+	public void BindUPnP()
 	{
-		Debug.Log("res: " + UPnPHelper.BIND("192.168.0.10", 1337, 22000));
+		Debug.Log("Loading upnp..");
+		UPnPHelper.BIND(_localIP, _remotePort, _remotePort + 20);
+	}
+
+	private void BindUPnPResult(UPnPHelperResult res)
+	{
+		if (res.Type == UPnPHelperResultType.Succeed)
+		{
+			_UPnPLoaded = true;
+			_remotePort = _localPort = res.ExternPort;
+			ClientConnection.Bind(new IPEndPoint(IPAddress.Any, _localPort));
+			Debug.Log("UPnP loaded on " + _remotePort.ToString());
+		}
+		else if (res.Type == UPnPHelperResultType.VersionMismatch)
+		{
+			Debug.Log("UPnPHelper Invalid version!");
+		}
+		else
+		{
+			_upnpCounter++;
+			Debug.Log("UPnP failed to load. Try " + _upnpCounter.ToString());
+			if (_upnpCounter >= 3)
+			{
+				Debug.Log("Failed to load UPnP after 3 tries.");
+			}
+			else
+				BindUPnP();
+		}
 	}
 
 	private void LoadGame(object sender, GameRoom room)
@@ -87,5 +130,29 @@ public class GameSession : MonoBehaviour
 		_clientManager.StartPlayer();
 	}
 
+	private string GetIPAddress()
+	{
+		IPHostEntry host;
+		string localIP = string.Empty;
+		host = Dns.GetHostEntry(Dns.GetHostName());
+		foreach (IPAddress ip in host.AddressList)
+		{
+			if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+			{
+				localIP = ip.ToString();
+			}
+		}
+		return localIP;
+	}
+
     #endregion
+
+	#region Properties
+
+	public bool UPnPLoaded
+	{
+		get { return _UPnPLoaded; }
+	}
+
+	#endregion
 }

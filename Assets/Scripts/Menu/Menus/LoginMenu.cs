@@ -30,6 +30,16 @@ public class LoginMenu : Menu
 
     private void OnEnable()
     {
+		UPnPHelper.RESULT += UPnPHelper_RESULT;
+		if (GameSession.CURRENT.UPnPLoaded)
+		{
+			_result = LoginResult.UPnPLoaded;
+		}
+		else
+		{
+			_errorOutput.ShowError("Loading UPnP connection..");
+		}
+
         _session = GameSession.CURRENT;
 		_session.ServerConnection.Connected += ServerConnection_Connected;
 		_session.ServerConnection.ConnectFailed += ServerConnection_ConnectFailed;
@@ -37,21 +47,16 @@ public class LoginMenu : Menu
         _session.ServerConnection.LoginFailed += ServerConnection_LoginFailed;
         _session.ServerConnection.LogedIn += ServerConnection_LogedIn;
 
-		if (!_session.ServerConnection.IsConnected)
-		{
-			BeginConnect();
-		}
-
-        // Instant proceed if already logedIn
-        else if (_session.ServerConnection.IsLogedIn)
-        {
-            Debug.Log("Already logedin");
-            _session = null;
-            _mainMenu.Show(this);
-            return;
-        }
-
     }
+
+	private void UPnPHelper_RESULT(UPnPHelperResult res)
+	{
+		if (res.Type != UPnPHelperResultType.Succeed)
+			_result = LoginResult.UPnPFailed;
+		else
+			_result = LoginResult.UPnPLoaded;
+	}
+
     private void OnDisable()
     {
         if (_session != null)
@@ -61,12 +66,28 @@ public class LoginMenu : Menu
 			_session.ServerConnection.ConnectionSecured -= ServerConnection_ConnectionSecured;
             _session.ServerConnection.LoginFailed -= ServerConnection_LoginFailed;
             _session.ServerConnection.LogedIn -= ServerConnection_LogedIn;
+
+			UPnPHelper.RESULT -= UPnPHelper_RESULT;
         }
     }
 
     private void FixedUpdate()
     {
-		if (_result == LoginResult.ConnectionFailed)
+		// Unity cannot handle access from other thread
+		// Easey fix by putting output in update
+		// SO that it will be called on main unity thread
+
+		if (_result == LoginResult.UPnPFailed)
+		{
+			_result = LoginResult.None;
+			_errorOutput.ShowError("Failed to load UPnP, this must be enabled on the router to play.", 0.5f, 10f);
+		}
+		else if (_result == LoginResult.UPnPLoaded)
+		{
+			_result = LoginResult.None;
+			BeginConnect();
+		}
+		else if (_result == LoginResult.ConnectionFailed)
 		{
 			_result = LoginResult.None;
 			_errorOutput.ShowError("Failed to connect.");
@@ -74,25 +95,25 @@ public class LoginMenu : Menu
 		}
 		else if (_result == LoginResult.Connected)
 		{
-			_errorOutput.ShowError("Securing connection...");
 			_result = LoginResult.None;
+			_errorOutput.ShowError("Securing connection...");
 		}
 		else if (_result == LoginResult.ConnectionSecured)
 		{
-			_errorOutput.ShowError("Connection established.");
 			_result = LoginResult.None;
+			_errorOutput.ShowError("Connection established.");
 		}
-        else if (_result == LoginResult.FailedToLogin)
-        {
-            _errorOutput.ShowError("Invalid credentials.");
-            _result = LoginResult.None;
-        }
-        else if (_result == LoginResult.LogedIn)
-        {
+		else if (_result == LoginResult.FailedToLogin)
+		{
+			_result = LoginResult.None;
+			_errorOutput.ShowError("Invalid credentials.");
+		}
+		else if (_result == LoginResult.LogedIn)
+		{
+			_result = LoginResult.None;
 			_errorOutput.ShowError("Welcome " + _session.ServerConnection.UserName);
-            _mainMenu.Show(this);
-            _result = LoginResult.None;
-        }
+			_mainMenu.Show(this);
+		}
 
 		if (!_session.ServerConnection.IsConnected && _reconnectTimer < _reconnectInterval)
 		{
@@ -119,7 +140,7 @@ public class LoginMenu : Menu
 
     public void Login()
     {
-        if (_session.ServerConnection.IsLoggingIn || _session.ServerConnection.IsLogedIn) return;
+		if (!_session || _session.ServerConnection.IsLoggingIn || _session.ServerConnection.IsLogedIn) return;
         
         string usr = _usrnInput.text;
         string pw = _pwInput.text;
@@ -164,6 +185,8 @@ public class LoginMenu : Menu
 
 enum LoginResult
 {
+	UPnPFailed,
+	UPnPLoaded,
 	Connected,
 	ConnectionSecured,
 	ConnectionFailed,

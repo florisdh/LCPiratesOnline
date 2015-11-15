@@ -100,8 +100,7 @@ public class NetworkClient
         {
             try
 			{
-				int offset = 0;
-                _aes = new SecuritySetupData(message.Data, ref offset).AES;
+                _aes = new SecuritySetupData(message.Data, ref message.Offset).AES;
                 _encrypter = _aes.CreateEncryptor();
                 _decrypter = _aes.CreateDecryptor();
             }
@@ -118,7 +117,7 @@ public class NetworkClient
 		}
 		else
 		{
-			Debug.Log(string.Format("Unhandled msg {0} with data of length {2}.", message.Type, message.Data.Length));
+			Debug.Log(string.Format("Unhandled msg {0} of length {2}.", message.Type, message.Data.Length));
 		}
     }
 

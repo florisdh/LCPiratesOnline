@@ -7,6 +7,9 @@ public class ClientToClient : IDisposable
 {
 	#region Events
 
+	public event UDPMessageEvent Received;
+	public delegate void UDPMessageEvent(EndPoint ep, TypedPackage package);
+
 	#endregion
 
 	#region Vars
@@ -27,7 +30,6 @@ public class ClientToClient : IDisposable
 		_connection = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 		_connection.ExclusiveAddressUse = false;
 		_connection.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-		
 		_receiveBuffer = new byte[_receiveBufferSize];
 	}
 
@@ -44,6 +46,11 @@ public class ClientToClient : IDisposable
 		catch (Exception) { }
 	}
 
+	public void Bind(EndPoint ep)
+	{
+		_connection.Bind(ep);
+	}
+
 	public void RegisterToServer(EndPoint serverEP, int playerID, byte[] sessionKey)
 	{
 		_serverEP = serverEP;
@@ -56,10 +63,7 @@ public class ClientToClient : IDisposable
 
 	public void BeginReceive()
 	{
-		//IPEndPoint ipep = new IPEndPoint(IPAddress.Any, 0);
-		//_receiveEP = (EndPoint)ipep;
 		_receiveEP = _connection.LocalEndPoint;
-		Debug.Log("UDP begin receive at " + _receiveEP.ToString());
 		_connection.BeginReceiveFrom(_receiveBuffer, 0, _receiveBufferSize, SocketFlags.None, ref _receiveEP, new AsyncCallback(ReceiveCallBack), _receiveEP);
 	}
 
@@ -70,17 +74,10 @@ public class ClientToClient : IDisposable
 		int received = _connection.EndReceiveFrom(res, ref _receiveEP);
 		EndPoint ep = _receiveEP;
 
-		try
-		{
-			int offset = 0;
-			RigidData msg = new RigidData(_receiveBuffer, ref offset);
-			Debug.Log(string.Format("UDP Received from addr {1} pos {2} angle {3} and velo {4}", ep, msg.Positioning.Position.Vector, msg.Positioning.Angle.Vector, msg.Velocity.Vector));
-		}
-		catch (Exception)
-		{
-			Debug.Log(string.Format("UDP Received {0}b from {1}", received, ep));
-		}
-
+		TypedPackage package = PackageFactory.Unpack(_receiveBuffer);
+		if (Received != null)
+			Received(ep, package);
+		
 		// Wait for next msg
 		BeginReceive();
 	}
@@ -88,8 +85,6 @@ public class ClientToClient : IDisposable
 	public void Send(byte[] data, EndPoint ep)
 	{
 		_connection.BeginSendTo(data, 0, data.Length, SocketFlags.None, ep, new AsyncCallback(SendCallBack), null);
-
-		Debug.Log("UDP sending to " + ep.ToString());
 	}
 
 	public void SendMessage(PackageType type, PackageData data, EndPoint ep)
