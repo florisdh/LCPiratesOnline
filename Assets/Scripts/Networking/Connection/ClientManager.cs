@@ -7,28 +7,29 @@ public class ClientManager : MonoBehaviour
 {
 	#region Vars
 
+	// Prefabs
 	public GameObject BoatPrefab;
 	public GameObject CameraPrefab;
 
+	// Current Session
+	private LevelSettings _currentLevel;
 	public RoomPlayerInfo[] ConnectedPlayers;
-	public int PlayerID;
-
 	private Dictionary<EndPoint, SpawnedPlayer> _players;
 
-	private LevelSettings _currentLevel;
+	// Current Player
 	private BoatManager _playerBoat;
 	private Rigidbody _rigid;
+	public int PlayerID;
 
-	private float _updateInterval = 100f;
+	private float _updateInterval = 50f;
 	private Timer _updateTimer;
 
+	// Networking
 	private ClientToClient _connection;
-	private RigidData _rigidPackage;
+	private PositioningData _posPackage;
 	private byte[] _sendBuffer;
 
 	private bool _started = false;
-
-	private SpawnedPlayer _other;
 
 	#endregion
 
@@ -36,7 +37,7 @@ public class ClientManager : MonoBehaviour
 
 	private void Start()
 	{
-		_rigidPackage = new RigidData(Vector3.zero, Vector3.zero, Vector3.zero);
+		_posPackage = new PositioningData(Vector3.zero, Vector3.zero);
 		_updateTimer = new Timer(_updateInterval);
 		_updateTimer.Elapsed += UpdateTimer_Elapsed;
 		_updateTimer.AutoReset = true;
@@ -59,29 +60,6 @@ public class ClientManager : MonoBehaviour
 		}
 	}
 
-	private void UpdateNetworkPackage()
-	{
-		_rigidPackage.Positioning.Position.Vector = _playerBoat.transform.position;
-		_rigidPackage.Positioning.Angle.Vector = _playerBoat.transform.eulerAngles;
-		_rigidPackage.Velocity.Vector = _rigid.velocity;
-	}
-
-	private void UpdatePlayers()
-	{
-		foreach (SpawnedPlayer player in _players.Values)
-		{
-			if (player.Info.PlayerID == PlayerID) continue;
-
-			if (player.RigidUpdated)
-			{
-				player.RigidUpdated = false;
-				player.Rigid.transform.position = player.RigidData.Positioning.Position.Vector;
-				player.Rigid.transform.eulerAngles = player.RigidData.Positioning.Angle.Vector;
-				//player.Rigid.velocity = player.RigidData.Velocity.Vector;
-			}
-		}
-	}
-
 	public void SpawnPlayers()
 	{
 		_currentLevel = LevelSettings.Current;
@@ -94,6 +72,7 @@ public class ClientManager : MonoBehaviour
 			SpawnedPlayer sPlayer = new SpawnedPlayer(newShip, player);
 			_players.Add(player.UdpEP, sPlayer);
 
+			// Self
 			if (player.PlayerID == PlayerID)
 			{
 				// Create camera for player
@@ -105,7 +84,32 @@ public class ClientManager : MonoBehaviour
 
 				UpdateNetworkPackage();
 			}
-			else _other = sPlayer;
+			// Other player
+			else
+			{
+				Destroy(newShip.GetComponent<Rigidbody>());
+			}
+		}
+	}
+
+	private void UpdateNetworkPackage()
+	{
+		_posPackage.Position.Vector = _playerBoat.transform.position;
+		_posPackage.Angle.Vector = _playerBoat.transform.eulerAngles;
+	}
+
+	private void UpdatePlayers()
+	{
+		foreach (SpawnedPlayer player in _players.Values)
+		{
+			if (player.Info.PlayerID == PlayerID) continue;
+
+			if (player.PosUpdated)
+			{
+				player.PosUpdated = false;
+				player.Boat.transform.position = player.PosData.Position.Vector;
+				player.Boat.transform.eulerAngles = player.PosData.Angle.Vector;
+			}
 		}
 	}
 
@@ -121,7 +125,7 @@ public class ClientManager : MonoBehaviour
 	private void UpdateTimer_Elapsed(object sender, ElapsedEventArgs e)
 	{
 		// Send to all clients
-		_sendBuffer = PackageFactory.Pack(PackageType.PositionUpdate, _rigidPackage);
+		_sendBuffer = PackageFactory.Pack(PackageType.PositionUpdate, _posPackage);
 		foreach (RoomPlayerInfo player in ConnectedPlayers)
 		{
 			if (player.PlayerID != PlayerID)
@@ -140,18 +144,17 @@ public class ClientManager : MonoBehaviour
 			return;
 		}
 		
-		//SpawnedPlayer p = _players[ep];
-		SpawnedPlayer p = _other;
+		SpawnedPlayer p = _players[ep];
 
 		// Handle msg
 		if (package.Type == PackageType.PositionUpdate)
 		{
-			p.RigidData.FromBytes(package.Data, ref package.Offset);
-			p.RigidUpdated = true;
+			p.PosData.FromBytes(package.Data, ref package.Offset);
+			p.PosUpdated = true;
 		}
 		else
 		{
-			Debug.Log("Unhandles UDP msg");
+			Debug.Log("Unhandled UDP msg");
 		}
 	}
 
@@ -160,16 +163,16 @@ public class ClientManager : MonoBehaviour
 
 public class SpawnedPlayer
 {
-	public Rigidbody Rigid;
-	public RigidData RigidData;
-	public bool RigidUpdated;
+	public GameObject Boat;
+	public PositioningData PosData;
 	public RoomPlayerInfo Info;
+	public bool PosUpdated;
 
 	public SpawnedPlayer(GameObject boat, RoomPlayerInfo info)
 	{
-		Rigid = boat.GetComponent<Rigidbody>();
-		RigidData = new RigidData(Rigid.position, Rigid.transform.eulerAngles, Rigid.velocity);
+		Boat = boat;
+		PosData = new PositioningData(Boat.transform.position, Boat.transform.eulerAngles);
 		Info = info;
-		RigidUpdated = true;
+		PosUpdated = true;
 	}
 }

@@ -22,6 +22,7 @@ public enum PackageType
 	SetupChange = 16,
 	GameLoaded = 17,
 	PositionUpdate = 18,
+	ShootUpdate = 19,
 
     // Server Packages
     SetupSecureConnection = 64,

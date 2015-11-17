@@ -8,7 +8,7 @@ public class BoatManager : MonoBehaviour
     public Cannon[] Cannons;
 	private BoatMovement _movement;
 	private CannonAngler _angler;
-	private CannonManager _cannonManager;
+	private CannonManager[] _cannonManagers;
 
 	private bool _enabled;
 	private bool _desiredEnabled;
@@ -22,7 +22,7 @@ public class BoatManager : MonoBehaviour
         Cannons = GetComponentsInChildren<Cannon>();
 		_movement = GetComponent<BoatMovement>();
 		_angler = GetComponent<CannonAngler>();
-		_cannonManager = GetComponent<CannonManager>();
+		_cannonManagers = GetComponentsInChildren<CannonManager>();
     }
 
 	void FixedUpdate()
@@ -30,7 +30,11 @@ public class BoatManager : MonoBehaviour
 		if (_desiredEnabled != _enabled)
 		{
 			_enabled = _desiredEnabled;
-			_movement.enabled = _angler.enabled = _cannonManager.enabled = _enabled;
+			_movement.enabled = _angler.enabled = _enabled;
+			foreach (CannonManager manager in _cannonManagers)
+			{
+				manager.enabled = _enabled;
+			}
 		}
 	}
 

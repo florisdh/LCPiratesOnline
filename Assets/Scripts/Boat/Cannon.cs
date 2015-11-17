@@ -3,29 +3,35 @@ using System.Collections;
 
 public class Cannon : MonoBehaviour
 {
-    #region Vars
+	#region Events
 
+	public event RigidEvent OnShoot;
+	public delegate void RigidEvent(Vector3 pos, Vector3 angle, Vector3 velo);
+
+	#endregion
+
+	#region Vars
+
+	[SerializeField]
+    private ParticleSystem Particles;
     [SerializeField]
     private GameObject _barrel;
+    [SerializeField]
+    private GameObject _projectilePrefab;
+    private AudioSource _shootSound;
+
     [SerializeField]
     private float _maxAngle;
     [SerializeField]
     private float _minAngle;
     [SerializeField]
-    private GameObject _cannonBall;
-    [SerializeField]
     private float _force;
-    [SerializeField]
-    private float _maxInterval;
-    private ParticleSystem Particles;
-    private AudioSource _shootSound;
 
-    private float _shootTiming = 1;
-    private float _shootTimer;
+	private float _minDelay = 0.1f;
+	private float _maxDelay = 0.3f;
 
+    private float _shootDelay;
     private bool _shooting;
-
-    public int row;
 
     #endregion
 
@@ -33,38 +39,17 @@ public class Cannon : MonoBehaviour
 
     void Start()
     {
-        Particles = GetComponentInChildren<ParticleSystem>();
         _shootSound = GetComponent<AudioSource>();
-        _shootTiming = Random.Range(0.1f, 0.4f);
+		_shootDelay = Random.Range(_minDelay, _maxDelay);
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
-
-        if(_shooting)
-        {
-            if(_shootTimer > _shootTiming)
-            {
-                _shootTimer = 0;
-                _shooting = false;
-                _shootTiming = Random.Range(0.1f, 0.7f);
-
-                GameObject newProjectile = (GameObject)Instantiate(_cannonBall, _barrel.transform.position + _barrel.transform.forward * 0.7f * _barrel.transform.lossyScale.z, _barrel.transform.rotation);
-                newProjectile.GetComponent<Rigidbody>().velocity = transform.parent.GetComponent<Rigidbody>().velocity;
-                newProjectile.GetComponent<Rigidbody>().AddForce(_barrel.transform.forward * _force);
-
-                Particles.Play();
-                _shootSound.Play();
-            }
-            else
-            {
-                _shootTimer += Time.deltaTime;
-            }
-        }
+		if (_barrel == null)
+		{
+			Destroy(this);
+			return;
+		}
     }
 
     public void ApplyRotation(float angleNormal)
@@ -79,15 +64,33 @@ public class Cannon : MonoBehaviour
 
     public void Shoot()
     {
-        if(_barrel == null)
-        {
-            Destroy(this);
-            return;
-        }
-
+		if (_shooting) return;
         _shooting = true;
-        
+
+		Invoke("Fire", _shootDelay);
     }
+
+	private void Fire()
+	{
+		if (!_shooting) return;
+		_shooting = false;
+
+		// Spawn
+		Vector3 targetPos = _barrel.transform.position + _barrel.transform.forward * 0.7f * _barrel.transform.lossyScale.z;
+		GameObject projectile = (GameObject)Instantiate(_projectilePrefab, targetPos, _barrel.transform.rotation);
+		Rigidbody projectileRigid = projectile.GetComponent<Rigidbody>();
+
+		// Apply force
+		projectileRigid.velocity = transform.parent.GetComponent<Rigidbody>().velocity;
+		projectileRigid.AddForce(_barrel.transform.forward * _force);
+
+		// User feedback
+		Particles.Play();
+		_shootSound.Play();
+
+		if (OnShoot != null)
+			OnShoot(projectile.transform.position, projectile.transform.eulerAngles, projectileRigid.velocity);
+	}
 
     #endregion
 }

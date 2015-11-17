@@ -36,7 +36,7 @@ public class CameraMovement : MonoBehaviour
 
     void OnEnable()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
         //Cursor.lockState = CursorLockMode.Locked;
     }
 

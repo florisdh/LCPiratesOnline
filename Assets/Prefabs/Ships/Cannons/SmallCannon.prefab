@@ -452,13 +452,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fa0a8575480de4dbc703cb5edcbc92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Particles: {fileID: 19833398}
   _barrel: {fileID: 150400}
+  _projectilePrefab: {fileID: 161646, guid: 058945a8190ac8f459f5e42625711c03, type: 2}
   _maxAngle: 0
   _minAngle: -30
-  _cannonBall: {fileID: 161646, guid: 058945a8190ac8f459f5e42625711c03, type: 2}
   _force: 20000
-  _maxInterval: .349999994
-  row: 0
 --- !u!136 &13669214
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1572,6 +1571,10 @@ Prefab:
       propertyPath: _force
       value: 20000
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _projectilePrefab
+      value: 
+      objectReference: {fileID: 161646, guid: 058945a8190ac8f459f5e42625711c03, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190210}

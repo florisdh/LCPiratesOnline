@@ -22,7 +22,7 @@ public class GameSession : MonoBehaviour
 
 	private string _localIP;
 	private int _localPort;
-	private int _remotePort = 20000;
+	private int _remotePort = 20010;
 	private int _upnpCounter = 0;
 
 	private ClientManager _clientManager;

@@ -4,75 +4,68 @@ using System.Collections.Generic;
 
 public class CannonManager : MonoBehaviour
 {
-    private GameObject[] _allCannons;
-    private List<GameObject> _rowOne;
-    private List<GameObject> _rowTwo;
+	#region Vars
 
-    [SerializeField]
-    private float _coolDownTiming;
+	[SerializeField]
+	private string _inputAxis;
+	private List<Cannon> _cannons;
+	
+	[SerializeField]
+	private float _shootInterval = 1f;
+	private float _shootTimer = 0f;
 
-    private float _coolDownTimer;
+	[SerializeField]
+	private float _delay = 0.1f;
 
-    void Start()
+	private bool _shooting = false;
+
+	#endregion
+
+	#region Construct
+
+	public CannonManager()
+		: base()
+	{
+		_cannons = new List<Cannon>();
+	}
+
+	#endregion
+
+	#region Methods
+
+	private void Update()
     {
-        _allCannons = GameObject.FindGameObjectsWithTag("Cannon");
-        
-        _rowOne = new List<GameObject>();
-        _rowTwo = new List<GameObject>();
-
-        for (int i = 0; i < _allCannons.Length; i++)
+		if (_shooting)
+		{
+			if (_shootTimer < _shootInterval)
+			{
+				_shootTimer += Time.deltaTime;
+			}
+			else
+			{
+				_shooting = false;
+				_shootTimer = 0f;
+			}
+		}
+		else if (Input.GetAxis(_inputAxis) > 0.5f)
         {
-            if(_allCannons[i].GetComponent<Cannon>().row == 1)
-            {
-                _rowOne.Add(_allCannons[i]);
-            }
-            else
-            {
-                _rowTwo.Add(_allCannons[i]);
-            }
+			_shooting = true;
+			Invoke("FireCannons", _delay);
         }
     }
 
-    void Update()
+	private void FireCannons()
     {
-        
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            if (_coolDownTimer > _coolDownTiming)
-            {
-                fireCannons(1);
-                _coolDownTimer = 0;
-            }
-        }
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            if (_coolDownTimer > _coolDownTiming)
-            {
-                fireCannons(2);
-                _coolDownTimer = 0;
-            }
-        }
+		foreach (Cannon cannon in _cannons)
+		{
+			cannon.Shoot();
+		}
+	}
 
-        _coolDownTimer += Time.deltaTime;
-    }
+	public void AddCannon(Cannon cannon)
+	{
+		_cannons.Add(cannon);
+	}
 
-    void fireCannons(int row)
-    {
-        if(row == 1)
-        {
-            for (int i = 0; i < _rowOne.Count; i++)
-            {
-                _rowOne[i].GetComponent<Cannon>().Shoot();
-            }
-        }
-        else
-        {
-            for (int i = 0; i < _rowTwo.Count; i++)
-            {
-                _rowTwo[i].GetComponent<Cannon>().Shoot();
-            }            
-        }
-    }
-
-
+	#endregion
 }
