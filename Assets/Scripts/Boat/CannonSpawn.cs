@@ -19,7 +19,7 @@ public class CannonSpawn : MonoBehaviour
 	{
 		GameObject obj = (GameObject)Instantiate(_prefab, transform.position, transform.rotation);
 		obj.transform.parent = transform.parent;
-		_targetManager.AddCannon(obj.GetComponent<Cannon>());
+		_targetManager.cannons.Add(obj.GetComponent<Cannon>());
 		Destroy(gameObject);
 	}
 

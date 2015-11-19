@@ -21,8 +21,7 @@ public enum PackageType
 	LeaveRoom = 15,
 	SetupChange = 16,
 	GameLoaded = 17,
-	PositionUpdate = 18,
-	ShootUpdate = 19,
+	PlayerUpdate = 18,
 
     // Server Packages
     SetupSecureConnection = 64,
@@ -90,6 +89,116 @@ public struct TypedPackage
 
 #region ClientToClient
 
+public class PlayerUpdateData : PackageData
+{
+	#region Vars
+
+	public PositioningData Positioning;
+	public ShootingData Shots;
+
+	#endregion
+
+	#region Construct
+
+	public PlayerUpdateData()
+	{
+		Positioning = new PositioningData();
+		Shots = new ShootingData();
+	}
+
+	public PlayerUpdateData(PositioningData positioning)
+	{
+		Positioning = positioning;
+		Shots = new ShootingData();
+	}
+
+	public PlayerUpdateData(PositioningData positioning, ShootingData shots)
+	{
+		Positioning = positioning;
+		Shots = shots;
+	}
+
+	public PlayerUpdateData(byte[] data, ref int offset)
+	{
+		FromBytes(data, ref offset);
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		List<byte> total = new List<byte>();
+		total.AddRange(Positioning.ToBytes());
+		total.AddRange(Shots.ToBytes());
+		return total.ToArray();
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+		Positioning = new PositioningData(data, ref offset);
+		Shots = new ShootingData(data, ref offset);
+	}
+
+	#endregion
+}
+
+public class ShootingData : PackageData
+{
+	#region Vars
+
+	public List<RigidData> Shots;
+	
+	#endregion
+
+	#region Construct
+
+	public ShootingData()
+	{
+		Shots = new List<RigidData>();
+	}
+
+	public ShootingData(byte[] data, ref int offset)
+	{
+		Shots = new List<RigidData>();
+		FromBytes(data, ref offset);
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		List<byte> total = new List<byte>();
+		
+		// Add amount
+		total.Add((byte)Shots.Count);
+
+		// Add items
+		foreach (RigidData shot in Shots)
+		{
+			total.AddRange(shot.ToBytes());
+		}
+
+		return total.ToArray();
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+		int total = (int)data[offset++];
+
+		Shots.Clear();
+		for (int i = 0; i < total; i++)
+		{
+			Shots.Add(new RigidData(data, ref offset));
+		}
+	}
+
+	#endregion
+}
+
 public class RigidData : PackageData
 {
 	#region Vars
@@ -100,6 +209,12 @@ public class RigidData : PackageData
 	#endregion
 
 	#region Construct
+
+	public RigidData()
+	{
+		Positioning = new PositioningData();
+		Velocity = new Vector3Data();
+	}
 
 	public RigidData(Vector3 position, Vector3 angle, Vector3 velo)
 	{
@@ -144,6 +259,12 @@ public class PositioningData : PackageData
 
     #region Construct
 
+	public PositioningData()
+	{
+		Position = new Vector3Data();
+		Angle = new Vector3Data();
+	}
+
 	public PositioningData(Vector3 position, Vector3 angle)
 	{
 		Position = new Vector3Data(position);
@@ -185,6 +306,11 @@ public class Vector3Data : PackageData
 	#endregion
 
 	#region Construct
+
+	public Vector3Data()
+	{
+		Vector = Vector3.zero;
+	}
 
 	public Vector3Data(Vector3 vector)
 	{

@@ -11,7 +11,9 @@ public class CannonAngler : MonoBehaviour
 
     [SerializeField]
     private float _angleSpeed;
-    private float _currentAngleNormal; // Current angle between 0f and 1f
+	
+	// Current angle between 0f and 1f
+    private float _currentAngleNormal;
 
     #endregion
 
@@ -35,10 +37,13 @@ public class CannonAngler : MonoBehaviour
 
     private void ApplyCannonsAngle()
     {
-        foreach (Cannon cannon in _manager.Cannons)
-        {
-            cannon.ApplyRotation(_currentAngleNormal);
-        }
+		foreach (CannonManager group in _manager.CannonGroups)
+		{
+			foreach (Cannon cannon in group.cannons)
+			{
+				cannon.ApplyRotation(_currentAngleNormal);
+			}
+		}
     }
 
     #endregion

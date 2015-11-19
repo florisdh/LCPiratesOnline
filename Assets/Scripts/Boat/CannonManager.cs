@@ -6,9 +6,10 @@ public class CannonManager : MonoBehaviour
 {
 	#region Vars
 
+	public List<Cannon> cannons;
+
 	[SerializeField]
 	private string _inputAxis;
-	private List<Cannon> _cannons;
 	
 	[SerializeField]
 	private float _shootInterval = 1f;
@@ -26,7 +27,7 @@ public class CannonManager : MonoBehaviour
 	public CannonManager()
 		: base()
 	{
-		_cannons = new List<Cannon>();
+		cannons = new List<Cannon>();
 	}
 
 	#endregion
@@ -56,16 +57,15 @@ public class CannonManager : MonoBehaviour
 
 	private void FireCannons()
     {
-		foreach (Cannon cannon in _cannons)
+		foreach (Cannon cannon in cannons)
 		{
 			cannon.Shoot();
 		}
 	}
 
-	public void AddCannon(Cannon cannon)
-	{
-		_cannons.Add(cannon);
-	}
+	#endregion
+
+	#region Properties
 
 	#endregion
 }

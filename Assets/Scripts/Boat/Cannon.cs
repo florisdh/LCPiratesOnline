@@ -40,7 +40,6 @@ public class Cannon : MonoBehaviour
     void Start()
     {
         _shootSound = GetComponent<AudioSource>();
-		_shootDelay = Random.Range(_minDelay, _maxDelay);
     }
 
     void Update()
@@ -67,6 +66,7 @@ public class Cannon : MonoBehaviour
 		if (_shooting) return;
         _shooting = true;
 
+		_shootDelay = Random.Range(_minDelay, _maxDelay);
 		Invoke("Fire", _shootDelay);
     }
 

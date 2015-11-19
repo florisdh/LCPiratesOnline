@@ -5,7 +5,6 @@ public class BoatManager : MonoBehaviour
 {
     #region Vars
 
-    public Cannon[] Cannons;
 	private BoatMovement _movement;
 	private CannonAngler _angler;
 	private CannonManager[] _cannonManagers;
@@ -19,7 +18,6 @@ public class BoatManager : MonoBehaviour
 
     void Awake()
     {
-        Cannons = GetComponentsInChildren<Cannon>();
 		_movement = GetComponent<BoatMovement>();
 		_angler = GetComponent<CannonAngler>();
 		_cannonManagers = GetComponentsInChildren<CannonManager>();
@@ -44,4 +42,13 @@ public class BoatManager : MonoBehaviour
 	}
 
     #endregion
+
+	#region Methods
+
+	public CannonManager[] CannonGroups
+	{
+		get { return _cannonManagers; }
+	}
+
+	#endregion
 }
