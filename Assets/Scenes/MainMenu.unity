@@ -16174,6 +16174,7 @@ MonoBehaviour:
   BoatPrefab: {fileID: 113898, guid: 74b758ccfcdd39141b4351aeebc4accc, type: 2}
   CameraPrefab: {fileID: 165590, guid: 04efb33e32f54cb44836a9ee0f7b7fac, type: 2}
   ProjectilePrefab: {fileID: 161646, guid: 058945a8190ac8f459f5e42625711c03, type: 2}
+  ShootEffectPrefab: {fileID: 106500, guid: ee63b5b8c5876de42aaa81bca9d61ba5, type: 2}
   PlayerID: 0
 --- !u!1 &1363566137
 GameObject:

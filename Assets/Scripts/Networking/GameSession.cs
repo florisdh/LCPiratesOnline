@@ -33,6 +33,9 @@ public class GameSession : MonoBehaviour
 
     private void Awake()
     {
+		if (Application.isEditor)
+			_remotePort = 20001;
+
         CURRENT = this;
 		DontDestroyOnLoad(this);
 

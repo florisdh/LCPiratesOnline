@@ -72,9 +72,33 @@ public class ClientToClient : IDisposable
 		int received = _connection.EndReceiveFrom(res, ref _receiveEP);
 		EndPoint ep = _receiveEP;
 
-		TypedPackage package = PackageFactory.Unpack(_receiveBuffer);
-		if (Received != null)
-			Received(ep, package);
+		// Read all packages
+		int readOffset = 0;
+		while (true)
+		{
+			TypedPackage package = PackageFactory.Unpack(_receiveBuffer, readOffset);
+
+			// Starting offset
+			readOffset = package.Offset;
+			
+			// Apply reading by other class
+			if (Received != null)
+				Received(ep, package);
+
+			// If not handled
+			if (package.Offset == readOffset)
+			{
+				Debug.Log("Message was not handled fully.");
+				break;
+			}
+				
+			// All read
+			if (package.Offset >= received)
+				break;
+
+			// Set startOffset for next package
+			readOffset = package.Offset;
+		}
 		
 		// Wait for next msg
 		BeginReceive();

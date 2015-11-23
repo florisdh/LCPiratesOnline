@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Timers;
 using System.Net;
+using System;
 
 public class ClientManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ClientManager : MonoBehaviour
 	public GameObject BoatPrefab;
 	public GameObject CameraPrefab;
 	public GameObject ProjectilePrefab;
+	public GameObject ShootEffectPrefab;
 
 	// Current Session
 	private LevelSettings _currentLevel;
@@ -27,8 +29,10 @@ public class ClientManager : MonoBehaviour
 
 	// Networking
 	private ClientToClient _connection;
-	private PlayerUpdateData _networkData;
+	private PositioningData _posData;
+	private ShootingData _shotsData;
 	private byte[] _sendBuffer;
+	private List<ShootingData> _shootStack;
 
 	private bool _started = false;
 
@@ -38,7 +42,9 @@ public class ClientManager : MonoBehaviour
 
 	private void Start()
 	{
-		_networkData = new PlayerUpdateData();
+		_posData = new PositioningData();
+		_shotsData = new ShootingData();
+		_shootStack = new List<ShootingData>();
 		_updateTimer = new Timer(_updateInterval);
 		_updateTimer.Elapsed += UpdateTimer_Elapsed;
 		_updateTimer.AutoReset = true;
@@ -103,13 +109,13 @@ public class ClientManager : MonoBehaviour
 
 	private void Cannon_OnShoot(Vector3 pos, Vector3 angle, Vector3 velo)
 	{
-		_networkData.Shots.Shots.Add(new RigidData(pos, angle, velo));
+		_shotsData.Shots.Add(new RigidData(pos, angle, velo));
 	}
 
 	private void UpdateNetworkPackage()
 	{
-		_networkData.Positioning.Position.Vector = _playerBoat.transform.position;
-		_networkData.Positioning.Angle.Vector = _playerBoat.transform.eulerAngles;
+		_posData.Position.Vector = _playerBoat.transform.position;
+		_posData.Angle.Vector = _playerBoat.transform.eulerAngles;
 	}
 
 	private void UpdatePlayers()
@@ -122,13 +128,23 @@ public class ClientManager : MonoBehaviour
 			{
 				player.Updated = false;
 
-				player.Boat.transform.position = player.UpdateData.Positioning.Position.Vector;
-				player.Boat.transform.eulerAngles = player.UpdateData.Positioning.Angle.Vector;
+				player.Boat.transform.position = player.Positioning.Position.Vector;
+				player.Boat.transform.eulerAngles = player.Positioning.Angle.Vector;
+			}
 
-				foreach (RigidData shot in player.UpdateData.Shots.Shots)
+			if (player.ShootBuffer.Shots.Count > 0)
+			{
+				lock (player.ShootBuffer.Shots)
 				{
-					GameObject newProjectile = (GameObject)Instantiate(ProjectilePrefab, shot.Positioning.Position.Vector, Quaternion.Euler(shot.Positioning.Angle.Vector));
-					newProjectile.GetComponent<Rigidbody>().velocity = shot.Velocity.Vector;
+					foreach (RigidData shot in player.ShootBuffer.Shots)
+					{
+						GameObject projectile = (GameObject)Instantiate(ProjectilePrefab, shot.Positioning.Position.Vector, Quaternion.Euler(shot.Positioning.Angle.Vector));
+						projectile.GetComponent<Rigidbody>().velocity = shot.Velocity.Vector;
+
+						GameObject effect = (GameObject)Instantiate(ShootEffectPrefab, shot.Positioning.Position.Vector, Quaternion.Euler(shot.Positioning.Angle.Vector));
+						Destroy(effect, 3f);
+					}
+					player.ShootBuffer.Shots.Clear();
 				}
 			}
 		}
@@ -145,9 +161,20 @@ public class ClientManager : MonoBehaviour
 
 	private void UpdateTimer_Elapsed(object sender, ElapsedEventArgs e)
 	{
-		// Create package
-		_sendBuffer = PackageFactory.Pack(PackageType.PlayerUpdate, _networkData);
-		_networkData.Shots.Shots.Clear();
+		// Create package //
+		List<byte> totalPackage = new List<byte>();
+
+		// Add positioning
+		totalPackage.AddRange(PackageFactory.Pack(PackageType.PlayerMove, _posData));
+		
+		// Add Shots
+		if (_shotsData.Shots.Count > 0)
+		{
+			totalPackage.AddRange(PackageFactory.Pack(PackageType.PlayerShoot, _shotsData));
+			_shotsData.Shots.Clear();
+		}
+		
+		_sendBuffer = totalPackage.ToArray();
 
 		// Send to all clients
 		foreach (RoomPlayerInfo player in ConnectedPlayers)
@@ -171,10 +198,17 @@ public class ClientManager : MonoBehaviour
 		SpawnedPlayer p = _players[ep];
 
 		// Handle msg
-		if (package.Type == PackageType.PlayerUpdate)
+		if (package.Type == PackageType.PlayerMove)
 		{
-			p.UpdateData.FromBytes(package.Data, ref package.Offset);
+			p.Positioning.FromBytes(package.Data, ref package.Offset);
 			p.Updated = true;
+		}
+		else if (package.Type == PackageType.PlayerShoot)
+		{
+			ShootingData message = new ShootingData(package.Data, ref package.Offset);
+			p.ShootBuffer.Shots.AddRange(message.Shots);
+
+			Debug.Log("Other shots received! size: " + message.Shots.Count);
 		}
 		else
 		{
@@ -188,14 +222,16 @@ public class ClientManager : MonoBehaviour
 public class SpawnedPlayer
 {
 	public GameObject Boat;
-	public PlayerUpdateData UpdateData;
 	public RoomPlayerInfo Info;
 	public bool Updated;
+	public PositioningData Positioning;
+	public ShootingData ShootBuffer;
 
 	public SpawnedPlayer(GameObject boat, RoomPlayerInfo info)
 	{
 		Boat = boat;
-		UpdateData = new PlayerUpdateData(new PositioningData(Boat.transform.position, Boat.transform.eulerAngles));
+		Positioning = new PositioningData(Boat.transform.position, Boat.transform.eulerAngles);
+		ShootBuffer = new ShootingData();
 		Info = info;
 		Updated = true;
 	}

@@ -21,7 +21,8 @@ public enum PackageType
 	LeaveRoom = 15,
 	SetupChange = 16,
 	GameLoaded = 17,
-	PlayerUpdate = 18,
+	PlayerMove = 18,
+	PlayerShoot = 19,
 
     // Server Packages
     SetupSecureConnection = 64,
@@ -65,13 +66,13 @@ public class PackageFactory
         return total.ToArray();
     }
 
-    public static TypedPackage Unpack(byte[] data)
+    public static TypedPackage Unpack(byte[] data, int startIndex = 0)
     {
-        return new TypedPackage((PackageType)(int)data[0], data, 1);
+		return new TypedPackage((PackageType)(int)data[startIndex], data, startIndex + 1);
     }
 }
 
-public struct TypedPackage
+public class TypedPackage
 {
     public PackageType Type;
 	public int Offset;
@@ -88,61 +89,6 @@ public struct TypedPackage
 #endregion
 
 #region ClientToClient
-
-public class PlayerUpdateData : PackageData
-{
-	#region Vars
-
-	public PositioningData Positioning;
-	public ShootingData Shots;
-
-	#endregion
-
-	#region Construct
-
-	public PlayerUpdateData()
-	{
-		Positioning = new PositioningData();
-		Shots = new ShootingData();
-	}
-
-	public PlayerUpdateData(PositioningData positioning)
-	{
-		Positioning = positioning;
-		Shots = new ShootingData();
-	}
-
-	public PlayerUpdateData(PositioningData positioning, ShootingData shots)
-	{
-		Positioning = positioning;
-		Shots = shots;
-	}
-
-	public PlayerUpdateData(byte[] data, ref int offset)
-	{
-		FromBytes(data, ref offset);
-	}
-
-	#endregion
-
-	#region Methods
-
-	public byte[] ToBytes()
-	{
-		List<byte> total = new List<byte>();
-		total.AddRange(Positioning.ToBytes());
-		total.AddRange(Shots.ToBytes());
-		return total.ToArray();
-	}
-
-	public void FromBytes(byte[] data, ref int offset)
-	{
-		Positioning = new PositioningData(data, ref offset);
-		Shots = new ShootingData(data, ref offset);
-	}
-
-	#endregion
-}
 
 public class ShootingData : PackageData
 {

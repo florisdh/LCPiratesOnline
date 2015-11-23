@@ -82,8 +82,8 @@ public class Cannon : MonoBehaviour
 
 		// Apply force
 		projectileRigid.velocity = transform.parent.GetComponent<Rigidbody>().velocity;
-		projectileRigid.AddForce(_barrel.transform.forward * _force);
-
+		projectileRigid.velocity += _barrel.transform.forward * _force;
+		
 		// User feedback
 		Particles.Play();
 		_shootSound.Play();
