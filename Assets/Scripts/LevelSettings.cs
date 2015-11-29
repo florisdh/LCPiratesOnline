@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
 
 public class LevelSettings : MonoBehaviour
 {
-	public static LevelSettings Current;
+	#region Events
+
+	#endregion
+
 	#region Vars
 
+	public static LevelSettings Current;
 	public List<Transform> SpawnPoints;
 
 	#endregion
@@ -20,6 +25,6 @@ public class LevelSettings : MonoBehaviour
 	#endregion
 
 	#region Methods
-	
+
 	#endregion
 }

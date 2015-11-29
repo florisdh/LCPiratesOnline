@@ -20,19 +20,14 @@ public class ClientManager : MonoBehaviour
 	private Dictionary<EndPoint, SpawnedPlayer> _players;
 
 	// Current Player
-	private BoatManager _playerBoat;
-	private Rigidbody _rigid;
+	private SpawnedPlayer _currentPlayer;
 	public int PlayerID;
 
+	// Networking
 	private float _updateInterval = 50f;
 	private Timer _updateTimer;
-
-	// Networking
 	private ClientToClient _connection;
-	private PositioningData _posData;
-	private ShootingData _shotsData;
 	private byte[] _sendBuffer;
-	private List<ShootingData> _shootStack;
 
 	private bool _started = false;
 
@@ -42,9 +37,6 @@ public class ClientManager : MonoBehaviour
 
 	private void Start()
 	{
-		_posData = new PositioningData();
-		_shotsData = new ShootingData();
-		_shootStack = new List<ShootingData>();
 		_updateTimer = new Timer(_updateInterval);
 		_updateTimer.Elapsed += UpdateTimer_Elapsed;
 		_updateTimer.AutoReset = true;
@@ -77,7 +69,6 @@ public class ClientManager : MonoBehaviour
 			GameObject newShip = (GameObject)Instantiate(BoatPrefab, _currentLevel.SpawnPoints[player.SpawnPointID].position, Quaternion.identity);
 
 			SpawnedPlayer sPlayer = new SpawnedPlayer(newShip, player);
-			_players.Add(player.UdpEP, sPlayer);
 
 			// Self
 			if (player.PlayerID == PlayerID)
@@ -86,10 +77,11 @@ public class ClientManager : MonoBehaviour
 				GameObject cam = (GameObject)Instantiate(CameraPrefab, newShip.transform.position, Quaternion.identity);
 				cam.GetComponent<CameraMovement>().Target = newShip.transform;
 
-				_playerBoat = newShip.GetComponent<BoatManager>();
-				_rigid = newShip.GetComponent<Rigidbody>();
+				_currentPlayer = sPlayer;
 
-				foreach (CannonManager group in _playerBoat.CannonGroups)
+				_currentPlayer.Manager.PartChanged += AddPartUpdate;
+
+				foreach (CannonManager group in _currentPlayer.Manager.CannonGroups)
 				{
 					foreach (Cannon cannon in group.cannons)
 					{
@@ -102,20 +94,26 @@ public class ClientManager : MonoBehaviour
 			// Other player
 			else
 			{
+				_players.Add(player.UdpEP, sPlayer);
 				Destroy(newShip.GetComponent<Rigidbody>());
 			}
 		}
 	}
 
+	private void AddPartUpdate(ObjectHealth part)
+	{
+		_currentPlayer.HitBuffer.Add(new HealthData(part.ID, part.Health));
+	}
+
 	private void Cannon_OnShoot(Vector3 pos, Vector3 angle, Vector3 velo)
 	{
-		_shotsData.Shots.Add(new RigidData(pos, angle, velo));
+		_currentPlayer.ShootBuffer.Shots.Add(new RigidData(pos, angle, velo));
 	}
 
 	private void UpdateNetworkPackage()
 	{
-		_posData.Position.Vector = _playerBoat.transform.position;
-		_posData.Angle.Vector = _playerBoat.transform.eulerAngles;
+		_currentPlayer.Positioning.Position.Vector = _currentPlayer.Boat.transform.position;
+		_currentPlayer.Positioning.Angle.Vector = _currentPlayer.Boat.transform.eulerAngles;
 	}
 
 	private void UpdatePlayers()
@@ -147,6 +145,18 @@ public class ClientManager : MonoBehaviour
 					player.ShootBuffer.Shots.Clear();
 				}
 			}
+
+			if (player.HitBuffer.Count > 0)
+			{
+				lock (player.HitBuffer)
+				{
+					foreach (HealthData item in player.HitBuffer)
+					{
+						player.Manager.UpdatePartHealth(item.PartID, item.Health);
+					}
+					player.HitBuffer.Clear();
+				}
+			}
 		}
 	}
 
@@ -155,7 +165,7 @@ public class ClientManager : MonoBehaviour
 		if (_started) return;
 		_started = true;
 
-		_playerBoat.EnableMovement();
+		_currentPlayer.Manager.EnableMovement();
 		_updateTimer.Start();
 	}
 
@@ -165,24 +175,39 @@ public class ClientManager : MonoBehaviour
 		List<byte> totalPackage = new List<byte>();
 
 		// Add positioning
-		totalPackage.AddRange(PackageFactory.Pack(PackageType.PlayerMove, _posData));
+		totalPackage.AddRange(PackageFactory.Pack(PackageType.PlayerMove, _currentPlayer.Positioning));
 		
 		// Add Shots
-		if (_shotsData.Shots.Count > 0)
+		if (_currentPlayer.ShootBuffer.Shots.Count > 0)
 		{
-			totalPackage.AddRange(PackageFactory.Pack(PackageType.PlayerShoot, _shotsData));
-			_shotsData.Shots.Clear();
+			lock (_currentPlayer.ShootBuffer.Shots)
+			{
+				totalPackage.AddRange(PackageFactory.Pack(PackageType.PlayerShoot, _currentPlayer.ShootBuffer));
+				_currentPlayer.ShootBuffer.Shots.Clear();
+			}
 		}
-		
+
+		// Add Hits
+		if (_currentPlayer.HitBuffer.Count > 0)
+		{
+			lock (_currentPlayer.HitBuffer)
+			{
+				foreach (HealthData item in _currentPlayer.HitBuffer)
+				{
+					totalPackage.AddRange(PackageFactory.Pack(PackageType.BoatPartHit, item));
+				}
+				_currentPlayer.HitBuffer.Clear();
+			}
+		}
+
 		_sendBuffer = totalPackage.ToArray();
 
 		// Send to all clients
 		foreach (RoomPlayerInfo player in ConnectedPlayers)
 		{
-			if (player.PlayerID != PlayerID)
-			{
-				_connection.Send(_sendBuffer, player.UdpEP);
-			}
+			if (player.PlayerID == PlayerID) continue;
+
+			_connection.Send(_sendBuffer, player.UdpEP);
 		}
 	}
 
@@ -194,7 +219,7 @@ public class ClientManager : MonoBehaviour
 			Debug.Log("Received UDP from unconnected client! By " + ep.ToString());
 			return;
 		}
-		
+
 		SpawnedPlayer p = _players[ep];
 
 		// Handle msg
@@ -207,8 +232,12 @@ public class ClientManager : MonoBehaviour
 		{
 			ShootingData message = new ShootingData(package.Data, ref package.Offset);
 			p.ShootBuffer.Shots.AddRange(message.Shots);
-
-			Debug.Log("Other shots received! size: " + message.Shots.Count);
+		}
+		else if (package.Type == PackageType.BoatPartHit)
+		{
+			HealthData message = new HealthData(package.Data, ref package.Offset);
+			lock (p.HitBuffer)
+				p.HitBuffer.Add(message);
 		}
 		else
 		{
@@ -217,21 +246,29 @@ public class ClientManager : MonoBehaviour
 	}
 
 	#endregion
+
+	#region Properties
+
+	#endregion
 }
 
 public class SpawnedPlayer
 {
 	public GameObject Boat;
+	public BoatManager Manager;
 	public RoomPlayerInfo Info;
 	public bool Updated;
 	public PositioningData Positioning;
 	public ShootingData ShootBuffer;
+	public List<HealthData> HitBuffer;
 
 	public SpawnedPlayer(GameObject boat, RoomPlayerInfo info)
 	{
 		Boat = boat;
+		Manager = boat.GetComponent<BoatManager>();
 		Positioning = new PositioningData(Boat.transform.position, Boat.transform.eulerAngles);
 		ShootBuffer = new ShootingData();
+		HitBuffer = new List<HealthData>();
 		Info = info;
 		Updated = true;
 	}

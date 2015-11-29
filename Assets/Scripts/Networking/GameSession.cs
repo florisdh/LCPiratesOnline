@@ -64,22 +64,24 @@ public class GameSession : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		// Load map
 		if (_loadRequest)
 		{
 			_loadRequest = false;
 			_loadingGame = true;
 			Application.LoadLevel(_currentRoom.MapID);
 		}
+		// Load Players
 		else if (_loadingGame && LevelSettings.Current != null)
 		{
 			_loadingGame = false;
-
+			
 			// Spawn players
 			_clientManager.ConnectedPlayers = _currentRoom.Players.ToArray();
 			_clientManager.PlayerID = ServerConnection.PlayerID;
 			_clientManager.SpawnPlayers();
 
-			// Send loaded to server
+			Debug.Log("Send loaded to server");
 			ServerConnection.LoadedGame();
 		}
 	}
@@ -130,6 +132,11 @@ public class GameSession : MonoBehaviour
 		_loadingGame = _loadRequest = false;
 		_inGame = true;
 
+		ThreadHelper.MAIN.InvokeOnThread(startGame);
+	}
+
+	private void startGame()
+	{
 		_clientManager.StartPlayer();
 	}
 

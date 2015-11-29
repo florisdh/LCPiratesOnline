@@ -23,6 +23,7 @@ public enum PackageType
 	GameLoaded = 17,
 	PlayerMove = 18,
 	PlayerShoot = 19,
+	BoatPartHit = 20,
 
     // Server Packages
     SetupSecureConnection = 64,
@@ -89,6 +90,52 @@ public class TypedPackage
 #endregion
 
 #region ClientToClient
+
+public class HealthData : PackageData
+{
+	#region Vars
+
+	public int PartID;
+	public float Health;
+
+	#endregion
+
+	#region Construct
+	
+	public HealthData(int partID, float health)
+	{
+		PartID = partID;
+		Health = health;
+	}
+
+	public HealthData(byte[] data, ref int offset)
+	{
+		FromBytes(data, ref offset);
+	}
+
+	#endregion
+
+	#region Methods
+
+	public byte[] ToBytes()
+	{
+		List<byte> total = new List<byte>();
+		total.AddRange(BitConverter.GetBytes((ushort)PartID));
+		total.AddRange(BitConverter.GetBytes(Health));
+		return total.ToArray();
+	}
+
+	public void FromBytes(byte[] data, ref int offset)
+	{
+		PartID = BitConverter.ToUInt16(data, offset);
+		offset += 2;
+
+		Health = BitConverter.ToSingle(data, offset);
+		offset += 4;
+	}
+
+	#endregion
+}
 
 public class ShootingData : PackageData
 {

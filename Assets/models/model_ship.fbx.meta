@@ -1,0 +1,5014 @@
+fileFormatVersion: 2
+guid: 9dbc0fbd50602448c8d990ec0a6a0146
+timeCreated: 1448619709
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: barrel_LOD1
+    100002: barrel_LOD1 1
+    100004: barrel_LOD1 10
+    100006: barrel_LOD1 11
+    100008: barrel_LOD1 12
+    100010: barrel_LOD1 13
+    100012: barrel_LOD1 14
+    100014: barrel_LOD1 15
+    100016: barrel_LOD1 16
+    100018: barrel_LOD1 17
+    100020: barrel_LOD1 18
+    100022: barrel_LOD1 19
+    100024: barrel_LOD1 2
+    100026: barrel_LOD1 20
+    100028: barrel_LOD1 21
+    100030: barrel_LOD1 22
+    100032: barrel_LOD1 23
+    100034: barrel_LOD1 24
+    100036: barrel_LOD1 3
+    100038: barrel_LOD1 4
+    100040: barrel_LOD1 5
+    100042: barrel_LOD1 6
+    100044: barrel_LOD1 7
+    100046: barrel_LOD1 8
+    100048: barrel_LOD1 9
+    100050: barrelgroup
+    100052: bighatch_bottom
+    100054: bighatch_bottom 1
+    100056: bighatch_frame
+    100058: bighatch_frame 1
+    100060: bighatch_top
+    100062: bighatch_top 1
+    100064: bowsprite_main
+    100066: cannon
+    100068: CANNON_MOCKUP
+    100070: cannonhatch_1
+    100072: cannonhatch_1 1
+    100074: cannonhatch_10
+    100076: cannonhatch_10 1
+    100078: cannonhatch_11
+    100080: cannonhatch_11 1
+    100082: cannonhatch_12
+    100084: cannonhatch_12 1
+    100086: cannonhatch_13
+    100088: cannonhatch_13 1
+    100090: cannonhatch_14
+    100092: cannonhatch_14 1
+    100094: cannonhatch_15
+    100096: cannonhatch_15 1
+    100098: cannonhatch_16
+    100100: cannonhatch_16 1
+    100102: cannonhatch_17
+    100104: cannonhatch_17 1
+    100106: cannonhatch_18
+    100108: cannonhatch_18 1
+    100110: cannonhatch_19
+    100112: cannonhatch_19 1
+    100114: cannonhatch_2
+    100116: cannonhatch_2 1
+    100118: cannonhatch_20
+    100120: cannonhatch_20 1
+    100122: cannonhatch_21
+    100124: cannonhatch_21 1
+    100126: cannonhatch_22
+    100128: cannonhatch_22 1
+    100130: cannonhatch_3
+    100132: cannonhatch_3 1
+    100134: cannonhatch_4
+    100136: cannonhatch_4 1
+    100138: cannonhatch_9
+    100140: cannonhatch_9 1
+    100142: cannonhatch_bot_1
+    100144: cannonhatch_bot_1 1
+    100146: cannonhatch_bot_2
+    100148: cannonhatch_bot_2 1
+    100150: cannonhatch_LOD0
+    100152: cannonhatch_LOD0 1
+    100154: cannonhatch_LOD0 10
+    100156: cannonhatch_LOD0 11
+    100158: cannonhatch_LOD0 12
+    100160: cannonhatch_LOD0 13
+    100162: cannonhatch_LOD0 14
+    100164: cannonhatch_LOD0 15
+    100166: cannonhatch_LOD0 16
+    100168: cannonhatch_LOD0 17
+    100170: cannonhatch_LOD0 18
+    100172: cannonhatch_LOD0 19
+    100174: cannonhatch_LOD0 2
+    100176: cannonhatch_LOD0 20
+    100178: cannonhatch_LOD0 21
+    100180: cannonhatch_LOD0 22
+    100182: cannonhatch_LOD0 23
+    100184: cannonhatch_LOD0 24
+    100186: cannonhatch_LOD0 25
+    100188: cannonhatch_LOD0 26
+    100190: cannonhatch_LOD0 27
+    100192: cannonhatch_LOD0 28
+    100194: cannonhatch_LOD0 29
+    100196: cannonhatch_LOD0 3
+    100198: cannonhatch_LOD0 30
+    100200: cannonhatch_LOD0 31
+    100202: cannonhatch_LOD0 32
+    100204: cannonhatch_LOD0 33
+    100206: cannonhatch_LOD0 34
+    100208: cannonhatch_LOD0 35
+    100210: cannonhatch_LOD0 36
+    100212: cannonhatch_LOD0 37
+    100214: cannonhatch_LOD0 38
+    100216: cannonhatch_LOD0 39
+    100218: cannonhatch_LOD0 4
+    100220: cannonhatch_LOD0 40
+    100222: cannonhatch_LOD0 41
+    100224: cannonhatch_LOD0 42
+    100226: cannonhatch_LOD0 43
+    100228: cannonhatch_LOD0 5
+    100230: cannonhatch_LOD0 6
+    100232: cannonhatch_LOD0 7
+    100234: cannonhatch_LOD0 8
+    100236: cannonhatch_LOD0 9
+    100238: cannonhatch_LOD1
+    100240: cannonhatch_LOD1 1
+    100242: cannonhatch_LOD1 10
+    100244: cannonhatch_LOD1 11
+    100246: cannonhatch_LOD1 12
+    100248: cannonhatch_LOD1 13
+    100250: cannonhatch_LOD1 14
+    100252: cannonhatch_LOD1 15
+    100254: cannonhatch_LOD1 16
+    100256: cannonhatch_LOD1 17
+    100258: cannonhatch_LOD1 18
+    100260: cannonhatch_LOD1 19
+    100262: cannonhatch_LOD1 2
+    100264: cannonhatch_LOD1 20
+    100266: cannonhatch_LOD1 21
+    100268: cannonhatch_LOD1 22
+    100270: cannonhatch_LOD1 23
+    100272: cannonhatch_LOD1 24
+    100274: cannonhatch_LOD1 25
+    100276: cannonhatch_LOD1 26
+    100278: cannonhatch_LOD1 27
+    100280: cannonhatch_LOD1 28
+    100282: cannonhatch_LOD1 29
+    100284: cannonhatch_LOD1 3
+    100286: cannonhatch_LOD1 30
+    100288: cannonhatch_LOD1 31
+    100290: cannonhatch_LOD1 32
+    100292: cannonhatch_LOD1 33
+    100294: cannonhatch_LOD1 34
+    100296: cannonhatch_LOD1 35
+    100298: cannonhatch_LOD1 36
+    100300: cannonhatch_LOD1 37
+    100302: cannonhatch_LOD1 38
+    100304: cannonhatch_LOD1 39
+    100306: cannonhatch_LOD1 4
+    100308: cannonhatch_LOD1 40
+    100310: cannonhatch_LOD1 41
+    100312: cannonhatch_LOD1 42
+    100314: cannonhatch_LOD1 43
+    100316: cannonhatch_LOD1 5
+    100318: cannonhatch_LOD1 6
+    100320: cannonhatch_LOD1 7
+    100322: cannonhatch_LOD1 8
+    100324: cannonhatch_LOD1 9
+    100326: cannonhatch_LOD2
+    100328: cannonhatch_LOD2 1
+    100330: cannonhatch_top_1
+    100332: cannonhatch_top_1 1
+    100334: cannonhatch_top_2
+    100336: cannonhatch_top_2 1
+    100338: cargohole_supportbeams
+    100340: centerrib
+    100342: chain_left
+    100344: chain_left_LOD0
+    100346: chain_left_LOD0 1
+    100348: chain_left_LOD0 10
+    100350: chain_left_LOD0 11
+    100352: chain_left_LOD0 12
+    100354: chain_left_LOD0 13
+    100356: chain_left_LOD0 14
+    100358: chain_left_LOD0 15
+    100360: chain_left_LOD0 16
+    100362: chain_left_LOD0 17
+    100364: chain_left_LOD0 18
+    100366: chain_left_LOD0 19
+    100368: chain_left_LOD0 2
+    100370: chain_left_LOD0 20
+    100372: chain_left_LOD0 21
+    100374: chain_left_LOD0 22
+    100376: chain_left_LOD0 23
+    100378: chain_left_LOD0 24
+    100380: chain_left_LOD0 3
+    100382: chain_left_LOD0 4
+    100384: chain_left_LOD0 5
+    100386: chain_left_LOD0 6
+    100388: chain_left_LOD0 7
+    100390: chain_left_LOD0 8
+    100392: chain_left_LOD0 9
+    100394: chain_left_LOD1
+    100396: chain_left_LOD1 1
+    100398: chain_left_LOD1 10
+    100400: chain_left_LOD1 11
+    100402: chain_left_LOD1 12
+    100404: chain_left_LOD1 13
+    100406: chain_left_LOD1 14
+    100408: chain_left_LOD1 15
+    100410: chain_left_LOD1 16
+    100412: chain_left_LOD1 17
+    100414: chain_left_LOD1 18
+    100416: chain_left_LOD1 19
+    100418: chain_left_LOD1 2
+    100420: chain_left_LOD1 20
+    100422: chain_left_LOD1 21
+    100424: chain_left_LOD1 22
+    100426: chain_left_LOD1 23
+    100428: chain_left_LOD1 24
+    100430: chain_left_LOD1 3
+    100432: chain_left_LOD1 4
+    100434: chain_left_LOD1 5
+    100436: chain_left_LOD1 6
+    100438: chain_left_LOD1 7
+    100440: chain_left_LOD1 8
+    100442: chain_left_LOD1 9
+    100444: chain_right
+    100446: chainstart_left
+    100448: chainstart_left 1
+    100450: chainstart_left 10
+    100452: chainstart_left 11
+    100454: chainstart_left 12
+    100456: chainstart_left 13
+    100458: chainstart_left 14
+    100460: chainstart_left 15
+    100462: chainstart_left 16
+    100464: chainstart_left 17
+    100466: chainstart_left 18
+    100468: chainstart_left 19
+    100470: chainstart_left 2
+    100472: chainstart_left 20
+    100474: chainstart_left 21
+    100476: chainstart_left 22
+    100478: chainstart_left 23
+    100480: chainstart_left 24
+    100482: chainstart_left 3
+    100484: chainstart_left 4
+    100486: chainstart_left 5
+    100488: chainstart_left 6
+    100490: chainstart_left 7
+    100492: chainstart_left 8
+    100494: chainstart_left 9
+    100496: chainstart_right
+    100498: chainstart_right 1
+    100500: chainstart_right 10
+    100502: chainstart_right 11
+    100504: chainstart_right 12
+    100506: chainstart_right 13
+    100508: chainstart_right 14
+    100510: chainstart_right 15
+    100512: chainstart_right 16
+    100514: chainstart_right 17
+    100516: chainstart_right 18
+    100518: chainstart_right 19
+    100520: chainstart_right 2
+    100522: chainstart_right 20
+    100524: chainstart_right 21
+    100526: chainstart_right 22
+    100528: chainstart_right 23
+    100530: chainstart_right 24
+    100532: chainstart_right 3
+    100534: chainstart_right 4
+    100536: chainstart_right 5
+    100538: chainstart_right 6
+    100540: chainstart_right 7
+    100542: chainstart_right 8
+    100544: chainstart_right 9
+    100546: crowsnest
+    100548: crowsnest_fencepost
+    100550: crowsnest_floor
+    100552: crowsnest_guardrail
+    100554: frame_LOD1
+    100556: frame_LOD1 1
+    100558: frame_LOD1 10
+    100560: frame_LOD1 11
+    100562: frame_LOD1 12
+    100564: frame_LOD1 13
+    100566: frame_LOD1 14
+    100568: frame_LOD1 15
+    100570: frame_LOD1 16
+    100572: frame_LOD1 17
+    100574: frame_LOD1 18
+    100576: frame_LOD1 19
+    100578: frame_LOD1 2
+    100580: frame_LOD1 20
+    100582: frame_LOD1 21
+    100584: frame_LOD1 22
+    100586: frame_LOD1 23
+    100588: frame_LOD1 24
+    100590: frame_LOD1 3
+    100592: frame_LOD1 4
+    100594: frame_LOD1 5
+    100596: frame_LOD1 6
+    100598: frame_LOD1 7
+    100600: frame_LOD1 8
+    100602: frame_LOD1 9
+    100604: front_ropeladders
+    100606: frontaxis
+    100608: frontaxis 1
+    100610: frontaxis 10
+    100612: frontaxis 11
+    100614: frontaxis 12
+    100616: frontaxis 13
+    100618: frontaxis 14
+    100620: frontaxis 15
+    100622: frontaxis 16
+    100624: frontaxis 17
+    100626: frontaxis 18
+    100628: frontaxis 19
+    100630: frontaxis 2
+    100632: frontaxis 20
+    100634: frontaxis 21
+    100636: frontaxis 22
+    100638: frontaxis 23
+    100640: frontaxis 24
+    100642: frontaxis 3
+    100644: frontaxis 4
+    100646: frontaxis 5
+    100648: frontaxis 6
+    100650: frontaxis 7
+    100652: frontaxis 8
+    100654: frontaxis 9
+    100656: frontsail_main
+    100658: frontsail_platform_1
+    100660: frontsail_platform_2
+    100662: frontsail_platform_2 1
+    100664: frontsail_platform_3
+    100666: frontsail_side_1
+    100668: frontsail_side_2
+    100670: frontsail_side_3
+    100672: frontwheel_LOD1
+    100674: frontwheel_LOD1 1
+    100676: frontwheel_LOD1 10
+    100678: frontwheel_LOD1 11
+    100680: frontwheel_LOD1 12
+    100682: frontwheel_LOD1 13
+    100684: frontwheel_LOD1 14
+    100686: frontwheel_LOD1 15
+    100688: frontwheel_LOD1 16
+    100690: frontwheel_LOD1 17
+    100692: frontwheel_LOD1 18
+    100694: frontwheel_LOD1 19
+    100696: frontwheel_LOD1 2
+    100698: frontwheel_LOD1 20
+    100700: frontwheel_LOD1 21
+    100702: frontwheel_LOD1 22
+    100704: frontwheel_LOD1 23
+    100706: frontwheel_LOD1 24
+    100708: frontwheel_LOD1 3
+    100710: frontwheel_LOD1 4
+    100712: frontwheel_LOD1 5
+    100714: frontwheel_LOD1 6
+    100716: frontwheel_LOD1 7
+    100718: frontwheel_LOD1 8
+    100720: frontwheel_LOD1 9
+    100722: frontwheels
+    100724: group10
+    100726: group11
+    100728: group12
+    100730: group13
+    100732: group14
+    100734: group15
+    100736: group16
+    100738: group17
+    100740: group18
+    100742: group19
+    100744: group2
+    100746: group20
+    100748: group21
+    100750: group22
+    100752: group23
+    100754: group24
+    100756: group25
+    100758: group26
+    100760: group3
+    100762: group4
+    100764: group5
+    100766: group6
+    100768: group7
+    100770: group8
+    100772: group9
+    100774: gunaxle_LOD1
+    100776: gunaxle_LOD1 1
+    100778: gunaxle_LOD1 10
+    100780: gunaxle_LOD1 11
+    100782: gunaxle_LOD1 12
+    100784: gunaxle_LOD1 13
+    100786: gunaxle_LOD1 14
+    100788: gunaxle_LOD1 15
+    100790: gunaxle_LOD1 16
+    100792: gunaxle_LOD1 17
+    100794: gunaxle_LOD1 18
+    100796: gunaxle_LOD1 19
+    100798: gunaxle_LOD1 2
+    100800: gunaxle_LOD1 20
+    100802: gunaxle_LOD1 21
+    100804: gunaxle_LOD1 22
+    100806: gunaxle_LOD1 23
+    100808: gunaxle_LOD1 24
+    100810: gunaxle_LOD1 3
+    100812: gunaxle_LOD1 4
+    100814: gunaxle_LOD1 5
+    100816: gunaxle_LOD1 6
+    100818: gunaxle_LOD1 7
+    100820: gunaxle_LOD1 8
+    100822: gunaxle_LOD1 9
+    100824: hatch
+    100826: hatch_bottom
+    100828: imagePlane1
+    100830: imagePlane2
+    100832: imagePlane3
+    100834: imagePlane4
+    100836: imagePlane5
+    100838: imagePlane6
+    100840: imagePlane7
+    100842: ladder_beam
+    100844: left
+    100846: mid_ropeladders
+    100848: midframe_middle
+    100850: midframe_middle 1
+    100852: midframe_middle 10
+    100854: midframe_middle 11
+    100856: midframe_middle 12
+    100858: midframe_middle 13
+    100860: midframe_middle 14
+    100862: midframe_middle 15
+    100864: midframe_middle 16
+    100866: midframe_middle 17
+    100868: midframe_middle 18
+    100870: midframe_middle 19
+    100872: midframe_middle 2
+    100874: midframe_middle 20
+    100876: midframe_middle 21
+    100878: midframe_middle 22
+    100880: midframe_middle 23
+    100882: midframe_middle 24
+    100884: midframe_middle 3
+    100886: midframe_middle 4
+    100888: midframe_middle 5
+    100890: midframe_middle 6
+    100892: midframe_middle 7
+    100894: midframe_middle 8
+    100896: midframe_middle 9
+    100898: midsail_main
+    100900: midsail_platform_1
+    100902: midsail_platform_2
+    100904: midsail_side_1
+    100906: midsail_side_2
+    100908: midsail_side_3
+    100910: midsail_side_4
+    100912: //RootNode
+    100914: pCube100
+    100916: pCube100 1
+    100918: pCube101
+    100920: pCube101 1
+    100922: pCube102
+    100924: pCube102 1
+    100926: pCube103
+    100928: pCube103 1
+    100930: pCube104
+    100932: pCube104 1
+    100934: pCube105
+    100936: pCube105 1
+    100938: pCube106
+    100940: pCube106 1
+    100942: pCube107
+    100944: pCube107 1
+    100946: pCube108
+    100948: pCube108 1
+    100950: pCube109
+    100952: pCube109 1
+    100954: pCube110
+    100956: pCube110 1
+    100958: pCube111
+    100960: pCube111 1
+    100962: pCube112
+    100964: pCube112 1
+    100966: pCube113
+    100968: pCube113 1
+    100970: pCube114
+    100972: pCube114 1
+    100974: pCube115
+    100976: pCube115 1
+    100978: pCube116
+    100980: pCube116 1
+    100982: pCube117
+    100984: pCube117 1
+    100986: pCube54
+    100988: pCube55
+    100990: pCube56
+    100992: pCube57
+    100994: pCube62
+    100996: pCube62 1
+    100998: pCube63
+    101000: pCube63 1
+    101002: pCube64
+    101004: pCube64 1
+    101006: pCube65
+    101008: pCube65 1
+    101010: pCube66
+    101012: pCube66 1
+    101014: pCube67
+    101016: pCube67 1
+    101018: pCube68
+    101020: pCube68 1
+    101022: pCube69
+    101024: pCube69 1
+    101026: pCube70
+    101028: pCube70 1
+    101030: pCube72
+    101032: pCube72 1
+    101034: pCube73
+    101036: pCube73 1
+    101038: pCube75
+    101040: pCube75 1
+    101042: pCube76
+    101044: pCube76 1
+    101046: pCube77
+    101048: pCube77 1
+    101050: pCube78
+    101052: pCube78 1
+    101054: pCube79
+    101056: pCube79 1
+    101058: pCube80
+    101060: pCube80 1
+    101062: pCube82
+    101064: pCube82 1
+    101066: pCube83
+    101068: pCube83 1
+    101070: pCube84
+    101072: pCube84 1
+    101074: pCube85
+    101076: pCube85 1
+    101078: pCube86
+    101080: pCube86 1
+    101082: pCube88
+    101084: pCube88 1
+    101086: pCube89
+    101088: pCube89 1
+    101090: pCube90
+    101092: pCube90 1
+    101094: pCube91
+    101096: pCube91 1
+    101098: pCube92
+    101100: pCube92 1
+    101102: pCube93
+    101104: pCube93 1
+    101106: pCube94
+    101108: pCube94 1
+    101110: pCube95
+    101112: pCube95 1
+    101114: pCube96
+    101116: pCube96 1
+    101118: pCube97
+    101120: pCube97 1
+    101122: pCube98
+    101124: pCube98 1
+    101126: pCube99
+    101128: pCube99 1
+    101130: polySurface1
+    101132: polySurface1 1
+    101134: polySurface101
+    101136: polySurface103
+    101138: polySurface105
+    101140: polySurface107
+    101142: polySurface108
+    101144: polySurface109
+    101146: polySurface109 1
+    101148: polySurface112
+    101150: polySurface112 1
+    101152: polySurface114
+    101154: polySurface114 1
+    101156: polySurface116
+    101158: polySurface116 1
+    101160: polySurface117
+    101162: polySurface117 1
+    101164: polySurface119
+    101166: polySurface119 1
+    101168: polySurface12
+    101170: polySurface12 1
+    101172: polySurface121
+    101174: polySurface121 1
+    101176: polySurface123
+    101178: polySurface123 1
+    101180: polySurface125
+    101182: polySurface125 1
+    101184: polySurface127
+    101186: polySurface127 1
+    101188: polySurface129
+    101190: polySurface129 1
+    101192: polySurface139
+    101194: polySurface139 1
+    101196: polySurface14
+    101198: polySurface14 1
+    101200: polySurface141
+    101202: polySurface141 1
+    101204: polySurface143
+    101206: polySurface143 1
+    101208: polySurface145
+    101210: polySurface145 1
+    101212: polySurface147
+    101214: polySurface147 1
+    101216: polySurface149
+    101218: polySurface149 1
+    101220: polySurface151
+    101222: polySurface151 1
+    101224: polySurface157
+    101226: polySurface157 1
+    101228: polySurface16
+    101230: polySurface16 1
+    101232: polySurface160
+    101234: polySurface160 1
+    101236: polySurface161
+    101238: polySurface161 1
+    101240: polySurface163
+    101242: polySurface163 1
+    101244: polySurface165
+    101246: polySurface165 1
+    101248: polySurface166
+    101250: polySurface166 1
+    101252: polySurface167
+    101254: polySurface167 1
+    101256: polySurface168
+    101258: polySurface168 1
+    101260: polySurface169
+    101262: polySurface169 1
+    101264: polySurface170
+    101266: polySurface170 1
+    101268: polySurface171
+    101270: polySurface171 1
+    101272: polySurface172
+    101274: polySurface172 1
+    101276: polySurface173
+    101278: polySurface173 1
+    101280: polySurface18
+    101282: polySurface18 1
+    101284: polySurface182
+    101286: polySurface182 1
+    101288: polySurface183
+    101290: polySurface183 1
+    101292: polySurface184
+    101294: polySurface184 1
+    101296: polySurface185
+    101298: polySurface185 1
+    101300: polySurface186
+    101302: polySurface186 1
+    101304: polySurface188
+    101306: polySurface188 1
+    101308: polySurface189
+    101310: polySurface189 1
+    101312: polySurface193
+    101314: polySurface194
+    101316: polySurface195
+    101318: polySurface196
+    101320: polySurface197
+    101322: polySurface198
+    101324: polySurface199
+    101326: polySurface20
+    101328: polySurface20 1
+    101330: polySurface200
+    101332: polySurface201
+    101334: polySurface202
+    101336: polySurface203
+    101338: polySurface204
+    101340: polySurface205
+    101342: polySurface206
+    101344: polySurface207
+    101346: polySurface208
+    101348: polySurface209
+    101350: polySurface210
+    101352: polySurface211
+    101354: polySurface212
+    101356: polySurface213
+    101358: polySurface214
+    101360: polySurface215
+    101362: polySurface215 1
+    101364: polySurface216
+    101366: polySurface216 1
+    101368: polySurface217
+    101370: polySurface217 1
+    101372: polySurface218
+    101374: polySurface218 1
+    101376: polySurface219
+    101378: polySurface219 1
+    101380: polySurface22
+    101382: polySurface22 1
+    101384: polySurface220
+    101386: polySurface220 1
+    101388: polySurface221
+    101390: polySurface221 1
+    101392: polySurface222
+    101394: polySurface222 1
+    101396: polySurface223
+    101398: polySurface223 1
+    101400: polySurface228
+    101402: polySurface228 1
+    101404: polySurface229
+    101406: polySurface229 1
+    101408: polySurface232
+    101410: polySurface232 1
+    101412: polySurface233
+    101414: polySurface233 1
+    101416: polySurface234
+    101418: polySurface234 1
+    101420: polySurface235
+    101422: polySurface235 1
+    101424: polySurface239
+    101426: polySurface239 1
+    101428: polySurface24
+    101430: polySurface24 1
+    101432: polySurface242
+    101434: polySurface242 1
+    101436: polySurface245
+    101438: polySurface245 1
+    101440: polySurface246
+    101442: polySurface246 1
+    101444: polySurface247
+    101446: polySurface247 1
+    101448: polySurface248
+    101450: polySurface248 1
+    101452: polySurface249
+    101454: polySurface249 1
+    101456: polySurface25
+    101458: polySurface25 1
+    101460: polySurface250
+    101462: polySurface250 1
+    101464: polySurface251
+    101466: polySurface251 1
+    101468: polySurface252
+    101470: polySurface252 1
+    101472: polySurface253
+    101474: polySurface253 1
+    101476: polySurface254
+    101478: polySurface254 1
+    101480: polySurface255
+    101482: polySurface255 1
+    101484: polySurface256
+    101486: polySurface256 1
+    101488: polySurface257
+    101490: polySurface257 1
+    101492: polySurface258
+    101494: polySurface258 1
+    101496: polySurface259
+    101498: polySurface259 1
+    101500: polySurface26
+    101502: polySurface26 1
+    101504: polySurface260
+    101506: polySurface260 1
+    101508: polySurface261
+    101510: polySurface261 1
+    101512: polySurface262
+    101514: polySurface262 1
+    101516: polySurface263
+    101518: polySurface263 1
+    101520: polySurface264
+    101522: polySurface264 1
+    101524: polySurface265
+    101526: polySurface265 1
+    101528: polySurface266
+    101530: polySurface266 1
+    101532: polySurface267
+    101534: polySurface267 1
+    101536: polySurface268
+    101538: polySurface268 1
+    101540: polySurface269
+    101542: polySurface269 1
+    101544: polySurface27
+    101546: polySurface27 1
+    101548: polySurface270
+    101550: polySurface270 1
+    101552: polySurface271
+    101554: polySurface271 1
+    101556: polySurface272
+    101558: polySurface272 1
+    101560: polySurface273
+    101562: polySurface273 1
+    101564: polySurface274
+    101566: polySurface274 1
+    101568: polySurface275
+    101570: polySurface275 1
+    101572: polySurface276
+    101574: polySurface276 1
+    101576: polySurface277
+    101578: polySurface277 1
+    101580: polySurface278
+    101582: polySurface278 1
+    101584: polySurface279
+    101586: polySurface279 1
+    101588: polySurface280
+    101590: polySurface280 1
+    101592: polySurface281
+    101594: polySurface281 1
+    101596: polySurface282
+    101598: polySurface282 1
+    101600: polySurface283
+    101602: polySurface283 1
+    101604: polySurface284
+    101606: polySurface284 1
+    101608: polySurface285
+    101610: polySurface285 1
+    101612: polySurface286
+    101614: polySurface286 1
+    101616: polySurface287
+    101618: polySurface287 1
+    101620: polySurface288
+    101622: polySurface288 1
+    101624: polySurface289
+    101626: polySurface289 1
+    101628: polySurface29
+    101630: polySurface29 1
+    101632: polySurface290
+    101634: polySurface290 1
+    101636: polySurface291
+    101638: polySurface291 1
+    101640: polySurface292
+    101642: polySurface292 1
+    101644: polySurface293
+    101646: polySurface293 1
+    101648: polySurface294
+    101650: polySurface294 1
+    101652: polySurface3
+    101654: polySurface3 1
+    101656: polySurface32
+    101658: polySurface32 1
+    101660: polySurface34
+    101662: polySurface34 1
+    101664: polySurface35
+    101666: polySurface35 1
+    101668: polySurface36
+    101670: polySurface36 1
+    101672: polySurface38
+    101674: polySurface38 1
+    101676: polySurface40
+    101678: polySurface40 1
+    101680: polySurface42
+    101682: polySurface42 1
+    101684: polySurface44
+    101686: polySurface44 1
+    101688: polySurface46
+    101690: polySurface46 1
+    101692: polySurface48
+    101694: polySurface48 1
+    101696: polySurface52
+    101698: polySurface52 1
+    101700: polySurface54
+    101702: polySurface54 1
+    101704: polySurface56
+    101706: polySurface56 1
+    101708: polySurface58
+    101710: polySurface58 1
+    101712: polySurface59
+    101714: polySurface59 1
+    101716: polySurface6
+    101718: polySurface6 1
+    101720: polySurface60
+    101722: polySurface60 1
+    101724: polySurface61
+    101726: polySurface61 1
+    101728: polySurface64
+    101730: polySurface64 1
+    101732: polySurface66
+    101734: polySurface66 1
+    101736: polySurface68
+    101738: polySurface68 1
+    101740: polySurface7
+    101742: polySurface7 1
+    101744: polySurface70
+    101746: polySurface70 1
+    101748: polySurface72
+    101750: polySurface72 1
+    101752: polySurface74
+    101754: polySurface74 1
+    101756: polySurface76
+    101758: polySurface76 1
+    101760: polySurface77
+    101762: polySurface77 1
+    101764: polySurface79
+    101766: polySurface79 1
+    101768: polySurface81
+    101770: polySurface81 1
+    101772: polySurface82
+    101774: polySurface82 1
+    101776: polySurface83
+    101778: polySurface85
+    101780: polySurface87
+    101782: polySurface89
+    101784: polySurface9
+    101786: polySurface9 1
+    101788: polySurface91
+    101790: polySurface93
+    101792: polySurface95
+    101794: polySurface97
+    101796: polySurface99
+    101798: pPlane1
+    101800: pPlane2
+    101802: pPlane3
+    101804: pPlane4
+    101806: pPlane5
+    101808: pPlane6
+    101810: pPlane7
+    101812: pPlane8
+    101814: rear_ropeladders
+    101816: rearaxis
+    101818: rearaxis 1
+    101820: rearaxis 10
+    101822: rearaxis 11
+    101824: rearaxis 12
+    101826: rearaxis 13
+    101828: rearaxis 14
+    101830: rearaxis 15
+    101832: rearaxis 16
+    101834: rearaxis 17
+    101836: rearaxis 18
+    101838: rearaxis 19
+    101840: rearaxis 2
+    101842: rearaxis 20
+    101844: rearaxis 21
+    101846: rearaxis 22
+    101848: rearaxis 23
+    101850: rearaxis 24
+    101852: rearaxis 3
+    101854: rearaxis 4
+    101856: rearaxis 5
+    101858: rearaxis 6
+    101860: rearaxis 7
+    101862: rearaxis 8
+    101864: rearaxis 9
+    101866: rearcabin
+    101868: rearcabin 1
+    101870: rearcabin1
+    101872: rearcabin1 1
+    101874: rearcabin_left
+    101876: rearcabin_left 1
+    101878: rearsail_main
+    101880: rearsail_platform_1
+    101882: rearsail_rear
+    101884: rearsail_side_1
+    101886: rearsail_side_2
+    101888: rearwheel_LOD1
+    101890: rearwheel_LOD1 1
+    101892: rearwheel_LOD1 10
+    101894: rearwheel_LOD1 11
+    101896: rearwheel_LOD1 12
+    101898: rearwheel_LOD1 13
+    101900: rearwheel_LOD1 14
+    101902: rearwheel_LOD1 15
+    101904: rearwheel_LOD1 16
+    101906: rearwheel_LOD1 17
+    101908: rearwheel_LOD1 18
+    101910: rearwheel_LOD1 19
+    101912: rearwheel_LOD1 2
+    101914: rearwheel_LOD1 20
+    101916: rearwheel_LOD1 21
+    101918: rearwheel_LOD1 22
+    101920: rearwheel_LOD1 23
+    101922: rearwheel_LOD1 24
+    101924: rearwheel_LOD1 3
+    101926: rearwheel_LOD1 4
+    101928: rearwheel_LOD1 5
+    101930: rearwheel_LOD1 6
+    101932: rearwheel_LOD1 7
+    101934: rearwheel_LOD1 8
+    101936: rearwheel_LOD1 9
+    101938: rearwheels
+    101940: ribgroup
+    101942: right
+    101944: rope_ropeladders
+    101946: rudder
+    101948: sail_bowsprite
+    101950: sail_front
+    101952: sail_mid
+    101954: sail_rear
+    101956: segment_left_1
+    101958: segment_left_1 1
+    101960: segment_left_10
+    101962: segment_left_10 1
+    101964: segment_left_11
+    101966: segment_left_11 1
+    101968: segment_left_12
+    101970: segment_left_12 1
+    101972: segment_left_2
+    101974: segment_left_2 1
+    101976: segment_left_3
+    101978: segment_left_3 1
+    101980: segment_left_4
+    101982: segment_left_4 1
+    101984: segment_left_5
+    101986: segment_left_5 1
+    101988: segment_left_6
+    101990: segment_left_6 1
+    101992: segment_left_7
+    101994: segment_left_7 1
+    101996: segment_left_8
+    101998: segment_left_8 1
+    102000: segment_left_9
+    102002: segment_left_9 1
+    102004: ship_hull_left_bot_1
+    102006: ship_hull_left_bot_1 1
+    102008: ship_hull_left_bot_10
+    102010: ship_hull_left_bot_10 1
+    102012: ship_hull_left_bot_11
+    102014: ship_hull_left_bot_11 1
+    102016: ship_hull_left_bot_12
+    102018: ship_hull_left_bot_12 1
+    102020: ship_hull_left_bot_2
+    102022: ship_hull_left_bot_2 1
+    102024: ship_hull_left_bot_3
+    102026: ship_hull_left_bot_3 1
+    102028: ship_hull_left_bot_4
+    102030: ship_hull_left_bot_4 1
+    102032: ship_hull_left_bot_5
+    102034: ship_hull_left_bot_5 1
+    102036: ship_hull_left_bot_6
+    102038: ship_hull_left_bot_6 1
+    102040: ship_hull_left_bot_7
+    102042: ship_hull_left_bot_7 1
+    102044: ship_hull_left_bot_8
+    102046: ship_hull_left_bot_8 1
+    102048: ship_hull_left_bot_9
+    102050: ship_hull_left_bot_9 1
+    102052: ship_hull_left_top2
+    102054: ship_hull_left_top2 1
+    102056: ship_hull_left_top_1
+    102058: ship_hull_left_top_1 1
+    102060: ship_hull_left_top_10
+    102062: ship_hull_left_top_10 1
+    102064: ship_hull_left_top_11
+    102066: ship_hull_left_top_11 1
+    102068: ship_hull_left_top_12
+    102070: ship_hull_left_top_12 1
+    102072: ship_hull_left_top_3
+    102074: ship_hull_left_top_3 1
+    102076: ship_hull_left_top_4
+    102078: ship_hull_left_top_4 1
+    102080: ship_hull_left_top_5
+    102082: ship_hull_left_top_5 1
+    102084: ship_hull_left_top_6
+    102086: ship_hull_left_top_6 1
+    102088: ship_hull_left_top_7
+    102090: ship_hull_left_top_7 1
+    102092: ship_hull_left_top_8
+    102094: ship_hull_left_top_8 1
+    102096: ship_hull_left_top_9
+    102098: ship_hull_left_top_9 1
+    102100: shipgroup
+    102102: transform1
+    102104: transform10
+    102106: transform11
+    102108: transform12
+    102110: transform12 1
+    102112: transform13
+    102114: transform13 1
+    102116: transform2
+    102118: transform3
+    102120: transform4
+    102122: transform5
+    102124: transform6
+    102126: transform7
+    102128: transform8
+    102130: transform9
+    102132: wedge_middle
+    102134: wedge_middle 1
+    102136: wedge_middle 10
+    102138: wedge_middle 11
+    102140: wedge_middle 12
+    102142: wedge_middle 13
+    102144: wedge_middle 14
+    102146: wedge_middle 15
+    102148: wedge_middle 16
+    102150: wedge_middle 17
+    102152: wedge_middle 18
+    102154: wedge_middle 19
+    102156: wedge_middle 2
+    102158: wedge_middle 20
+    102160: wedge_middle 21
+    102162: wedge_middle 22
+    102164: wedge_middle 23
+    102166: wedge_middle 24
+    102168: wedge_middle 3
+    102170: wedge_middle 4
+    102172: wedge_middle 5
+    102174: wedge_middle 6
+    102176: wedge_middle 7
+    102178: wedge_middle 8
+    102180: wedge_middle 9
+    400000: barrel_LOD1
+    400002: barrel_LOD1 1
+    400004: barrel_LOD1 10
+    400006: barrel_LOD1 11
+    400008: barrel_LOD1 12
+    400010: barrel_LOD1 13
+    400012: barrel_LOD1 14
+    400014: barrel_LOD1 15
+    400016: barrel_LOD1 16
+    400018: barrel_LOD1 17
+    400020: barrel_LOD1 18
+    400022: barrel_LOD1 19
+    400024: barrel_LOD1 2
+    400026: barrel_LOD1 20
+    400028: barrel_LOD1 21
+    400030: barrel_LOD1 22
+    400032: barrel_LOD1 23
+    400034: barrel_LOD1 24
+    400036: barrel_LOD1 3
+    400038: barrel_LOD1 4
+    400040: barrel_LOD1 5
+    400042: barrel_LOD1 6
+    400044: barrel_LOD1 7
+    400046: barrel_LOD1 8
+    400048: barrel_LOD1 9
+    400050: barrelgroup
+    400052: bighatch_bottom
+    400054: bighatch_bottom 1
+    400056: bighatch_frame
+    400058: bighatch_frame 1
+    400060: bighatch_top
+    400062: bighatch_top 1
+    400064: bowsprite_main
+    400066: cannon
+    400068: CANNON_MOCKUP
+    400070: cannonhatch_1
+    400072: cannonhatch_1 1
+    400074: cannonhatch_10
+    400076: cannonhatch_10 1
+    400078: cannonhatch_11
+    400080: cannonhatch_11 1
+    400082: cannonhatch_12
+    400084: cannonhatch_12 1
+    400086: cannonhatch_13
+    400088: cannonhatch_13 1
+    400090: cannonhatch_14
+    400092: cannonhatch_14 1
+    400094: cannonhatch_15
+    400096: cannonhatch_15 1
+    400098: cannonhatch_16
+    400100: cannonhatch_16 1
+    400102: cannonhatch_17
+    400104: cannonhatch_17 1
+    400106: cannonhatch_18
+    400108: cannonhatch_18 1
+    400110: cannonhatch_19
+    400112: cannonhatch_19 1
+    400114: cannonhatch_2
+    400116: cannonhatch_2 1
+    400118: cannonhatch_20
+    400120: cannonhatch_20 1
+    400122: cannonhatch_21
+    400124: cannonhatch_21 1
+    400126: cannonhatch_22
+    400128: cannonhatch_22 1
+    400130: cannonhatch_3
+    400132: cannonhatch_3 1
+    400134: cannonhatch_4
+    400136: cannonhatch_4 1
+    400138: cannonhatch_9
+    400140: cannonhatch_9 1
+    400142: cannonhatch_bot_1
+    400144: cannonhatch_bot_1 1
+    400146: cannonhatch_bot_2
+    400148: cannonhatch_bot_2 1
+    400150: cannonhatch_LOD0
+    400152: cannonhatch_LOD0 1
+    400154: cannonhatch_LOD0 10
+    400156: cannonhatch_LOD0 11
+    400158: cannonhatch_LOD0 12
+    400160: cannonhatch_LOD0 13
+    400162: cannonhatch_LOD0 14
+    400164: cannonhatch_LOD0 15
+    400166: cannonhatch_LOD0 16
+    400168: cannonhatch_LOD0 17
+    400170: cannonhatch_LOD0 18
+    400172: cannonhatch_LOD0 19
+    400174: cannonhatch_LOD0 2
+    400176: cannonhatch_LOD0 20
+    400178: cannonhatch_LOD0 21
+    400180: cannonhatch_LOD0 22
+    400182: cannonhatch_LOD0 23
+    400184: cannonhatch_LOD0 24
+    400186: cannonhatch_LOD0 25
+    400188: cannonhatch_LOD0 26
+    400190: cannonhatch_LOD0 27
+    400192: cannonhatch_LOD0 28
+    400194: cannonhatch_LOD0 29
+    400196: cannonhatch_LOD0 3
+    400198: cannonhatch_LOD0 30
+    400200: cannonhatch_LOD0 31
+    400202: cannonhatch_LOD0 32
+    400204: cannonhatch_LOD0 33
+    400206: cannonhatch_LOD0 34
+    400208: cannonhatch_LOD0 35
+    400210: cannonhatch_LOD0 36
+    400212: cannonhatch_LOD0 37
+    400214: cannonhatch_LOD0 38
+    400216: cannonhatch_LOD0 39
+    400218: cannonhatch_LOD0 4
+    400220: cannonhatch_LOD0 40
+    400222: cannonhatch_LOD0 41
+    400224: cannonhatch_LOD0 42
+    400226: cannonhatch_LOD0 43
+    400228: cannonhatch_LOD0 5
+    400230: cannonhatch_LOD0 6
+    400232: cannonhatch_LOD0 7
+    400234: cannonhatch_LOD0 8
+    400236: cannonhatch_LOD0 9
+    400238: cannonhatch_LOD1
+    400240: cannonhatch_LOD1 1
+    400242: cannonhatch_LOD1 10
+    400244: cannonhatch_LOD1 11
+    400246: cannonhatch_LOD1 12
+    400248: cannonhatch_LOD1 13
+    400250: cannonhatch_LOD1 14
+    400252: cannonhatch_LOD1 15
+    400254: cannonhatch_LOD1 16
+    400256: cannonhatch_LOD1 17
+    400258: cannonhatch_LOD1 18
+    400260: cannonhatch_LOD1 19
+    400262: cannonhatch_LOD1 2
+    400264: cannonhatch_LOD1 20
+    400266: cannonhatch_LOD1 21
+    400268: cannonhatch_LOD1 22
+    400270: cannonhatch_LOD1 23
+    400272: cannonhatch_LOD1 24
+    400274: cannonhatch_LOD1 25
+    400276: cannonhatch_LOD1 26
+    400278: cannonhatch_LOD1 27
+    400280: cannonhatch_LOD1 28
+    400282: cannonhatch_LOD1 29
+    400284: cannonhatch_LOD1 3
+    400286: cannonhatch_LOD1 30
+    400288: cannonhatch_LOD1 31
+    400290: cannonhatch_LOD1 32
+    400292: cannonhatch_LOD1 33
+    400294: cannonhatch_LOD1 34
+    400296: cannonhatch_LOD1 35
+    400298: cannonhatch_LOD1 36
+    400300: cannonhatch_LOD1 37
+    400302: cannonhatch_LOD1 38
+    400304: cannonhatch_LOD1 39
+    400306: cannonhatch_LOD1 4
+    400308: cannonhatch_LOD1 40
+    400310: cannonhatch_LOD1 41
+    400312: cannonhatch_LOD1 42
+    400314: cannonhatch_LOD1 43
+    400316: cannonhatch_LOD1 5
+    400318: cannonhatch_LOD1 6
+    400320: cannonhatch_LOD1 7
+    400322: cannonhatch_LOD1 8
+    400324: cannonhatch_LOD1 9
+    400326: cannonhatch_LOD2
+    400328: cannonhatch_LOD2 1
+    400330: cannonhatch_top_1
+    400332: cannonhatch_top_1 1
+    400334: cannonhatch_top_2
+    400336: cannonhatch_top_2 1
+    400338: cargohole_supportbeams
+    400340: centerrib
+    400342: chain_left
+    400344: chain_left_LOD0
+    400346: chain_left_LOD0 1
+    400348: chain_left_LOD0 10
+    400350: chain_left_LOD0 11
+    400352: chain_left_LOD0 12
+    400354: chain_left_LOD0 13
+    400356: chain_left_LOD0 14
+    400358: chain_left_LOD0 15
+    400360: chain_left_LOD0 16
+    400362: chain_left_LOD0 17
+    400364: chain_left_LOD0 18
+    400366: chain_left_LOD0 19
+    400368: chain_left_LOD0 2
+    400370: chain_left_LOD0 20
+    400372: chain_left_LOD0 21
+    400374: chain_left_LOD0 22
+    400376: chain_left_LOD0 23
+    400378: chain_left_LOD0 24
+    400380: chain_left_LOD0 3
+    400382: chain_left_LOD0 4
+    400384: chain_left_LOD0 5
+    400386: chain_left_LOD0 6
+    400388: chain_left_LOD0 7
+    400390: chain_left_LOD0 8
+    400392: chain_left_LOD0 9
+    400394: chain_left_LOD1
+    400396: chain_left_LOD1 1
+    400398: chain_left_LOD1 10
+    400400: chain_left_LOD1 11
+    400402: chain_left_LOD1 12
+    400404: chain_left_LOD1 13
+    400406: chain_left_LOD1 14
+    400408: chain_left_LOD1 15
+    400410: chain_left_LOD1 16
+    400412: chain_left_LOD1 17
+    400414: chain_left_LOD1 18
+    400416: chain_left_LOD1 19
+    400418: chain_left_LOD1 2
+    400420: chain_left_LOD1 20
+    400422: chain_left_LOD1 21
+    400424: chain_left_LOD1 22
+    400426: chain_left_LOD1 23
+    400428: chain_left_LOD1 24
+    400430: chain_left_LOD1 3
+    400432: chain_left_LOD1 4
+    400434: chain_left_LOD1 5
+    400436: chain_left_LOD1 6
+    400438: chain_left_LOD1 7
+    400440: chain_left_LOD1 8
+    400442: chain_left_LOD1 9
+    400444: chain_right
+    400446: chainstart_left
+    400448: chainstart_left 1
+    400450: chainstart_left 10
+    400452: chainstart_left 11
+    400454: chainstart_left 12
+    400456: chainstart_left 13
+    400458: chainstart_left 14
+    400460: chainstart_left 15
+    400462: chainstart_left 16
+    400464: chainstart_left 17
+    400466: chainstart_left 18
+    400468: chainstart_left 19
+    400470: chainstart_left 2
+    400472: chainstart_left 20
+    400474: chainstart_left 21
+    400476: chainstart_left 22
+    400478: chainstart_left 23
+    400480: chainstart_left 24
+    400482: chainstart_left 3
+    400484: chainstart_left 4
+    400486: chainstart_left 5
+    400488: chainstart_left 6
+    400490: chainstart_left 7
+    400492: chainstart_left 8
+    400494: chainstart_left 9
+    400496: chainstart_right
+    400498: chainstart_right 1
+    400500: chainstart_right 10
+    400502: chainstart_right 11
+    400504: chainstart_right 12
+    400506: chainstart_right 13
+    400508: chainstart_right 14
+    400510: chainstart_right 15
+    400512: chainstart_right 16
+    400514: chainstart_right 17
+    400516: chainstart_right 18
+    400518: chainstart_right 19
+    400520: chainstart_right 2
+    400522: chainstart_right 20
+    400524: chainstart_right 21
+    400526: chainstart_right 22
+    400528: chainstart_right 23
+    400530: chainstart_right 24
+    400532: chainstart_right 3
+    400534: chainstart_right 4
+    400536: chainstart_right 5
+    400538: chainstart_right 6
+    400540: chainstart_right 7
+    400542: chainstart_right 8
+    400544: chainstart_right 9
+    400546: crowsnest
+    400548: crowsnest_fencepost
+    400550: crowsnest_floor
+    400552: crowsnest_guardrail
+    400554: frame_LOD1
+    400556: frame_LOD1 1
+    400558: frame_LOD1 10
+    400560: frame_LOD1 11
+    400562: frame_LOD1 12
+    400564: frame_LOD1 13
+    400566: frame_LOD1 14
+    400568: frame_LOD1 15
+    400570: frame_LOD1 16
+    400572: frame_LOD1 17
+    400574: frame_LOD1 18
+    400576: frame_LOD1 19
+    400578: frame_LOD1 2
+    400580: frame_LOD1 20
+    400582: frame_LOD1 21
+    400584: frame_LOD1 22
+    400586: frame_LOD1 23
+    400588: frame_LOD1 24
+    400590: frame_LOD1 3
+    400592: frame_LOD1 4
+    400594: frame_LOD1 5
+    400596: frame_LOD1 6
+    400598: frame_LOD1 7
+    400600: frame_LOD1 8
+    400602: frame_LOD1 9
+    400604: front_ropeladders
+    400606: frontaxis
+    400608: frontaxis 1
+    400610: frontaxis 10
+    400612: frontaxis 11
+    400614: frontaxis 12
+    400616: frontaxis 13
+    400618: frontaxis 14
+    400620: frontaxis 15
+    400622: frontaxis 16
+    400624: frontaxis 17
+    400626: frontaxis 18
+    400628: frontaxis 19
+    400630: frontaxis 2
+    400632: frontaxis 20
+    400634: frontaxis 21
+    400636: frontaxis 22
+    400638: frontaxis 23
+    400640: frontaxis 24
+    400642: frontaxis 3
+    400644: frontaxis 4
+    400646: frontaxis 5
+    400648: frontaxis 6
+    400650: frontaxis 7
+    400652: frontaxis 8
+    400654: frontaxis 9
+    400656: frontsail_main
+    400658: frontsail_platform_1
+    400660: frontsail_platform_2
+    400662: frontsail_platform_2 1
+    400664: frontsail_platform_3
+    400666: frontsail_side_1
+    400668: frontsail_side_2
+    400670: frontsail_side_3
+    400672: frontwheel_LOD1
+    400674: frontwheel_LOD1 1
+    400676: frontwheel_LOD1 10
+    400678: frontwheel_LOD1 11
+    400680: frontwheel_LOD1 12
+    400682: frontwheel_LOD1 13
+    400684: frontwheel_LOD1 14
+    400686: frontwheel_LOD1 15
+    400688: frontwheel_LOD1 16
+    400690: frontwheel_LOD1 17
+    400692: frontwheel_LOD1 18
+    400694: frontwheel_LOD1 19
+    400696: frontwheel_LOD1 2
+    400698: frontwheel_LOD1 20
+    400700: frontwheel_LOD1 21
+    400702: frontwheel_LOD1 22
+    400704: frontwheel_LOD1 23
+    400706: frontwheel_LOD1 24
+    400708: frontwheel_LOD1 3
+    400710: frontwheel_LOD1 4
+    400712: frontwheel_LOD1 5
+    400714: frontwheel_LOD1 6
+    400716: frontwheel_LOD1 7
+    400718: frontwheel_LOD1 8
+    400720: frontwheel_LOD1 9
+    400722: frontwheels
+    400724: group10
+    400726: group11
+    400728: group12
+    400730: group13
+    400732: group14
+    400734: group15
+    400736: group16
+    400738: group17
+    400740: group18
+    400742: group19
+    400744: group2
+    400746: group20
+    400748: group21
+    400750: group22
+    400752: group23
+    400754: group24
+    400756: group25
+    400758: group26
+    400760: group3
+    400762: group4
+    400764: group5
+    400766: group6
+    400768: group7
+    400770: group8
+    400772: group9
+    400774: gunaxle_LOD1
+    400776: gunaxle_LOD1 1
+    400778: gunaxle_LOD1 10
+    400780: gunaxle_LOD1 11
+    400782: gunaxle_LOD1 12
+    400784: gunaxle_LOD1 13
+    400786: gunaxle_LOD1 14
+    400788: gunaxle_LOD1 15
+    400790: gunaxle_LOD1 16
+    400792: gunaxle_LOD1 17
+    400794: gunaxle_LOD1 18
+    400796: gunaxle_LOD1 19
+    400798: gunaxle_LOD1 2
+    400800: gunaxle_LOD1 20
+    400802: gunaxle_LOD1 21
+    400804: gunaxle_LOD1 22
+    400806: gunaxle_LOD1 23
+    400808: gunaxle_LOD1 24
+    400810: gunaxle_LOD1 3
+    400812: gunaxle_LOD1 4
+    400814: gunaxle_LOD1 5
+    400816: gunaxle_LOD1 6
+    400818: gunaxle_LOD1 7
+    400820: gunaxle_LOD1 8
+    400822: gunaxle_LOD1 9
+    400824: hatch
+    400826: hatch_bottom
+    400828: imagePlane1
+    400830: imagePlane2
+    400832: imagePlane3
+    400834: imagePlane4
+    400836: imagePlane5
+    400838: imagePlane6
+    400840: imagePlane7
+    400842: ladder_beam
+    400844: left
+    400846: mid_ropeladders
+    400848: midframe_middle
+    400850: midframe_middle 1
+    400852: midframe_middle 10
+    400854: midframe_middle 11
+    400856: midframe_middle 12
+    400858: midframe_middle 13
+    400860: midframe_middle 14
+    400862: midframe_middle 15
+    400864: midframe_middle 16
+    400866: midframe_middle 17
+    400868: midframe_middle 18
+    400870: midframe_middle 19
+    400872: midframe_middle 2
+    400874: midframe_middle 20
+    400876: midframe_middle 21
+    400878: midframe_middle 22
+    400880: midframe_middle 23
+    400882: midframe_middle 24
+    400884: midframe_middle 3
+    400886: midframe_middle 4
+    400888: midframe_middle 5
+    400890: midframe_middle 6
+    400892: midframe_middle 7
+    400894: midframe_middle 8
+    400896: midframe_middle 9
+    400898: midsail_main
+    400900: midsail_platform_1
+    400902: midsail_platform_2
+    400904: midsail_side_1
+    400906: midsail_side_2
+    400908: midsail_side_3
+    400910: midsail_side_4
+    400912: //RootNode
+    400914: pCube100
+    400916: pCube100 1
+    400918: pCube101
+    400920: pCube101 1
+    400922: pCube102
+    400924: pCube102 1
+    400926: pCube103
+    400928: pCube103 1
+    400930: pCube104
+    400932: pCube104 1
+    400934: pCube105
+    400936: pCube105 1
+    400938: pCube106
+    400940: pCube106 1
+    400942: pCube107
+    400944: pCube107 1
+    400946: pCube108
+    400948: pCube108 1
+    400950: pCube109
+    400952: pCube109 1
+    400954: pCube110
+    400956: pCube110 1
+    400958: pCube111
+    400960: pCube111 1
+    400962: pCube112
+    400964: pCube112 1
+    400966: pCube113
+    400968: pCube113 1
+    400970: pCube114
+    400972: pCube114 1
+    400974: pCube115
+    400976: pCube115 1
+    400978: pCube116
+    400980: pCube116 1
+    400982: pCube117
+    400984: pCube117 1
+    400986: pCube54
+    400988: pCube55
+    400990: pCube56
+    400992: pCube57
+    400994: pCube62
+    400996: pCube62 1
+    400998: pCube63
+    401000: pCube63 1
+    401002: pCube64
+    401004: pCube64 1
+    401006: pCube65
+    401008: pCube65 1
+    401010: pCube66
+    401012: pCube66 1
+    401014: pCube67
+    401016: pCube67 1
+    401018: pCube68
+    401020: pCube68 1
+    401022: pCube69
+    401024: pCube69 1
+    401026: pCube70
+    401028: pCube70 1
+    401030: pCube72
+    401032: pCube72 1
+    401034: pCube73
+    401036: pCube73 1
+    401038: pCube75
+    401040: pCube75 1
+    401042: pCube76
+    401044: pCube76 1
+    401046: pCube77
+    401048: pCube77 1
+    401050: pCube78
+    401052: pCube78 1
+    401054: pCube79
+    401056: pCube79 1
+    401058: pCube80
+    401060: pCube80 1
+    401062: pCube82
+    401064: pCube82 1
+    401066: pCube83
+    401068: pCube83 1
+    401070: pCube84
+    401072: pCube84 1
+    401074: pCube85
+    401076: pCube85 1
+    401078: pCube86
+    401080: pCube86 1
+    401082: pCube88
+    401084: pCube88 1
+    401086: pCube89
+    401088: pCube89 1
+    401090: pCube90
+    401092: pCube90 1
+    401094: pCube91
+    401096: pCube91 1
+    401098: pCube92
+    401100: pCube92 1
+    401102: pCube93
+    401104: pCube93 1
+    401106: pCube94
+    401108: pCube94 1
+    401110: pCube95
+    401112: pCube95 1
+    401114: pCube96
+    401116: pCube96 1
+    401118: pCube97
+    401120: pCube97 1
+    401122: pCube98
+    401124: pCube98 1
+    401126: pCube99
+    401128: pCube99 1
+    401130: polySurface1
+    401132: polySurface1 1
+    401134: polySurface101
+    401136: polySurface103
+    401138: polySurface105
+    401140: polySurface107
+    401142: polySurface108
+    401144: polySurface109
+    401146: polySurface109 1
+    401148: polySurface112
+    401150: polySurface112 1
+    401152: polySurface114
+    401154: polySurface114 1
+    401156: polySurface116
+    401158: polySurface116 1
+    401160: polySurface117
+    401162: polySurface117 1
+    401164: polySurface119
+    401166: polySurface119 1
+    401168: polySurface12
+    401170: polySurface12 1
+    401172: polySurface121
+    401174: polySurface121 1
+    401176: polySurface123
+    401178: polySurface123 1
+    401180: polySurface125
+    401182: polySurface125 1
+    401184: polySurface127
+    401186: polySurface127 1
+    401188: polySurface129
+    401190: polySurface129 1
+    401192: polySurface139
+    401194: polySurface139 1
+    401196: polySurface14
+    401198: polySurface14 1
+    401200: polySurface141
+    401202: polySurface141 1
+    401204: polySurface143
+    401206: polySurface143 1
+    401208: polySurface145
+    401210: polySurface145 1
+    401212: polySurface147
+    401214: polySurface147 1
+    401216: polySurface149
+    401218: polySurface149 1
+    401220: polySurface151
+    401222: polySurface151 1
+    401224: polySurface157
+    401226: polySurface157 1
+    401228: polySurface16
+    401230: polySurface16 1
+    401232: polySurface160
+    401234: polySurface160 1
+    401236: polySurface161
+    401238: polySurface161 1
+    401240: polySurface163
+    401242: polySurface163 1
+    401244: polySurface165
+    401246: polySurface165 1
+    401248: polySurface166
+    401250: polySurface166 1
+    401252: polySurface167
+    401254: polySurface167 1
+    401256: polySurface168
+    401258: polySurface168 1
+    401260: polySurface169
+    401262: polySurface169 1
+    401264: polySurface170
+    401266: polySurface170 1
+    401268: polySurface171
+    401270: polySurface171 1
+    401272: polySurface172
+    401274: polySurface172 1
+    401276: polySurface173
+    401278: polySurface173 1
+    401280: polySurface18
+    401282: polySurface18 1
+    401284: polySurface182
+    401286: polySurface182 1
+    401288: polySurface183
+    401290: polySurface183 1
+    401292: polySurface184
+    401294: polySurface184 1
+    401296: polySurface185
+    401298: polySurface185 1
+    401300: polySurface186
+    401302: polySurface186 1
+    401304: polySurface188
+    401306: polySurface188 1
+    401308: polySurface189
+    401310: polySurface189 1
+    401312: polySurface193
+    401314: polySurface194
+    401316: polySurface195
+    401318: polySurface196
+    401320: polySurface197
+    401322: polySurface198
+    401324: polySurface199
+    401326: polySurface20
+    401328: polySurface20 1
+    401330: polySurface200
+    401332: polySurface201
+    401334: polySurface202
+    401336: polySurface203
+    401338: polySurface204
+    401340: polySurface205
+    401342: polySurface206
+    401344: polySurface207
+    401346: polySurface208
+    401348: polySurface209
+    401350: polySurface210
+    401352: polySurface211
+    401354: polySurface212
+    401356: polySurface213
+    401358: polySurface214
+    401360: polySurface215
+    401362: polySurface215 1
+    401364: polySurface216
+    401366: polySurface216 1
+    401368: polySurface217
+    401370: polySurface217 1
+    401372: polySurface218
+    401374: polySurface218 1
+    401376: polySurface219
+    401378: polySurface219 1
+    401380: polySurface22
+    401382: polySurface22 1
+    401384: polySurface220
+    401386: polySurface220 1
+    401388: polySurface221
+    401390: polySurface221 1
+    401392: polySurface222
+    401394: polySurface222 1
+    401396: polySurface223
+    401398: polySurface223 1
+    401400: polySurface228
+    401402: polySurface228 1
+    401404: polySurface229
+    401406: polySurface229 1
+    401408: polySurface232
+    401410: polySurface232 1
+    401412: polySurface233
+    401414: polySurface233 1
+    401416: polySurface234
+    401418: polySurface234 1
+    401420: polySurface235
+    401422: polySurface235 1
+    401424: polySurface239
+    401426: polySurface239 1
+    401428: polySurface24
+    401430: polySurface24 1
+    401432: polySurface242
+    401434: polySurface242 1
+    401436: polySurface245
+    401438: polySurface245 1
+    401440: polySurface246
+    401442: polySurface246 1
+    401444: polySurface247
+    401446: polySurface247 1
+    401448: polySurface248
+    401450: polySurface248 1
+    401452: polySurface249
+    401454: polySurface249 1
+    401456: polySurface25
+    401458: polySurface25 1
+    401460: polySurface250
+    401462: polySurface250 1
+    401464: polySurface251
+    401466: polySurface251 1
+    401468: polySurface252
+    401470: polySurface252 1
+    401472: polySurface253
+    401474: polySurface253 1
+    401476: polySurface254
+    401478: polySurface254 1
+    401480: polySurface255
+    401482: polySurface255 1
+    401484: polySurface256
+    401486: polySurface256 1
+    401488: polySurface257
+    401490: polySurface257 1
+    401492: polySurface258
+    401494: polySurface258 1
+    401496: polySurface259
+    401498: polySurface259 1
+    401500: polySurface26
+    401502: polySurface26 1
+    401504: polySurface260
+    401506: polySurface260 1
+    401508: polySurface261
+    401510: polySurface261 1
+    401512: polySurface262
+    401514: polySurface262 1
+    401516: polySurface263
+    401518: polySurface263 1
+    401520: polySurface264
+    401522: polySurface264 1
+    401524: polySurface265
+    401526: polySurface265 1
+    401528: polySurface266
+    401530: polySurface266 1
+    401532: polySurface267
+    401534: polySurface267 1
+    401536: polySurface268
+    401538: polySurface268 1
+    401540: polySurface269
+    401542: polySurface269 1
+    401544: polySurface27
+    401546: polySurface27 1
+    401548: polySurface270
+    401550: polySurface270 1
+    401552: polySurface271
+    401554: polySurface271 1
+    401556: polySurface272
+    401558: polySurface272 1
+    401560: polySurface273
+    401562: polySurface273 1
+    401564: polySurface274
+    401566: polySurface274 1
+    401568: polySurface275
+    401570: polySurface275 1
+    401572: polySurface276
+    401574: polySurface276 1
+    401576: polySurface277
+    401578: polySurface277 1
+    401580: polySurface278
+    401582: polySurface278 1
+    401584: polySurface279
+    401586: polySurface279 1
+    401588: polySurface280
+    401590: polySurface280 1
+    401592: polySurface281
+    401594: polySurface281 1
+    401596: polySurface282
+    401598: polySurface282 1
+    401600: polySurface283
+    401602: polySurface283 1
+    401604: polySurface284
+    401606: polySurface284 1
+    401608: polySurface285
+    401610: polySurface285 1
+    401612: polySurface286
+    401614: polySurface286 1
+    401616: polySurface287
+    401618: polySurface287 1
+    401620: polySurface288
+    401622: polySurface288 1
+    401624: polySurface289
+    401626: polySurface289 1
+    401628: polySurface29
+    401630: polySurface29 1
+    401632: polySurface290
+    401634: polySurface290 1
+    401636: polySurface291
+    401638: polySurface291 1
+    401640: polySurface292
+    401642: polySurface292 1
+    401644: polySurface293
+    401646: polySurface293 1
+    401648: polySurface294
+    401650: polySurface294 1
+    401652: polySurface3
+    401654: polySurface3 1
+    401656: polySurface32
+    401658: polySurface32 1
+    401660: polySurface34
+    401662: polySurface34 1
+    401664: polySurface35
+    401666: polySurface35 1
+    401668: polySurface36
+    401670: polySurface36 1
+    401672: polySurface38
+    401674: polySurface38 1
+    401676: polySurface40
+    401678: polySurface40 1
+    401680: polySurface42
+    401682: polySurface42 1
+    401684: polySurface44
+    401686: polySurface44 1
+    401688: polySurface46
+    401690: polySurface46 1
+    401692: polySurface48
+    401694: polySurface48 1
+    401696: polySurface52
+    401698: polySurface52 1
+    401700: polySurface54
+    401702: polySurface54 1
+    401704: polySurface56
+    401706: polySurface56 1
+    401708: polySurface58
+    401710: polySurface58 1
+    401712: polySurface59
+    401714: polySurface59 1
+    401716: polySurface6
+    401718: polySurface6 1
+    401720: polySurface60
+    401722: polySurface60 1
+    401724: polySurface61
+    401726: polySurface61 1
+    401728: polySurface64
+    401730: polySurface64 1
+    401732: polySurface66
+    401734: polySurface66 1
+    401736: polySurface68
+    401738: polySurface68 1
+    401740: polySurface7
+    401742: polySurface7 1
+    401744: polySurface70
+    401746: polySurface70 1
+    401748: polySurface72
+    401750: polySurface72 1
+    401752: polySurface74
+    401754: polySurface74 1
+    401756: polySurface76
+    401758: polySurface76 1
+    401760: polySurface77
+    401762: polySurface77 1
+    401764: polySurface79
+    401766: polySurface79 1
+    401768: polySurface81
+    401770: polySurface81 1
+    401772: polySurface82
+    401774: polySurface82 1
+    401776: polySurface83
+    401778: polySurface85
+    401780: polySurface87
+    401782: polySurface89
+    401784: polySurface9
+    401786: polySurface9 1
+    401788: polySurface91
+    401790: polySurface93
+    401792: polySurface95
+    401794: polySurface97
+    401796: polySurface99
+    401798: pPlane1
+    401800: pPlane2
+    401802: pPlane3
+    401804: pPlane4
+    401806: pPlane5
+    401808: pPlane6
+    401810: pPlane7
+    401812: pPlane8
+    401814: rear_ropeladders
+    401816: rearaxis
+    401818: rearaxis 1
+    401820: rearaxis 10
+    401822: rearaxis 11
+    401824: rearaxis 12
+    401826: rearaxis 13
+    401828: rearaxis 14
+    401830: rearaxis 15
+    401832: rearaxis 16
+    401834: rearaxis 17
+    401836: rearaxis 18
+    401838: rearaxis 19
+    401840: rearaxis 2
+    401842: rearaxis 20
+    401844: rearaxis 21
+    401846: rearaxis 22
+    401848: rearaxis 23
+    401850: rearaxis 24
+    401852: rearaxis 3
+    401854: rearaxis 4
+    401856: rearaxis 5
+    401858: rearaxis 6
+    401860: rearaxis 7
+    401862: rearaxis 8
+    401864: rearaxis 9
+    401866: rearcabin
+    401868: rearcabin 1
+    401870: rearcabin1
+    401872: rearcabin1 1
+    401874: rearcabin_left
+    401876: rearcabin_left 1
+    401878: rearsail_main
+    401880: rearsail_platform_1
+    401882: rearsail_rear
+    401884: rearsail_side_1
+    401886: rearsail_side_2
+    401888: rearwheel_LOD1
+    401890: rearwheel_LOD1 1
+    401892: rearwheel_LOD1 10
+    401894: rearwheel_LOD1 11
+    401896: rearwheel_LOD1 12
+    401898: rearwheel_LOD1 13
+    401900: rearwheel_LOD1 14
+    401902: rearwheel_LOD1 15
+    401904: rearwheel_LOD1 16
+    401906: rearwheel_LOD1 17
+    401908: rearwheel_LOD1 18
+    401910: rearwheel_LOD1 19
+    401912: rearwheel_LOD1 2
+    401914: rearwheel_LOD1 20
+    401916: rearwheel_LOD1 21
+    401918: rearwheel_LOD1 22
+    401920: rearwheel_LOD1 23
+    401922: rearwheel_LOD1 24
+    401924: rearwheel_LOD1 3
+    401926: rearwheel_LOD1 4
+    401928: rearwheel_LOD1 5
+    401930: rearwheel_LOD1 6
+    401932: rearwheel_LOD1 7
+    401934: rearwheel_LOD1 8
+    401936: rearwheel_LOD1 9
+    401938: rearwheels
+    401940: ribgroup
+    401942: right
+    401944: rope_ropeladders
+    401946: rudder
+    401948: sail_bowsprite
+    401950: sail_front
+    401952: sail_mid
+    401954: sail_rear
+    401956: segment_left_1
+    401958: segment_left_1 1
+    401960: segment_left_10
+    401962: segment_left_10 1
+    401964: segment_left_11
+    401966: segment_left_11 1
+    401968: segment_left_12
+    401970: segment_left_12 1
+    401972: segment_left_2
+    401974: segment_left_2 1
+    401976: segment_left_3
+    401978: segment_left_3 1
+    401980: segment_left_4
+    401982: segment_left_4 1
+    401984: segment_left_5
+    401986: segment_left_5 1
+    401988: segment_left_6
+    401990: segment_left_6 1
+    401992: segment_left_7
+    401994: segment_left_7 1
+    401996: segment_left_8
+    401998: segment_left_8 1
+    402000: segment_left_9
+    402002: segment_left_9 1
+    402004: ship_hull_left_bot_1
+    402006: ship_hull_left_bot_1 1
+    402008: ship_hull_left_bot_10
+    402010: ship_hull_left_bot_10 1
+    402012: ship_hull_left_bot_11
+    402014: ship_hull_left_bot_11 1
+    402016: ship_hull_left_bot_12
+    402018: ship_hull_left_bot_12 1
+    402020: ship_hull_left_bot_2
+    402022: ship_hull_left_bot_2 1
+    402024: ship_hull_left_bot_3
+    402026: ship_hull_left_bot_3 1
+    402028: ship_hull_left_bot_4
+    402030: ship_hull_left_bot_4 1
+    402032: ship_hull_left_bot_5
+    402034: ship_hull_left_bot_5 1
+    402036: ship_hull_left_bot_6
+    402038: ship_hull_left_bot_6 1
+    402040: ship_hull_left_bot_7
+    402042: ship_hull_left_bot_7 1
+    402044: ship_hull_left_bot_8
+    402046: ship_hull_left_bot_8 1
+    402048: ship_hull_left_bot_9
+    402050: ship_hull_left_bot_9 1
+    402052: ship_hull_left_top2
+    402054: ship_hull_left_top2 1
+    402056: ship_hull_left_top_1
+    402058: ship_hull_left_top_1 1
+    402060: ship_hull_left_top_10
+    402062: ship_hull_left_top_10 1
+    402064: ship_hull_left_top_11
+    402066: ship_hull_left_top_11 1
+    402068: ship_hull_left_top_12
+    402070: ship_hull_left_top_12 1
+    402072: ship_hull_left_top_3
+    402074: ship_hull_left_top_3 1
+    402076: ship_hull_left_top_4
+    402078: ship_hull_left_top_4 1
+    402080: ship_hull_left_top_5
+    402082: ship_hull_left_top_5 1
+    402084: ship_hull_left_top_6
+    402086: ship_hull_left_top_6 1
+    402088: ship_hull_left_top_7
+    402090: ship_hull_left_top_7 1
+    402092: ship_hull_left_top_8
+    402094: ship_hull_left_top_8 1
+    402096: ship_hull_left_top_9
+    402098: ship_hull_left_top_9 1
+    402100: shipgroup
+    402102: transform1
+    402104: transform10
+    402106: transform11
+    402108: transform12
+    402110: transform12 1
+    402112: transform13
+    402114: transform13 1
+    402116: transform2
+    402118: transform3
+    402120: transform4
+    402122: transform5
+    402124: transform6
+    402126: transform7
+    402128: transform8
+    402130: transform9
+    402132: wedge_middle
+    402134: wedge_middle 1
+    402136: wedge_middle 10
+    402138: wedge_middle 11
+    402140: wedge_middle 12
+    402142: wedge_middle 13
+    402144: wedge_middle 14
+    402146: wedge_middle 15
+    402148: wedge_middle 16
+    402150: wedge_middle 17
+    402152: wedge_middle 18
+    402154: wedge_middle 19
+    402156: wedge_middle 2
+    402158: wedge_middle 20
+    402160: wedge_middle 21
+    402162: wedge_middle 22
+    402164: wedge_middle 23
+    402166: wedge_middle 24
+    402168: wedge_middle 3
+    402170: wedge_middle 4
+    402172: wedge_middle 5
+    402174: wedge_middle 6
+    402176: wedge_middle 7
+    402178: wedge_middle 8
+    402180: wedge_middle 9
+    2300000: barrel_LOD1
+    2300002: barrel_LOD1 1
+    2300004: barrel_LOD1 10
+    2300006: barrel_LOD1 11
+    2300008: barrel_LOD1 12
+    2300010: barrel_LOD1 13
+    2300012: barrel_LOD1 14
+    2300014: barrel_LOD1 15
+    2300016: barrel_LOD1 16
+    2300018: barrel_LOD1 17
+    2300020: barrel_LOD1 18
+    2300022: barrel_LOD1 19
+    2300024: barrel_LOD1 2
+    2300026: barrel_LOD1 20
+    2300028: barrel_LOD1 21
+    2300030: barrel_LOD1 22
+    2300032: barrel_LOD1 23
+    2300034: barrel_LOD1 24
+    2300036: barrel_LOD1 3
+    2300038: barrel_LOD1 4
+    2300040: barrel_LOD1 5
+    2300042: barrel_LOD1 6
+    2300044: barrel_LOD1 7
+    2300046: barrel_LOD1 8
+    2300048: barrel_LOD1 9
+    2300050: bighatch_bottom
+    2300052: bighatch_bottom 1
+    2300054: bighatch_frame
+    2300056: bighatch_frame 1
+    2300058: bighatch_top
+    2300060: bighatch_top 1
+    2300062: cannonhatch_LOD0
+    2300064: cannonhatch_LOD0 1
+    2300066: cannonhatch_LOD0 10
+    2300068: cannonhatch_LOD0 11
+    2300070: cannonhatch_LOD0 12
+    2300072: cannonhatch_LOD0 13
+    2300074: cannonhatch_LOD0 14
+    2300076: cannonhatch_LOD0 15
+    2300078: cannonhatch_LOD0 16
+    2300080: cannonhatch_LOD0 17
+    2300082: cannonhatch_LOD0 18
+    2300084: cannonhatch_LOD0 19
+    2300086: cannonhatch_LOD0 2
+    2300088: cannonhatch_LOD0 20
+    2300090: cannonhatch_LOD0 21
+    2300092: cannonhatch_LOD0 22
+    2300094: cannonhatch_LOD0 23
+    2300096: cannonhatch_LOD0 24
+    2300098: cannonhatch_LOD0 25
+    2300100: cannonhatch_LOD0 26
+    2300102: cannonhatch_LOD0 27
+    2300104: cannonhatch_LOD0 28
+    2300106: cannonhatch_LOD0 29
+    2300108: cannonhatch_LOD0 3
+    2300110: cannonhatch_LOD0 30
+    2300112: cannonhatch_LOD0 31
+    2300114: cannonhatch_LOD0 32
+    2300116: cannonhatch_LOD0 33
+    2300118: cannonhatch_LOD0 34
+    2300120: cannonhatch_LOD0 35
+    2300122: cannonhatch_LOD0 36
+    2300124: cannonhatch_LOD0 37
+    2300126: cannonhatch_LOD0 38
+    2300128: cannonhatch_LOD0 39
+    2300130: cannonhatch_LOD0 4
+    2300132: cannonhatch_LOD0 40
+    2300134: cannonhatch_LOD0 41
+    2300136: cannonhatch_LOD0 42
+    2300138: cannonhatch_LOD0 43
+    2300140: cannonhatch_LOD0 5
+    2300142: cannonhatch_LOD0 6
+    2300144: cannonhatch_LOD0 7
+    2300146: cannonhatch_LOD0 8
+    2300148: cannonhatch_LOD0 9
+    2300150: cannonhatch_LOD1
+    2300152: cannonhatch_LOD1 1
+    2300154: cannonhatch_LOD1 10
+    2300156: cannonhatch_LOD1 11
+    2300158: cannonhatch_LOD1 12
+    2300160: cannonhatch_LOD1 13
+    2300162: cannonhatch_LOD1 14
+    2300164: cannonhatch_LOD1 15
+    2300166: cannonhatch_LOD1 16
+    2300168: cannonhatch_LOD1 17
+    2300170: cannonhatch_LOD1 18
+    2300172: cannonhatch_LOD1 19
+    2300174: cannonhatch_LOD1 2
+    2300176: cannonhatch_LOD1 20
+    2300178: cannonhatch_LOD1 21
+    2300180: cannonhatch_LOD1 22
+    2300182: cannonhatch_LOD1 23
+    2300184: cannonhatch_LOD1 24
+    2300186: cannonhatch_LOD1 25
+    2300188: cannonhatch_LOD1 26
+    2300190: cannonhatch_LOD1 27
+    2300192: cannonhatch_LOD1 28
+    2300194: cannonhatch_LOD1 29
+    2300196: cannonhatch_LOD1 3
+    2300198: cannonhatch_LOD1 30
+    2300200: cannonhatch_LOD1 31
+    2300202: cannonhatch_LOD1 32
+    2300204: cannonhatch_LOD1 33
+    2300206: cannonhatch_LOD1 34
+    2300208: cannonhatch_LOD1 35
+    2300210: cannonhatch_LOD1 36
+    2300212: cannonhatch_LOD1 37
+    2300214: cannonhatch_LOD1 38
+    2300216: cannonhatch_LOD1 39
+    2300218: cannonhatch_LOD1 4
+    2300220: cannonhatch_LOD1 40
+    2300222: cannonhatch_LOD1 41
+    2300224: cannonhatch_LOD1 42
+    2300226: cannonhatch_LOD1 43
+    2300228: cannonhatch_LOD1 5
+    2300230: cannonhatch_LOD1 6
+    2300232: cannonhatch_LOD1 7
+    2300234: cannonhatch_LOD1 8
+    2300236: cannonhatch_LOD1 9
+    2300238: cannonhatch_LOD2
+    2300240: cannonhatch_LOD2 1
+    2300242: centerrib
+    2300244: chain_left_LOD0
+    2300246: chain_left_LOD0 1
+    2300248: chain_left_LOD0 10
+    2300250: chain_left_LOD0 11
+    2300252: chain_left_LOD0 12
+    2300254: chain_left_LOD0 13
+    2300256: chain_left_LOD0 14
+    2300258: chain_left_LOD0 15
+    2300260: chain_left_LOD0 16
+    2300262: chain_left_LOD0 17
+    2300264: chain_left_LOD0 18
+    2300266: chain_left_LOD0 19
+    2300268: chain_left_LOD0 2
+    2300270: chain_left_LOD0 20
+    2300272: chain_left_LOD0 21
+    2300274: chain_left_LOD0 22
+    2300276: chain_left_LOD0 23
+    2300278: chain_left_LOD0 24
+    2300280: chain_left_LOD0 3
+    2300282: chain_left_LOD0 4
+    2300284: chain_left_LOD0 5
+    2300286: chain_left_LOD0 6
+    2300288: chain_left_LOD0 7
+    2300290: chain_left_LOD0 8
+    2300292: chain_left_LOD0 9
+    2300294: chain_left_LOD1
+    2300296: chain_left_LOD1 1
+    2300298: chain_left_LOD1 10
+    2300300: chain_left_LOD1 11
+    2300302: chain_left_LOD1 12
+    2300304: chain_left_LOD1 13
+    2300306: chain_left_LOD1 14
+    2300308: chain_left_LOD1 15
+    2300310: chain_left_LOD1 16
+    2300312: chain_left_LOD1 17
+    2300314: chain_left_LOD1 18
+    2300316: chain_left_LOD1 19
+    2300318: chain_left_LOD1 2
+    2300320: chain_left_LOD1 20
+    2300322: chain_left_LOD1 21
+    2300324: chain_left_LOD1 22
+    2300326: chain_left_LOD1 23
+    2300328: chain_left_LOD1 24
+    2300330: chain_left_LOD1 3
+    2300332: chain_left_LOD1 4
+    2300334: chain_left_LOD1 5
+    2300336: chain_left_LOD1 6
+    2300338: chain_left_LOD1 7
+    2300340: chain_left_LOD1 8
+    2300342: chain_left_LOD1 9
+    2300344: chainstart_left
+    2300346: chainstart_left 1
+    2300348: chainstart_left 10
+    2300350: chainstart_left 11
+    2300352: chainstart_left 12
+    2300354: chainstart_left 13
+    2300356: chainstart_left 14
+    2300358: chainstart_left 15
+    2300360: chainstart_left 16
+    2300362: chainstart_left 17
+    2300364: chainstart_left 18
+    2300366: chainstart_left 19
+    2300368: chainstart_left 2
+    2300370: chainstart_left 20
+    2300372: chainstart_left 21
+    2300374: chainstart_left 22
+    2300376: chainstart_left 23
+    2300378: chainstart_left 24
+    2300380: chainstart_left 3
+    2300382: chainstart_left 4
+    2300384: chainstart_left 5
+    2300386: chainstart_left 6
+    2300388: chainstart_left 7
+    2300390: chainstart_left 8
+    2300392: chainstart_left 9
+    2300394: chainstart_right
+    2300396: chainstart_right 1
+    2300398: chainstart_right 10
+    2300400: chainstart_right 11
+    2300402: chainstart_right 12
+    2300404: chainstart_right 13
+    2300406: chainstart_right 14
+    2300408: chainstart_right 15
+    2300410: chainstart_right 16
+    2300412: chainstart_right 17
+    2300414: chainstart_right 18
+    2300416: chainstart_right 19
+    2300418: chainstart_right 2
+    2300420: chainstart_right 20
+    2300422: chainstart_right 21
+    2300424: chainstart_right 22
+    2300426: chainstart_right 23
+    2300428: chainstart_right 24
+    2300430: chainstart_right 3
+    2300432: chainstart_right 4
+    2300434: chainstart_right 5
+    2300436: chainstart_right 6
+    2300438: chainstart_right 7
+    2300440: chainstart_right 8
+    2300442: chainstart_right 9
+    2300444: crowsnest_fencepost
+    2300446: crowsnest_floor
+    2300448: crowsnest_guardrail
+    2300450: frame_LOD1
+    2300452: frame_LOD1 1
+    2300454: frame_LOD1 10
+    2300456: frame_LOD1 11
+    2300458: frame_LOD1 12
+    2300460: frame_LOD1 13
+    2300462: frame_LOD1 14
+    2300464: frame_LOD1 15
+    2300466: frame_LOD1 16
+    2300468: frame_LOD1 17
+    2300470: frame_LOD1 18
+    2300472: frame_LOD1 19
+    2300474: frame_LOD1 2
+    2300476: frame_LOD1 20
+    2300478: frame_LOD1 21
+    2300480: frame_LOD1 22
+    2300482: frame_LOD1 23
+    2300484: frame_LOD1 24
+    2300486: frame_LOD1 3
+    2300488: frame_LOD1 4
+    2300490: frame_LOD1 5
+    2300492: frame_LOD1 6
+    2300494: frame_LOD1 7
+    2300496: frame_LOD1 8
+    2300498: frame_LOD1 9
+    2300500: frontaxis
+    2300502: frontaxis 1
+    2300504: frontaxis 10
+    2300506: frontaxis 11
+    2300508: frontaxis 12
+    2300510: frontaxis 13
+    2300512: frontaxis 14
+    2300514: frontaxis 15
+    2300516: frontaxis 16
+    2300518: frontaxis 17
+    2300520: frontaxis 18
+    2300522: frontaxis 19
+    2300524: frontaxis 2
+    2300526: frontaxis 20
+    2300528: frontaxis 21
+    2300530: frontaxis 22
+    2300532: frontaxis 23
+    2300534: frontaxis 24
+    2300536: frontaxis 3
+    2300538: frontaxis 4
+    2300540: frontaxis 5
+    2300542: frontaxis 6
+    2300544: frontaxis 7
+    2300546: frontaxis 8
+    2300548: frontaxis 9
+    2300550: frontsail_platform_1
+    2300552: frontsail_platform_2
+    2300554: frontsail_platform_2 1
+    2300556: frontsail_platform_3
+    2300558: frontsail_side_1
+    2300560: frontsail_side_2
+    2300562: frontsail_side_3
+    2300564: frontwheel_LOD1
+    2300566: frontwheel_LOD1 1
+    2300568: frontwheel_LOD1 10
+    2300570: frontwheel_LOD1 11
+    2300572: frontwheel_LOD1 12
+    2300574: frontwheel_LOD1 13
+    2300576: frontwheel_LOD1 14
+    2300578: frontwheel_LOD1 15
+    2300580: frontwheel_LOD1 16
+    2300582: frontwheel_LOD1 17
+    2300584: frontwheel_LOD1 18
+    2300586: frontwheel_LOD1 19
+    2300588: frontwheel_LOD1 2
+    2300590: frontwheel_LOD1 20
+    2300592: frontwheel_LOD1 21
+    2300594: frontwheel_LOD1 22
+    2300596: frontwheel_LOD1 23
+    2300598: frontwheel_LOD1 24
+    2300600: frontwheel_LOD1 3
+    2300602: frontwheel_LOD1 4
+    2300604: frontwheel_LOD1 5
+    2300606: frontwheel_LOD1 6
+    2300608: frontwheel_LOD1 7
+    2300610: frontwheel_LOD1 8
+    2300612: frontwheel_LOD1 9
+    2300614: gunaxle_LOD1
+    2300616: gunaxle_LOD1 1
+    2300618: gunaxle_LOD1 10
+    2300620: gunaxle_LOD1 11
+    2300622: gunaxle_LOD1 12
+    2300624: gunaxle_LOD1 13
+    2300626: gunaxle_LOD1 14
+    2300628: gunaxle_LOD1 15
+    2300630: gunaxle_LOD1 16
+    2300632: gunaxle_LOD1 17
+    2300634: gunaxle_LOD1 18
+    2300636: gunaxle_LOD1 19
+    2300638: gunaxle_LOD1 2
+    2300640: gunaxle_LOD1 20
+    2300642: gunaxle_LOD1 21
+    2300644: gunaxle_LOD1 22
+    2300646: gunaxle_LOD1 23
+    2300648: gunaxle_LOD1 24
+    2300650: gunaxle_LOD1 3
+    2300652: gunaxle_LOD1 4
+    2300654: gunaxle_LOD1 5
+    2300656: gunaxle_LOD1 6
+    2300658: gunaxle_LOD1 7
+    2300660: gunaxle_LOD1 8
+    2300662: gunaxle_LOD1 9
+    2300664: ladder_beam
+    2300666: midframe_middle
+    2300668: midframe_middle 1
+    2300670: midframe_middle 10
+    2300672: midframe_middle 11
+    2300674: midframe_middle 12
+    2300676: midframe_middle 13
+    2300678: midframe_middle 14
+    2300680: midframe_middle 15
+    2300682: midframe_middle 16
+    2300684: midframe_middle 17
+    2300686: midframe_middle 18
+    2300688: midframe_middle 19
+    2300690: midframe_middle 2
+    2300692: midframe_middle 20
+    2300694: midframe_middle 21
+    2300696: midframe_middle 22
+    2300698: midframe_middle 23
+    2300700: midframe_middle 24
+    2300702: midframe_middle 3
+    2300704: midframe_middle 4
+    2300706: midframe_middle 5
+    2300708: midframe_middle 6
+    2300710: midframe_middle 7
+    2300712: midframe_middle 8
+    2300714: midframe_middle 9
+    2300716: midsail_platform_1
+    2300718: midsail_platform_2
+    2300720: midsail_side_1
+    2300722: midsail_side_2
+    2300724: midsail_side_3
+    2300726: midsail_side_4
+    2300728: pCube100
+    2300730: pCube100 1
+    2300732: pCube101
+    2300734: pCube101 1
+    2300736: pCube102
+    2300738: pCube102 1
+    2300740: pCube103
+    2300742: pCube103 1
+    2300744: pCube104
+    2300746: pCube104 1
+    2300748: pCube105
+    2300750: pCube105 1
+    2300752: pCube106
+    2300754: pCube106 1
+    2300756: pCube107
+    2300758: pCube107 1
+    2300760: pCube108
+    2300762: pCube108 1
+    2300764: pCube109
+    2300766: pCube109 1
+    2300768: pCube110
+    2300770: pCube110 1
+    2300772: pCube111
+    2300774: pCube111 1
+    2300776: pCube112
+    2300778: pCube112 1
+    2300780: pCube113
+    2300782: pCube113 1
+    2300784: pCube114
+    2300786: pCube114 1
+    2300788: pCube115
+    2300790: pCube115 1
+    2300792: pCube116
+    2300794: pCube116 1
+    2300796: pCube117
+    2300798: pCube117 1
+    2300800: pCube54
+    2300802: pCube55
+    2300804: pCube56
+    2300806: pCube57
+    2300808: pCube62
+    2300810: pCube62 1
+    2300812: pCube63
+    2300814: pCube63 1
+    2300816: pCube64
+    2300818: pCube64 1
+    2300820: pCube65
+    2300822: pCube65 1
+    2300824: pCube66
+    2300826: pCube66 1
+    2300828: pCube67
+    2300830: pCube67 1
+    2300832: pCube68
+    2300834: pCube68 1
+    2300836: pCube69
+    2300838: pCube69 1
+    2300840: pCube70
+    2300842: pCube70 1
+    2300844: pCube72
+    2300846: pCube72 1
+    2300848: pCube73
+    2300850: pCube73 1
+    2300852: pCube75
+    2300854: pCube75 1
+    2300856: pCube76
+    2300858: pCube76 1
+    2300860: pCube77
+    2300862: pCube77 1
+    2300864: pCube78
+    2300866: pCube78 1
+    2300868: pCube79
+    2300870: pCube79 1
+    2300872: pCube80
+    2300874: pCube80 1
+    2300876: pCube82
+    2300878: pCube82 1
+    2300880: pCube83
+    2300882: pCube83 1
+    2300884: pCube84
+    2300886: pCube84 1
+    2300888: pCube85
+    2300890: pCube85 1
+    2300892: pCube86
+    2300894: pCube86 1
+    2300896: pCube88
+    2300898: pCube88 1
+    2300900: pCube89
+    2300902: pCube89 1
+    2300904: pCube90
+    2300906: pCube90 1
+    2300908: pCube91
+    2300910: pCube91 1
+    2300912: pCube92
+    2300914: pCube92 1
+    2300916: pCube93
+    2300918: pCube93 1
+    2300920: pCube94
+    2300922: pCube94 1
+    2300924: pCube95
+    2300926: pCube95 1
+    2300928: pCube96
+    2300930: pCube96 1
+    2300932: pCube97
+    2300934: pCube97 1
+    2300936: pCube98
+    2300938: pCube98 1
+    2300940: pCube99
+    2300942: pCube99 1
+    2300944: polySurface1
+    2300946: polySurface1 1
+    2300948: polySurface101
+    2300950: polySurface103
+    2300952: polySurface105
+    2300954: polySurface107
+    2300956: polySurface108
+    2300958: polySurface109
+    2300960: polySurface109 1
+    2300962: polySurface112
+    2300964: polySurface112 1
+    2300966: polySurface114
+    2300968: polySurface114 1
+    2300970: polySurface116
+    2300972: polySurface116 1
+    2300974: polySurface117
+    2300976: polySurface117 1
+    2300978: polySurface119
+    2300980: polySurface119 1
+    2300982: polySurface12
+    2300984: polySurface12 1
+    2300986: polySurface121
+    2300988: polySurface121 1
+    2300990: polySurface123
+    2300992: polySurface123 1
+    2300994: polySurface125
+    2300996: polySurface125 1
+    2300998: polySurface127
+    2301000: polySurface127 1
+    2301002: polySurface129
+    2301004: polySurface129 1
+    2301006: polySurface14
+    2301008: polySurface14 1
+    2301010: polySurface16
+    2301012: polySurface16 1
+    2301014: polySurface160
+    2301016: polySurface160 1
+    2301018: polySurface161
+    2301020: polySurface161 1
+    2301022: polySurface163
+    2301024: polySurface163 1
+    2301026: polySurface165
+    2301028: polySurface165 1
+    2301030: polySurface166
+    2301032: polySurface166 1
+    2301034: polySurface167
+    2301036: polySurface167 1
+    2301038: polySurface168
+    2301040: polySurface168 1
+    2301042: polySurface169
+    2301044: polySurface169 1
+    2301046: polySurface170
+    2301048: polySurface170 1
+    2301050: polySurface171
+    2301052: polySurface171 1
+    2301054: polySurface172
+    2301056: polySurface172 1
+    2301058: polySurface173
+    2301060: polySurface173 1
+    2301062: polySurface18
+    2301064: polySurface18 1
+    2301066: polySurface182
+    2301068: polySurface182 1
+    2301070: polySurface183
+    2301072: polySurface183 1
+    2301074: polySurface184
+    2301076: polySurface184 1
+    2301078: polySurface185
+    2301080: polySurface185 1
+    2301082: polySurface186
+    2301084: polySurface186 1
+    2301086: polySurface188
+    2301088: polySurface188 1
+    2301090: polySurface189
+    2301092: polySurface189 1
+    2301094: polySurface194
+    2301096: polySurface196
+    2301098: polySurface197
+    2301100: polySurface198
+    2301102: polySurface20
+    2301104: polySurface20 1
+    2301106: polySurface200
+    2301108: polySurface202
+    2301110: polySurface203
+    2301112: polySurface204
+    2301114: polySurface206
+    2301116: polySurface208
+    2301118: polySurface209
+    2301120: polySurface210
+    2301122: polySurface211
+    2301124: polySurface212
+    2301126: polySurface213
+    2301128: polySurface214
+    2301130: polySurface215
+    2301132: polySurface215 1
+    2301134: polySurface216
+    2301136: polySurface216 1
+    2301138: polySurface217
+    2301140: polySurface217 1
+    2301142: polySurface218
+    2301144: polySurface218 1
+    2301146: polySurface219
+    2301148: polySurface219 1
+    2301150: polySurface22
+    2301152: polySurface22 1
+    2301154: polySurface220
+    2301156: polySurface220 1
+    2301158: polySurface221
+    2301160: polySurface221 1
+    2301162: polySurface222
+    2301164: polySurface222 1
+    2301166: polySurface223
+    2301168: polySurface223 1
+    2301170: polySurface228
+    2301172: polySurface228 1
+    2301174: polySurface229
+    2301176: polySurface229 1
+    2301178: polySurface232
+    2301180: polySurface232 1
+    2301182: polySurface233
+    2301184: polySurface233 1
+    2301186: polySurface234
+    2301188: polySurface234 1
+    2301190: polySurface235
+    2301192: polySurface235 1
+    2301194: polySurface239
+    2301196: polySurface239 1
+    2301198: polySurface24
+    2301200: polySurface24 1
+    2301202: polySurface242
+    2301204: polySurface242 1
+    2301206: polySurface245
+    2301208: polySurface245 1
+    2301210: polySurface246
+    2301212: polySurface246 1
+    2301214: polySurface247
+    2301216: polySurface247 1
+    2301218: polySurface248
+    2301220: polySurface248 1
+    2301222: polySurface249
+    2301224: polySurface249 1
+    2301226: polySurface25
+    2301228: polySurface25 1
+    2301230: polySurface250
+    2301232: polySurface250 1
+    2301234: polySurface251
+    2301236: polySurface251 1
+    2301238: polySurface252
+    2301240: polySurface252 1
+    2301242: polySurface253
+    2301244: polySurface253 1
+    2301246: polySurface254
+    2301248: polySurface254 1
+    2301250: polySurface255
+    2301252: polySurface255 1
+    2301254: polySurface256
+    2301256: polySurface256 1
+    2301258: polySurface257
+    2301260: polySurface257 1
+    2301262: polySurface258
+    2301264: polySurface258 1
+    2301266: polySurface259
+    2301268: polySurface259 1
+    2301270: polySurface26
+    2301272: polySurface26 1
+    2301274: polySurface260
+    2301276: polySurface260 1
+    2301278: polySurface261
+    2301280: polySurface261 1
+    2301282: polySurface262
+    2301284: polySurface262 1
+    2301286: polySurface263
+    2301288: polySurface263 1
+    2301290: polySurface264
+    2301292: polySurface264 1
+    2301294: polySurface265
+    2301296: polySurface265 1
+    2301298: polySurface266
+    2301300: polySurface266 1
+    2301302: polySurface267
+    2301304: polySurface267 1
+    2301306: polySurface268
+    2301308: polySurface268 1
+    2301310: polySurface269
+    2301312: polySurface269 1
+    2301314: polySurface27
+    2301316: polySurface27 1
+    2301318: polySurface270
+    2301320: polySurface270 1
+    2301322: polySurface271
+    2301324: polySurface271 1
+    2301326: polySurface272
+    2301328: polySurface272 1
+    2301330: polySurface273
+    2301332: polySurface273 1
+    2301334: polySurface274
+    2301336: polySurface274 1
+    2301338: polySurface275
+    2301340: polySurface275 1
+    2301342: polySurface276
+    2301344: polySurface276 1
+    2301346: polySurface277
+    2301348: polySurface277 1
+    2301350: polySurface278
+    2301352: polySurface278 1
+    2301354: polySurface279
+    2301356: polySurface279 1
+    2301358: polySurface280
+    2301360: polySurface280 1
+    2301362: polySurface281
+    2301364: polySurface281 1
+    2301366: polySurface282
+    2301368: polySurface282 1
+    2301370: polySurface283
+    2301372: polySurface283 1
+    2301374: polySurface284
+    2301376: polySurface284 1
+    2301378: polySurface285
+    2301380: polySurface285 1
+    2301382: polySurface286
+    2301384: polySurface286 1
+    2301386: polySurface287
+    2301388: polySurface287 1
+    2301390: polySurface288
+    2301392: polySurface288 1
+    2301394: polySurface289
+    2301396: polySurface289 1
+    2301398: polySurface29
+    2301400: polySurface29 1
+    2301402: polySurface290
+    2301404: polySurface290 1
+    2301406: polySurface291
+    2301408: polySurface291 1
+    2301410: polySurface292
+    2301412: polySurface292 1
+    2301414: polySurface293
+    2301416: polySurface293 1
+    2301418: polySurface294
+    2301420: polySurface294 1
+    2301422: polySurface3
+    2301424: polySurface3 1
+    2301426: polySurface32
+    2301428: polySurface32 1
+    2301430: polySurface34
+    2301432: polySurface34 1
+    2301434: polySurface35
+    2301436: polySurface35 1
+    2301438: polySurface36
+    2301440: polySurface36 1
+    2301442: polySurface38
+    2301444: polySurface38 1
+    2301446: polySurface40
+    2301448: polySurface40 1
+    2301450: polySurface42
+    2301452: polySurface42 1
+    2301454: polySurface44
+    2301456: polySurface44 1
+    2301458: polySurface46
+    2301460: polySurface46 1
+    2301462: polySurface48
+    2301464: polySurface48 1
+    2301466: polySurface52
+    2301468: polySurface52 1
+    2301470: polySurface54
+    2301472: polySurface54 1
+    2301474: polySurface56
+    2301476: polySurface56 1
+    2301478: polySurface58
+    2301480: polySurface58 1
+    2301482: polySurface59
+    2301484: polySurface59 1
+    2301486: polySurface6
+    2301488: polySurface6 1
+    2301490: polySurface60
+    2301492: polySurface60 1
+    2301494: polySurface61
+    2301496: polySurface61 1
+    2301498: polySurface64
+    2301500: polySurface64 1
+    2301502: polySurface66
+    2301504: polySurface66 1
+    2301506: polySurface68
+    2301508: polySurface68 1
+    2301510: polySurface7
+    2301512: polySurface7 1
+    2301514: polySurface70
+    2301516: polySurface70 1
+    2301518: polySurface72
+    2301520: polySurface72 1
+    2301522: polySurface74
+    2301524: polySurface74 1
+    2301526: polySurface76
+    2301528: polySurface76 1
+    2301530: polySurface77
+    2301532: polySurface77 1
+    2301534: polySurface79
+    2301536: polySurface79 1
+    2301538: polySurface81
+    2301540: polySurface81 1
+    2301542: polySurface82
+    2301544: polySurface82 1
+    2301546: polySurface83
+    2301548: polySurface85
+    2301550: polySurface87
+    2301552: polySurface89
+    2301554: polySurface9
+    2301556: polySurface9 1
+    2301558: polySurface91
+    2301560: polySurface93
+    2301562: polySurface95
+    2301564: polySurface97
+    2301566: polySurface99
+    2301568: pPlane1
+    2301570: pPlane2
+    2301572: pPlane3
+    2301574: pPlane4
+    2301576: pPlane5
+    2301578: pPlane6
+    2301580: pPlane7
+    2301582: pPlane8
+    2301584: rearaxis
+    2301586: rearaxis 1
+    2301588: rearaxis 10
+    2301590: rearaxis 11
+    2301592: rearaxis 12
+    2301594: rearaxis 13
+    2301596: rearaxis 14
+    2301598: rearaxis 15
+    2301600: rearaxis 16
+    2301602: rearaxis 17
+    2301604: rearaxis 18
+    2301606: rearaxis 19
+    2301608: rearaxis 2
+    2301610: rearaxis 20
+    2301612: rearaxis 21
+    2301614: rearaxis 22
+    2301616: rearaxis 23
+    2301618: rearaxis 24
+    2301620: rearaxis 3
+    2301622: rearaxis 4
+    2301624: rearaxis 5
+    2301626: rearaxis 6
+    2301628: rearaxis 7
+    2301630: rearaxis 8
+    2301632: rearaxis 9
+    2301634: rearcabin_left
+    2301636: rearcabin_left 1
+    2301638: rearsail_platform_1
+    2301640: rearsail_side_1
+    2301642: rearsail_side_2
+    2301644: rearwheel_LOD1
+    2301646: rearwheel_LOD1 1
+    2301648: rearwheel_LOD1 10
+    2301650: rearwheel_LOD1 11
+    2301652: rearwheel_LOD1 12
+    2301654: rearwheel_LOD1 13
+    2301656: rearwheel_LOD1 14
+    2301658: rearwheel_LOD1 15
+    2301660: rearwheel_LOD1 16
+    2301662: rearwheel_LOD1 17
+    2301664: rearwheel_LOD1 18
+    2301666: rearwheel_LOD1 19
+    2301668: rearwheel_LOD1 2
+    2301670: rearwheel_LOD1 20
+    2301672: rearwheel_LOD1 21
+    2301674: rearwheel_LOD1 22
+    2301676: rearwheel_LOD1 23
+    2301678: rearwheel_LOD1 24
+    2301680: rearwheel_LOD1 3
+    2301682: rearwheel_LOD1 4
+    2301684: rearwheel_LOD1 5
+    2301686: rearwheel_LOD1 6
+    2301688: rearwheel_LOD1 7
+    2301690: rearwheel_LOD1 8
+    2301692: rearwheel_LOD1 9
+    2301694: rudder
+    2301696: ship_hull_left_bot_1
+    2301698: ship_hull_left_bot_1 1
+    2301700: ship_hull_left_bot_10
+    2301702: ship_hull_left_bot_10 1
+    2301704: ship_hull_left_bot_11
+    2301706: ship_hull_left_bot_11 1
+    2301708: ship_hull_left_bot_12
+    2301710: ship_hull_left_bot_12 1
+    2301712: ship_hull_left_bot_2
+    2301714: ship_hull_left_bot_2 1
+    2301716: ship_hull_left_bot_3
+    2301718: ship_hull_left_bot_3 1
+    2301720: ship_hull_left_bot_4
+    2301722: ship_hull_left_bot_4 1
+    2301724: ship_hull_left_bot_5
+    2301726: ship_hull_left_bot_5 1
+    2301728: ship_hull_left_bot_6
+    2301730: ship_hull_left_bot_6 1
+    2301732: ship_hull_left_bot_7
+    2301734: ship_hull_left_bot_7 1
+    2301736: ship_hull_left_bot_8
+    2301738: ship_hull_left_bot_8 1
+    2301740: ship_hull_left_bot_9
+    2301742: ship_hull_left_bot_9 1
+    2301744: ship_hull_left_top2
+    2301746: ship_hull_left_top2 1
+    2301748: ship_hull_left_top_1
+    2301750: ship_hull_left_top_1 1
+    2301752: ship_hull_left_top_10
+    2301754: ship_hull_left_top_10 1
+    2301756: ship_hull_left_top_11
+    2301758: ship_hull_left_top_11 1
+    2301760: ship_hull_left_top_12
+    2301762: ship_hull_left_top_12 1
+    2301764: ship_hull_left_top_3
+    2301766: ship_hull_left_top_3 1
+    2301768: ship_hull_left_top_4
+    2301770: ship_hull_left_top_4 1
+    2301772: ship_hull_left_top_5
+    2301774: ship_hull_left_top_5 1
+    2301776: ship_hull_left_top_6
+    2301778: ship_hull_left_top_6 1
+    2301780: ship_hull_left_top_7
+    2301782: ship_hull_left_top_7 1
+    2301784: ship_hull_left_top_8
+    2301786: ship_hull_left_top_8 1
+    2301788: ship_hull_left_top_9
+    2301790: ship_hull_left_top_9 1
+    2301792: wedge_middle
+    2301794: wedge_middle 1
+    2301796: wedge_middle 10
+    2301798: wedge_middle 11
+    2301800: wedge_middle 12
+    2301802: wedge_middle 13
+    2301804: wedge_middle 14
+    2301806: wedge_middle 15
+    2301808: wedge_middle 16
+    2301810: wedge_middle 17
+    2301812: wedge_middle 18
+    2301814: wedge_middle 19
+    2301816: wedge_middle 2
+    2301818: wedge_middle 20
+    2301820: wedge_middle 21
+    2301822: wedge_middle 22
+    2301824: wedge_middle 23
+    2301826: wedge_middle 24
+    2301828: wedge_middle 3
+    2301830: wedge_middle 4
+    2301832: wedge_middle 5
+    2301834: wedge_middle 6
+    2301836: wedge_middle 7
+    2301838: wedge_middle 8
+    2301840: wedge_middle 9
+    3300000: barrel_LOD1
+    3300002: barrel_LOD1 1
+    3300004: barrel_LOD1 10
+    3300006: barrel_LOD1 11
+    3300008: barrel_LOD1 12
+    3300010: barrel_LOD1 13
+    3300012: barrel_LOD1 14
+    3300014: barrel_LOD1 15
+    3300016: barrel_LOD1 16
+    3300018: barrel_LOD1 17
+    3300020: barrel_LOD1 18
+    3300022: barrel_LOD1 19
+    3300024: barrel_LOD1 2
+    3300026: barrel_LOD1 20
+    3300028: barrel_LOD1 21
+    3300030: barrel_LOD1 22
+    3300032: barrel_LOD1 23
+    3300034: barrel_LOD1 24
+    3300036: barrel_LOD1 3
+    3300038: barrel_LOD1 4
+    3300040: barrel_LOD1 5
+    3300042: barrel_LOD1 6
+    3300044: barrel_LOD1 7
+    3300046: barrel_LOD1 8
+    3300048: barrel_LOD1 9
+    3300050: bighatch_bottom
+    3300052: bighatch_bottom 1
+    3300054: bighatch_frame
+    3300056: bighatch_frame 1
+    3300058: bighatch_top
+    3300060: bighatch_top 1
+    3300062: cannonhatch_LOD0
+    3300064: cannonhatch_LOD0 1
+    3300066: cannonhatch_LOD0 10
+    3300068: cannonhatch_LOD0 11
+    3300070: cannonhatch_LOD0 12
+    3300072: cannonhatch_LOD0 13
+    3300074: cannonhatch_LOD0 14
+    3300076: cannonhatch_LOD0 15
+    3300078: cannonhatch_LOD0 16
+    3300080: cannonhatch_LOD0 17
+    3300082: cannonhatch_LOD0 18
+    3300084: cannonhatch_LOD0 19
+    3300086: cannonhatch_LOD0 2
+    3300088: cannonhatch_LOD0 20
+    3300090: cannonhatch_LOD0 21
+    3300092: cannonhatch_LOD0 22
+    3300094: cannonhatch_LOD0 23
+    3300096: cannonhatch_LOD0 24
+    3300098: cannonhatch_LOD0 25
+    3300100: cannonhatch_LOD0 26
+    3300102: cannonhatch_LOD0 27
+    3300104: cannonhatch_LOD0 28
+    3300106: cannonhatch_LOD0 29
+    3300108: cannonhatch_LOD0 3
+    3300110: cannonhatch_LOD0 30
+    3300112: cannonhatch_LOD0 31
+    3300114: cannonhatch_LOD0 32
+    3300116: cannonhatch_LOD0 33
+    3300118: cannonhatch_LOD0 34
+    3300120: cannonhatch_LOD0 35
+    3300122: cannonhatch_LOD0 36
+    3300124: cannonhatch_LOD0 37
+    3300126: cannonhatch_LOD0 38
+    3300128: cannonhatch_LOD0 39
+    3300130: cannonhatch_LOD0 4
+    3300132: cannonhatch_LOD0 40
+    3300134: cannonhatch_LOD0 41
+    3300136: cannonhatch_LOD0 42
+    3300138: cannonhatch_LOD0 43
+    3300140: cannonhatch_LOD0 5
+    3300142: cannonhatch_LOD0 6
+    3300144: cannonhatch_LOD0 7
+    3300146: cannonhatch_LOD0 8
+    3300148: cannonhatch_LOD0 9
+    3300150: cannonhatch_LOD1
+    3300152: cannonhatch_LOD1 1
+    3300154: cannonhatch_LOD1 10
+    3300156: cannonhatch_LOD1 11
+    3300158: cannonhatch_LOD1 12
+    3300160: cannonhatch_LOD1 13
+    3300162: cannonhatch_LOD1 14
+    3300164: cannonhatch_LOD1 15
+    3300166: cannonhatch_LOD1 16
+    3300168: cannonhatch_LOD1 17
+    3300170: cannonhatch_LOD1 18
+    3300172: cannonhatch_LOD1 19
+    3300174: cannonhatch_LOD1 2
+    3300176: cannonhatch_LOD1 20
+    3300178: cannonhatch_LOD1 21
+    3300180: cannonhatch_LOD1 22
+    3300182: cannonhatch_LOD1 23
+    3300184: cannonhatch_LOD1 24
+    3300186: cannonhatch_LOD1 25
+    3300188: cannonhatch_LOD1 26
+    3300190: cannonhatch_LOD1 27
+    3300192: cannonhatch_LOD1 28
+    3300194: cannonhatch_LOD1 29
+    3300196: cannonhatch_LOD1 3
+    3300198: cannonhatch_LOD1 30
+    3300200: cannonhatch_LOD1 31
+    3300202: cannonhatch_LOD1 32
+    3300204: cannonhatch_LOD1 33
+    3300206: cannonhatch_LOD1 34
+    3300208: cannonhatch_LOD1 35
+    3300210: cannonhatch_LOD1 36
+    3300212: cannonhatch_LOD1 37
+    3300214: cannonhatch_LOD1 38
+    3300216: cannonhatch_LOD1 39
+    3300218: cannonhatch_LOD1 4
+    3300220: cannonhatch_LOD1 40
+    3300222: cannonhatch_LOD1 41
+    3300224: cannonhatch_LOD1 42
+    3300226: cannonhatch_LOD1 43
+    3300228: cannonhatch_LOD1 5
+    3300230: cannonhatch_LOD1 6
+    3300232: cannonhatch_LOD1 7
+    3300234: cannonhatch_LOD1 8
+    3300236: cannonhatch_LOD1 9
+    3300238: cannonhatch_LOD2
+    3300240: cannonhatch_LOD2 1
+    3300242: centerrib
+    3300244: chain_left_LOD0
+    3300246: chain_left_LOD0 1
+    3300248: chain_left_LOD0 10
+    3300250: chain_left_LOD0 11
+    3300252: chain_left_LOD0 12
+    3300254: chain_left_LOD0 13
+    3300256: chain_left_LOD0 14
+    3300258: chain_left_LOD0 15
+    3300260: chain_left_LOD0 16
+    3300262: chain_left_LOD0 17
+    3300264: chain_left_LOD0 18
+    3300266: chain_left_LOD0 19
+    3300268: chain_left_LOD0 2
+    3300270: chain_left_LOD0 20
+    3300272: chain_left_LOD0 21
+    3300274: chain_left_LOD0 22
+    3300276: chain_left_LOD0 23
+    3300278: chain_left_LOD0 24
+    3300280: chain_left_LOD0 3
+    3300282: chain_left_LOD0 4
+    3300284: chain_left_LOD0 5
+    3300286: chain_left_LOD0 6
+    3300288: chain_left_LOD0 7
+    3300290: chain_left_LOD0 8
+    3300292: chain_left_LOD0 9
+    3300294: chain_left_LOD1
+    3300296: chain_left_LOD1 1
+    3300298: chain_left_LOD1 10
+    3300300: chain_left_LOD1 11
+    3300302: chain_left_LOD1 12
+    3300304: chain_left_LOD1 13
+    3300306: chain_left_LOD1 14
+    3300308: chain_left_LOD1 15
+    3300310: chain_left_LOD1 16
+    3300312: chain_left_LOD1 17
+    3300314: chain_left_LOD1 18
+    3300316: chain_left_LOD1 19
+    3300318: chain_left_LOD1 2
+    3300320: chain_left_LOD1 20
+    3300322: chain_left_LOD1 21
+    3300324: chain_left_LOD1 22
+    3300326: chain_left_LOD1 23
+    3300328: chain_left_LOD1 24
+    3300330: chain_left_LOD1 3
+    3300332: chain_left_LOD1 4
+    3300334: chain_left_LOD1 5
+    3300336: chain_left_LOD1 6
+    3300338: chain_left_LOD1 7
+    3300340: chain_left_LOD1 8
+    3300342: chain_left_LOD1 9
+    3300344: chainstart_left
+    3300346: chainstart_left 1
+    3300348: chainstart_left 10
+    3300350: chainstart_left 11
+    3300352: chainstart_left 12
+    3300354: chainstart_left 13
+    3300356: chainstart_left 14
+    3300358: chainstart_left 15
+    3300360: chainstart_left 16
+    3300362: chainstart_left 17
+    3300364: chainstart_left 18
+    3300366: chainstart_left 19
+    3300368: chainstart_left 2
+    3300370: chainstart_left 20
+    3300372: chainstart_left 21
+    3300374: chainstart_left 22
+    3300376: chainstart_left 23
+    3300378: chainstart_left 24
+    3300380: chainstart_left 3
+    3300382: chainstart_left 4
+    3300384: chainstart_left 5
+    3300386: chainstart_left 6
+    3300388: chainstart_left 7
+    3300390: chainstart_left 8
+    3300392: chainstart_left 9
+    3300394: chainstart_right
+    3300396: chainstart_right 1
+    3300398: chainstart_right 10
+    3300400: chainstart_right 11
+    3300402: chainstart_right 12
+    3300404: chainstart_right 13
+    3300406: chainstart_right 14
+    3300408: chainstart_right 15
+    3300410: chainstart_right 16
+    3300412: chainstart_right 17
+    3300414: chainstart_right 18
+    3300416: chainstart_right 19
+    3300418: chainstart_right 2
+    3300420: chainstart_right 20
+    3300422: chainstart_right 21
+    3300424: chainstart_right 22
+    3300426: chainstart_right 23
+    3300428: chainstart_right 24
+    3300430: chainstart_right 3
+    3300432: chainstart_right 4
+    3300434: chainstart_right 5
+    3300436: chainstart_right 6
+    3300438: chainstart_right 7
+    3300440: chainstart_right 8
+    3300442: chainstart_right 9
+    3300444: crowsnest_fencepost
+    3300446: crowsnest_floor
+    3300448: crowsnest_guardrail
+    3300450: frame_LOD1
+    3300452: frame_LOD1 1
+    3300454: frame_LOD1 10
+    3300456: frame_LOD1 11
+    3300458: frame_LOD1 12
+    3300460: frame_LOD1 13
+    3300462: frame_LOD1 14
+    3300464: frame_LOD1 15
+    3300466: frame_LOD1 16
+    3300468: frame_LOD1 17
+    3300470: frame_LOD1 18
+    3300472: frame_LOD1 19
+    3300474: frame_LOD1 2
+    3300476: frame_LOD1 20
+    3300478: frame_LOD1 21
+    3300480: frame_LOD1 22
+    3300482: frame_LOD1 23
+    3300484: frame_LOD1 24
+    3300486: frame_LOD1 3
+    3300488: frame_LOD1 4
+    3300490: frame_LOD1 5
+    3300492: frame_LOD1 6
+    3300494: frame_LOD1 7
+    3300496: frame_LOD1 8
+    3300498: frame_LOD1 9
+    3300500: frontaxis
+    3300502: frontaxis 1
+    3300504: frontaxis 10
+    3300506: frontaxis 11
+    3300508: frontaxis 12
+    3300510: frontaxis 13
+    3300512: frontaxis 14
+    3300514: frontaxis 15
+    3300516: frontaxis 16
+    3300518: frontaxis 17
+    3300520: frontaxis 18
+    3300522: frontaxis 19
+    3300524: frontaxis 2
+    3300526: frontaxis 20
+    3300528: frontaxis 21
+    3300530: frontaxis 22
+    3300532: frontaxis 23
+    3300534: frontaxis 24
+    3300536: frontaxis 3
+    3300538: frontaxis 4
+    3300540: frontaxis 5
+    3300542: frontaxis 6
+    3300544: frontaxis 7
+    3300546: frontaxis 8
+    3300548: frontaxis 9
+    3300550: frontsail_platform_1
+    3300552: frontsail_platform_2
+    3300554: frontsail_platform_2 1
+    3300556: frontsail_platform_3
+    3300558: frontsail_side_1
+    3300560: frontsail_side_2
+    3300562: frontsail_side_3
+    3300564: frontwheel_LOD1
+    3300566: frontwheel_LOD1 1
+    3300568: frontwheel_LOD1 10
+    3300570: frontwheel_LOD1 11
+    3300572: frontwheel_LOD1 12
+    3300574: frontwheel_LOD1 13
+    3300576: frontwheel_LOD1 14
+    3300578: frontwheel_LOD1 15
+    3300580: frontwheel_LOD1 16
+    3300582: frontwheel_LOD1 17
+    3300584: frontwheel_LOD1 18
+    3300586: frontwheel_LOD1 19
+    3300588: frontwheel_LOD1 2
+    3300590: frontwheel_LOD1 20
+    3300592: frontwheel_LOD1 21
+    3300594: frontwheel_LOD1 22
+    3300596: frontwheel_LOD1 23
+    3300598: frontwheel_LOD1 24
+    3300600: frontwheel_LOD1 3
+    3300602: frontwheel_LOD1 4
+    3300604: frontwheel_LOD1 5
+    3300606: frontwheel_LOD1 6
+    3300608: frontwheel_LOD1 7
+    3300610: frontwheel_LOD1 8
+    3300612: frontwheel_LOD1 9
+    3300614: gunaxle_LOD1
+    3300616: gunaxle_LOD1 1
+    3300618: gunaxle_LOD1 10
+    3300620: gunaxle_LOD1 11
+    3300622: gunaxle_LOD1 12
+    3300624: gunaxle_LOD1 13
+    3300626: gunaxle_LOD1 14
+    3300628: gunaxle_LOD1 15
+    3300630: gunaxle_LOD1 16
+    3300632: gunaxle_LOD1 17
+    3300634: gunaxle_LOD1 18
+    3300636: gunaxle_LOD1 19
+    3300638: gunaxle_LOD1 2
+    3300640: gunaxle_LOD1 20
+    3300642: gunaxle_LOD1 21
+    3300644: gunaxle_LOD1 22
+    3300646: gunaxle_LOD1 23
+    3300648: gunaxle_LOD1 24
+    3300650: gunaxle_LOD1 3
+    3300652: gunaxle_LOD1 4
+    3300654: gunaxle_LOD1 5
+    3300656: gunaxle_LOD1 6
+    3300658: gunaxle_LOD1 7
+    3300660: gunaxle_LOD1 8
+    3300662: gunaxle_LOD1 9
+    3300664: ladder_beam
+    3300666: midframe_middle
+    3300668: midframe_middle 1
+    3300670: midframe_middle 10
+    3300672: midframe_middle 11
+    3300674: midframe_middle 12
+    3300676: midframe_middle 13
+    3300678: midframe_middle 14
+    3300680: midframe_middle 15
+    3300682: midframe_middle 16
+    3300684: midframe_middle 17
+    3300686: midframe_middle 18
+    3300688: midframe_middle 19
+    3300690: midframe_middle 2
+    3300692: midframe_middle 20
+    3300694: midframe_middle 21
+    3300696: midframe_middle 22
+    3300698: midframe_middle 23
+    3300700: midframe_middle 24
+    3300702: midframe_middle 3
+    3300704: midframe_middle 4
+    3300706: midframe_middle 5
+    3300708: midframe_middle 6
+    3300710: midframe_middle 7
+    3300712: midframe_middle 8
+    3300714: midframe_middle 9
+    3300716: midsail_platform_1
+    3300718: midsail_platform_2
+    3300720: midsail_side_1
+    3300722: midsail_side_2
+    3300724: midsail_side_3
+    3300726: midsail_side_4
+    3300728: pCube100
+    3300730: pCube100 1
+    3300732: pCube101
+    3300734: pCube101 1
+    3300736: pCube102
+    3300738: pCube102 1
+    3300740: pCube103
+    3300742: pCube103 1
+    3300744: pCube104
+    3300746: pCube104 1
+    3300748: pCube105
+    3300750: pCube105 1
+    3300752: pCube106
+    3300754: pCube106 1
+    3300756: pCube107
+    3300758: pCube107 1
+    3300760: pCube108
+    3300762: pCube108 1
+    3300764: pCube109
+    3300766: pCube109 1
+    3300768: pCube110
+    3300770: pCube110 1
+    3300772: pCube111
+    3300774: pCube111 1
+    3300776: pCube112
+    3300778: pCube112 1
+    3300780: pCube113
+    3300782: pCube113 1
+    3300784: pCube114
+    3300786: pCube114 1
+    3300788: pCube115
+    3300790: pCube115 1
+    3300792: pCube116
+    3300794: pCube116 1
+    3300796: pCube117
+    3300798: pCube117 1
+    3300800: pCube54
+    3300802: pCube55
+    3300804: pCube56
+    3300806: pCube57
+    3300808: pCube62
+    3300810: pCube62 1
+    3300812: pCube63
+    3300814: pCube63 1
+    3300816: pCube64
+    3300818: pCube64 1
+    3300820: pCube65
+    3300822: pCube65 1
+    3300824: pCube66
+    3300826: pCube66 1
+    3300828: pCube67
+    3300830: pCube67 1
+    3300832: pCube68
+    3300834: pCube68 1
+    3300836: pCube69
+    3300838: pCube69 1
+    3300840: pCube70
+    3300842: pCube70 1
+    3300844: pCube72
+    3300846: pCube72 1
+    3300848: pCube73
+    3300850: pCube73 1
+    3300852: pCube75
+    3300854: pCube75 1
+    3300856: pCube76
+    3300858: pCube76 1
+    3300860: pCube77
+    3300862: pCube77 1
+    3300864: pCube78
+    3300866: pCube78 1
+    3300868: pCube79
+    3300870: pCube79 1
+    3300872: pCube80
+    3300874: pCube80 1
+    3300876: pCube82
+    3300878: pCube82 1
+    3300880: pCube83
+    3300882: pCube83 1
+    3300884: pCube84
+    3300886: pCube84 1
+    3300888: pCube85
+    3300890: pCube85 1
+    3300892: pCube86
+    3300894: pCube86 1
+    3300896: pCube88
+    3300898: pCube88 1
+    3300900: pCube89
+    3300902: pCube89 1
+    3300904: pCube90
+    3300906: pCube90 1
+    3300908: pCube91
+    3300910: pCube91 1
+    3300912: pCube92
+    3300914: pCube92 1
+    3300916: pCube93
+    3300918: pCube93 1
+    3300920: pCube94
+    3300922: pCube94 1
+    3300924: pCube95
+    3300926: pCube95 1
+    3300928: pCube96
+    3300930: pCube96 1
+    3300932: pCube97
+    3300934: pCube97 1
+    3300936: pCube98
+    3300938: pCube98 1
+    3300940: pCube99
+    3300942: pCube99 1
+    3300944: polySurface1
+    3300946: polySurface1 1
+    3300948: polySurface101
+    3300950: polySurface103
+    3300952: polySurface105
+    3300954: polySurface107
+    3300956: polySurface108
+    3300958: polySurface109
+    3300960: polySurface109 1
+    3300962: polySurface112
+    3300964: polySurface112 1
+    3300966: polySurface114
+    3300968: polySurface114 1
+    3300970: polySurface116
+    3300972: polySurface116 1
+    3300974: polySurface117
+    3300976: polySurface117 1
+    3300978: polySurface119
+    3300980: polySurface119 1
+    3300982: polySurface12
+    3300984: polySurface12 1
+    3300986: polySurface121
+    3300988: polySurface121 1
+    3300990: polySurface123
+    3300992: polySurface123 1
+    3300994: polySurface125
+    3300996: polySurface125 1
+    3300998: polySurface127
+    3301000: polySurface127 1
+    3301002: polySurface129
+    3301004: polySurface129 1
+    3301006: polySurface14
+    3301008: polySurface14 1
+    3301010: polySurface16
+    3301012: polySurface16 1
+    3301014: polySurface160
+    3301016: polySurface160 1
+    3301018: polySurface161
+    3301020: polySurface161 1
+    3301022: polySurface163
+    3301024: polySurface163 1
+    3301026: polySurface165
+    3301028: polySurface165 1
+    3301030: polySurface166
+    3301032: polySurface166 1
+    3301034: polySurface167
+    3301036: polySurface167 1
+    3301038: polySurface168
+    3301040: polySurface168 1
+    3301042: polySurface169
+    3301044: polySurface169 1
+    3301046: polySurface170
+    3301048: polySurface170 1
+    3301050: polySurface171
+    3301052: polySurface171 1
+    3301054: polySurface172
+    3301056: polySurface172 1
+    3301058: polySurface173
+    3301060: polySurface173 1
+    3301062: polySurface18
+    3301064: polySurface18 1
+    3301066: polySurface182
+    3301068: polySurface182 1
+    3301070: polySurface183
+    3301072: polySurface183 1
+    3301074: polySurface184
+    3301076: polySurface184 1
+    3301078: polySurface185
+    3301080: polySurface185 1
+    3301082: polySurface186
+    3301084: polySurface186 1
+    3301086: polySurface188
+    3301088: polySurface188 1
+    3301090: polySurface189
+    3301092: polySurface189 1
+    3301094: polySurface194
+    3301096: polySurface196
+    3301098: polySurface197
+    3301100: polySurface198
+    3301102: polySurface20
+    3301104: polySurface20 1
+    3301106: polySurface200
+    3301108: polySurface202
+    3301110: polySurface203
+    3301112: polySurface204
+    3301114: polySurface206
+    3301116: polySurface208
+    3301118: polySurface209
+    3301120: polySurface210
+    3301122: polySurface211
+    3301124: polySurface212
+    3301126: polySurface213
+    3301128: polySurface214
+    3301130: polySurface215
+    3301132: polySurface215 1
+    3301134: polySurface216
+    3301136: polySurface216 1
+    3301138: polySurface217
+    3301140: polySurface217 1
+    3301142: polySurface218
+    3301144: polySurface218 1
+    3301146: polySurface219
+    3301148: polySurface219 1
+    3301150: polySurface22
+    3301152: polySurface22 1
+    3301154: polySurface220
+    3301156: polySurface220 1
+    3301158: polySurface221
+    3301160: polySurface221 1
+    3301162: polySurface222
+    3301164: polySurface222 1
+    3301166: polySurface223
+    3301168: polySurface223 1
+    3301170: polySurface228
+    3301172: polySurface228 1
+    3301174: polySurface229
+    3301176: polySurface229 1
+    3301178: polySurface232
+    3301180: polySurface232 1
+    3301182: polySurface233
+    3301184: polySurface233 1
+    3301186: polySurface234
+    3301188: polySurface234 1
+    3301190: polySurface235
+    3301192: polySurface235 1
+    3301194: polySurface239
+    3301196: polySurface239 1
+    3301198: polySurface24
+    3301200: polySurface24 1
+    3301202: polySurface242
+    3301204: polySurface242 1
+    3301206: polySurface245
+    3301208: polySurface245 1
+    3301210: polySurface246
+    3301212: polySurface246 1
+    3301214: polySurface247
+    3301216: polySurface247 1
+    3301218: polySurface248
+    3301220: polySurface248 1
+    3301222: polySurface249
+    3301224: polySurface249 1
+    3301226: polySurface25
+    3301228: polySurface25 1
+    3301230: polySurface250
+    3301232: polySurface250 1
+    3301234: polySurface251
+    3301236: polySurface251 1
+    3301238: polySurface252
+    3301240: polySurface252 1
+    3301242: polySurface253
+    3301244: polySurface253 1
+    3301246: polySurface254
+    3301248: polySurface254 1
+    3301250: polySurface255
+    3301252: polySurface255 1
+    3301254: polySurface256
+    3301256: polySurface256 1
+    3301258: polySurface257
+    3301260: polySurface257 1
+    3301262: polySurface258
+    3301264: polySurface258 1
+    3301266: polySurface259
+    3301268: polySurface259 1
+    3301270: polySurface26
+    3301272: polySurface26 1
+    3301274: polySurface260
+    3301276: polySurface260 1
+    3301278: polySurface261
+    3301280: polySurface261 1
+    3301282: polySurface262
+    3301284: polySurface262 1
+    3301286: polySurface263
+    3301288: polySurface263 1
+    3301290: polySurface264
+    3301292: polySurface264 1
+    3301294: polySurface265
+    3301296: polySurface265 1
+    3301298: polySurface266
+    3301300: polySurface266 1
+    3301302: polySurface267
+    3301304: polySurface267 1
+    3301306: polySurface268
+    3301308: polySurface268 1
+    3301310: polySurface269
+    3301312: polySurface269 1
+    3301314: polySurface27
+    3301316: polySurface27 1
+    3301318: polySurface270
+    3301320: polySurface270 1
+    3301322: polySurface271
+    3301324: polySurface271 1
+    3301326: polySurface272
+    3301328: polySurface272 1
+    3301330: polySurface273
+    3301332: polySurface273 1
+    3301334: polySurface274
+    3301336: polySurface274 1
+    3301338: polySurface275
+    3301340: polySurface275 1
+    3301342: polySurface276
+    3301344: polySurface276 1
+    3301346: polySurface277
+    3301348: polySurface277 1
+    3301350: polySurface278
+    3301352: polySurface278 1
+    3301354: polySurface279
+    3301356: polySurface279 1
+    3301358: polySurface280
+    3301360: polySurface280 1
+    3301362: polySurface281
+    3301364: polySurface281 1
+    3301366: polySurface282
+    3301368: polySurface282 1
+    3301370: polySurface283
+    3301372: polySurface283 1
+    3301374: polySurface284
+    3301376: polySurface284 1
+    3301378: polySurface285
+    3301380: polySurface285 1
+    3301382: polySurface286
+    3301384: polySurface286 1
+    3301386: polySurface287
+    3301388: polySurface287 1
+    3301390: polySurface288
+    3301392: polySurface288 1
+    3301394: polySurface289
+    3301396: polySurface289 1
+    3301398: polySurface29
+    3301400: polySurface29 1
+    3301402: polySurface290
+    3301404: polySurface290 1
+    3301406: polySurface291
+    3301408: polySurface291 1
+    3301410: polySurface292
+    3301412: polySurface292 1
+    3301414: polySurface293
+    3301416: polySurface293 1
+    3301418: polySurface294
+    3301420: polySurface294 1
+    3301422: polySurface3
+    3301424: polySurface3 1
+    3301426: polySurface32
+    3301428: polySurface32 1
+    3301430: polySurface34
+    3301432: polySurface34 1
+    3301434: polySurface35
+    3301436: polySurface35 1
+    3301438: polySurface36
+    3301440: polySurface36 1
+    3301442: polySurface38
+    3301444: polySurface38 1
+    3301446: polySurface40
+    3301448: polySurface40 1
+    3301450: polySurface42
+    3301452: polySurface42 1
+    3301454: polySurface44
+    3301456: polySurface44 1
+    3301458: polySurface46
+    3301460: polySurface46 1
+    3301462: polySurface48
+    3301464: polySurface48 1
+    3301466: polySurface52
+    3301468: polySurface52 1
+    3301470: polySurface54
+    3301472: polySurface54 1
+    3301474: polySurface56
+    3301476: polySurface56 1
+    3301478: polySurface58
+    3301480: polySurface58 1
+    3301482: polySurface59
+    3301484: polySurface59 1
+    3301486: polySurface6
+    3301488: polySurface6 1
+    3301490: polySurface60
+    3301492: polySurface60 1
+    3301494: polySurface61
+    3301496: polySurface61 1
+    3301498: polySurface64
+    3301500: polySurface64 1
+    3301502: polySurface66
+    3301504: polySurface66 1
+    3301506: polySurface68
+    3301508: polySurface68 1
+    3301510: polySurface7
+    3301512: polySurface7 1
+    3301514: polySurface70
+    3301516: polySurface70 1
+    3301518: polySurface72
+    3301520: polySurface72 1
+    3301522: polySurface74
+    3301524: polySurface74 1
+    3301526: polySurface76
+    3301528: polySurface76 1
+    3301530: polySurface77
+    3301532: polySurface77 1
+    3301534: polySurface79
+    3301536: polySurface79 1
+    3301538: polySurface81
+    3301540: polySurface81 1
+    3301542: polySurface82
+    3301544: polySurface82 1
+    3301546: polySurface83
+    3301548: polySurface85
+    3301550: polySurface87
+    3301552: polySurface89
+    3301554: polySurface9
+    3301556: polySurface9 1
+    3301558: polySurface91
+    3301560: polySurface93
+    3301562: polySurface95
+    3301564: polySurface97
+    3301566: polySurface99
+    3301568: pPlane1
+    3301570: pPlane2
+    3301572: pPlane3
+    3301574: pPlane4
+    3301576: pPlane5
+    3301578: pPlane6
+    3301580: pPlane7
+    3301582: pPlane8
+    3301584: rearaxis
+    3301586: rearaxis 1
+    3301588: rearaxis 10
+    3301590: rearaxis 11
+    3301592: rearaxis 12
+    3301594: rearaxis 13
+    3301596: rearaxis 14
+    3301598: rearaxis 15
+    3301600: rearaxis 16
+    3301602: rearaxis 17
+    3301604: rearaxis 18
+    3301606: rearaxis 19
+    3301608: rearaxis 2
+    3301610: rearaxis 20
+    3301612: rearaxis 21
+    3301614: rearaxis 22
+    3301616: rearaxis 23
+    3301618: rearaxis 24
+    3301620: rearaxis 3
+    3301622: rearaxis 4
+    3301624: rearaxis 5
+    3301626: rearaxis 6
+    3301628: rearaxis 7
+    3301630: rearaxis 8
+    3301632: rearaxis 9
+    3301634: rearcabin_left
+    3301636: rearcabin_left 1
+    3301638: rearsail_platform_1
+    3301640: rearsail_side_1
+    3301642: rearsail_side_2
+    3301644: rearwheel_LOD1
+    3301646: rearwheel_LOD1 1
+    3301648: rearwheel_LOD1 10
+    3301650: rearwheel_LOD1 11
+    3301652: rearwheel_LOD1 12
+    3301654: rearwheel_LOD1 13
+    3301656: rearwheel_LOD1 14
+    3301658: rearwheel_LOD1 15
+    3301660: rearwheel_LOD1 16
+    3301662: rearwheel_LOD1 17
+    3301664: rearwheel_LOD1 18
+    3301666: rearwheel_LOD1 19
+    3301668: rearwheel_LOD1 2
+    3301670: rearwheel_LOD1 20
+    3301672: rearwheel_LOD1 21
+    3301674: rearwheel_LOD1 22
+    3301676: rearwheel_LOD1 23
+    3301678: rearwheel_LOD1 24
+    3301680: rearwheel_LOD1 3
+    3301682: rearwheel_LOD1 4
+    3301684: rearwheel_LOD1 5
+    3301686: rearwheel_LOD1 6
+    3301688: rearwheel_LOD1 7
+    3301690: rearwheel_LOD1 8
+    3301692: rearwheel_LOD1 9
+    3301694: rudder
+    3301696: ship_hull_left_bot_1
+    3301698: ship_hull_left_bot_1 1
+    3301700: ship_hull_left_bot_10
+    3301702: ship_hull_left_bot_10 1
+    3301704: ship_hull_left_bot_11
+    3301706: ship_hull_left_bot_11 1
+    3301708: ship_hull_left_bot_12
+    3301710: ship_hull_left_bot_12 1
+    3301712: ship_hull_left_bot_2
+    3301714: ship_hull_left_bot_2 1
+    3301716: ship_hull_left_bot_3
+    3301718: ship_hull_left_bot_3 1
+    3301720: ship_hull_left_bot_4
+    3301722: ship_hull_left_bot_4 1
+    3301724: ship_hull_left_bot_5
+    3301726: ship_hull_left_bot_5 1
+    3301728: ship_hull_left_bot_6
+    3301730: ship_hull_left_bot_6 1
+    3301732: ship_hull_left_bot_7
+    3301734: ship_hull_left_bot_7 1
+    3301736: ship_hull_left_bot_8
+    3301738: ship_hull_left_bot_8 1
+    3301740: ship_hull_left_bot_9
+    3301742: ship_hull_left_bot_9 1
+    3301744: ship_hull_left_top2
+    3301746: ship_hull_left_top2 1
+    3301748: ship_hull_left_top_1
+    3301750: ship_hull_left_top_1 1
+    3301752: ship_hull_left_top_10
+    3301754: ship_hull_left_top_10 1
+    3301756: ship_hull_left_top_11
+    3301758: ship_hull_left_top_11 1
+    3301760: ship_hull_left_top_12
+    3301762: ship_hull_left_top_12 1
+    3301764: ship_hull_left_top_3
+    3301766: ship_hull_left_top_3 1
+    3301768: ship_hull_left_top_4
+    3301770: ship_hull_left_top_4 1
+    3301772: ship_hull_left_top_5
+    3301774: ship_hull_left_top_5 1
+    3301776: ship_hull_left_top_6
+    3301778: ship_hull_left_top_6 1
+    3301780: ship_hull_left_top_7
+    3301782: ship_hull_left_top_7 1
+    3301784: ship_hull_left_top_8
+    3301786: ship_hull_left_top_8 1
+    3301788: ship_hull_left_top_9
+    3301790: ship_hull_left_top_9 1
+    3301792: wedge_middle
+    3301794: wedge_middle 1
+    3301796: wedge_middle 10
+    3301798: wedge_middle 11
+    3301800: wedge_middle 12
+    3301802: wedge_middle 13
+    3301804: wedge_middle 14
+    3301806: wedge_middle 15
+    3301808: wedge_middle 16
+    3301810: wedge_middle 17
+    3301812: wedge_middle 18
+    3301814: wedge_middle 19
+    3301816: wedge_middle 2
+    3301818: wedge_middle 20
+    3301820: wedge_middle 21
+    3301822: wedge_middle 22
+    3301824: wedge_middle 23
+    3301826: wedge_middle 24
+    3301828: wedge_middle 3
+    3301830: wedge_middle 4
+    3301832: wedge_middle 5
+    3301834: wedge_middle 6
+    3301836: wedge_middle 7
+    3301838: wedge_middle 8
+    3301840: wedge_middle 9
+    4300000: frame_LOD1
+    4300002: midframe_middle
+    4300004: wedge_middle
+    4300006: chainstart_right
+    4300008: chainstart_left
+    4300010: frontaxis
+    4300012: frontwheel_LOD1
+    4300014: rearaxis
+    4300016: rearwheel_LOD1
+    4300018: chain_left_LOD0
+    4300020: chain_left_LOD1
+    4300022: barrel_LOD1
+    4300024: gunaxle_LOD1
+    4300026: frame_LOD1
+    4300028: midframe_middle
+    4300030: wedge_middle
+    4300032: chainstart_right
+    4300034: chainstart_left
+    4300036: frontaxis
+    4300038: frontwheel_LOD1
+    4300040: rearaxis
+    4300042: rearwheel_LOD1
+    4300044: chain_left_LOD0
+    4300046: chain_left_LOD1
+    4300048: barrel_LOD1
+    4300050: gunaxle_LOD1
+    4300052: frame_LOD1
+    4300054: midframe_middle
+    4300056: wedge_middle
+    4300058: chainstart_right
+    4300060: chainstart_left
+    4300062: frontaxis
+    4300064: frontwheel_LOD1
+    4300066: rearaxis
+    4300068: rearwheel_LOD1
+    4300070: chain_left_LOD0
+    4300072: chain_left_LOD1
+    4300074: barrel_LOD1
+    4300076: gunaxle_LOD1
+    4300078: frame_LOD1
+    4300080: midframe_middle
+    4300082: wedge_middle
+    4300084: chainstart_right
+    4300086: chainstart_left
+    4300088: frontaxis
+    4300090: frontwheel_LOD1
+    4300092: rearaxis
+    4300094: rearwheel_LOD1
+    4300096: chain_left_LOD0
+    4300098: chain_left_LOD1
+    4300100: barrel_LOD1
+    4300102: gunaxle_LOD1
+    4300104: frame_LOD1
+    4300106: midframe_middle
+    4300108: wedge_middle
+    4300110: chainstart_right
+    4300112: chainstart_left
+    4300114: frontaxis
+    4300116: frontwheel_LOD1
+    4300118: rearaxis
+    4300120: rearwheel_LOD1
+    4300122: chain_left_LOD0
+    4300124: chain_left_LOD1
+    4300126: barrel_LOD1
+    4300128: gunaxle_LOD1
+    4300130: frame_LOD1
+    4300132: midframe_middle
+    4300134: wedge_middle
+    4300136: chainstart_right
+    4300138: chainstart_left
+    4300140: frontaxis
+    4300142: frontwheel_LOD1
+    4300144: rearaxis
+    4300146: rearwheel_LOD1
+    4300148: chain_left_LOD0
+    4300150: chain_left_LOD1
+    4300152: barrel_LOD1
+    4300154: gunaxle_LOD1
+    4300156: frame_LOD1
+    4300158: midframe_middle
+    4300160: wedge_middle
+    4300162: chainstart_right
+    4300164: chainstart_left
+    4300166: frontaxis
+    4300168: frontwheel_LOD1
+    4300170: rearaxis
+    4300172: rearwheel_LOD1
+    4300174: chain_left_LOD0
+    4300176: chain_left_LOD1
+    4300178: barrel_LOD1
+    4300180: gunaxle_LOD1
+    4300182: frame_LOD1
+    4300184: midframe_middle
+    4300186: wedge_middle
+    4300188: chainstart_right
+    4300190: chainstart_left
+    4300192: frontaxis
+    4300194: frontwheel_LOD1
+    4300196: rearaxis
+    4300198: rearwheel_LOD1
+    4300200: chain_left_LOD0
+    4300202: chain_left_LOD1
+    4300204: barrel_LOD1
+    4300206: gunaxle_LOD1
+    4300208: frame_LOD1
+    4300210: midframe_middle
+    4300212: wedge_middle
+    4300214: chainstart_right
+    4300216: chainstart_left
+    4300218: frontaxis
+    4300220: frontwheel_LOD1
+    4300222: rearaxis
+    4300224: rearwheel_LOD1
+    4300226: chain_left_LOD0
+    4300228: chain_left_LOD1
+    4300230: barrel_LOD1
+    4300232: gunaxle_LOD1
+    4300234: frame_LOD1
+    4300236: midframe_middle
+    4300238: wedge_middle
+    4300240: chainstart_right
+    4300242: chainstart_left
+    4300244: frontaxis
+    4300246: frontwheel_LOD1
+    4300248: rearaxis
+    4300250: rearwheel_LOD1
+    4300252: chain_left_LOD0
+    4300254: chain_left_LOD1
+    4300256: barrel_LOD1
+    4300258: gunaxle_LOD1
+    4300260: frame_LOD1
+    4300262: midframe_middle
+    4300264: wedge_middle
+    4300266: chainstart_right
+    4300268: chainstart_left
+    4300270: frontaxis
+    4300272: frontwheel_LOD1
+    4300274: rearaxis
+    4300276: rearwheel_LOD1
+    4300278: chain_left_LOD0
+    4300280: chain_left_LOD1
+    4300282: barrel_LOD1
+    4300284: gunaxle_LOD1
+    4300286: frame_LOD1
+    4300288: midframe_middle
+    4300290: wedge_middle
+    4300292: chainstart_right
+    4300294: chainstart_left
+    4300296: frontaxis
+    4300298: frontwheel_LOD1
+    4300300: rearaxis
+    4300302: rearwheel_LOD1
+    4300304: chain_left_LOD0
+    4300306: chain_left_LOD1
+    4300308: barrel_LOD1
+    4300310: gunaxle_LOD1
+    4300312: frame_LOD1
+    4300314: midframe_middle
+    4300316: wedge_middle
+    4300318: chainstart_right
+    4300320: chainstart_left
+    4300322: frontaxis
+    4300324: frontwheel_LOD1
+    4300326: rearaxis
+    4300328: rearwheel_LOD1
+    4300330: chain_left_LOD0
+    4300332: chain_left_LOD1
+    4300334: barrel_LOD1
+    4300336: gunaxle_LOD1
+    4300338: frame_LOD1
+    4300340: midframe_middle
+    4300342: wedge_middle
+    4300344: chainstart_right
+    4300346: chainstart_left
+    4300348: frontaxis
+    4300350: frontwheel_LOD1
+    4300352: rearaxis
+    4300354: rearwheel_LOD1
+    4300356: chain_left_LOD0
+    4300358: chain_left_LOD1
+    4300360: barrel_LOD1
+    4300362: gunaxle_LOD1
+    4300364: frame_LOD1
+    4300366: midframe_middle
+    4300368: wedge_middle
+    4300370: chainstart_right
+    4300372: chainstart_left
+    4300374: frontaxis
+    4300376: frontwheel_LOD1
+    4300378: rearaxis
+    4300380: rearwheel_LOD1
+    4300382: chain_left_LOD0
+    4300384: chain_left_LOD1
+    4300386: barrel_LOD1
+    4300388: gunaxle_LOD1
+    4300390: frame_LOD1
+    4300392: midframe_middle
+    4300394: wedge_middle
+    4300396: chainstart_right
+    4300398: chainstart_left
+    4300400: frontaxis
+    4300402: frontwheel_LOD1
+    4300404: rearaxis
+    4300406: rearwheel_LOD1
+    4300408: chain_left_LOD0
+    4300410: chain_left_LOD1
+    4300412: barrel_LOD1
+    4300414: gunaxle_LOD1
+    4300416: frame_LOD1
+    4300418: midframe_middle
+    4300420: wedge_middle
+    4300422: chainstart_right
+    4300424: chainstart_left
+    4300426: frontaxis
+    4300428: frontwheel_LOD1
+    4300430: rearaxis
+    4300432: rearwheel_LOD1
+    4300434: chain_left_LOD0
+    4300436: chain_left_LOD1
+    4300438: barrel_LOD1
+    4300440: gunaxle_LOD1
+    4300442: frame_LOD1
+    4300444: midframe_middle
+    4300446: wedge_middle
+    4300448: chainstart_right
+    4300450: chainstart_left
+    4300452: frontaxis
+    4300454: frontwheel_LOD1
+    4300456: rearaxis
+    4300458: rearwheel_LOD1
+    4300460: chain_left_LOD0
+    4300462: chain_left_LOD1
+    4300464: barrel_LOD1
+    4300466: gunaxle_LOD1
+    4300468: frame_LOD1
+    4300470: midframe_middle
+    4300472: wedge_middle
+    4300474: chainstart_right
+    4300476: chainstart_left
+    4300478: frontaxis
+    4300480: frontwheel_LOD1
+    4300482: rearaxis
+    4300484: rearwheel_LOD1
+    4300486: chain_left_LOD0
+    4300488: chain_left_LOD1
+    4300490: barrel_LOD1
+    4300492: gunaxle_LOD1
+    4300494: frame_LOD1
+    4300496: midframe_middle
+    4300498: wedge_middle
+    4300500: chainstart_right
+    4300502: chainstart_left
+    4300504: frontaxis
+    4300506: frontwheel_LOD1
+    4300508: rearaxis
+    4300510: rearwheel_LOD1
+    4300512: chain_left_LOD0
+    4300514: chain_left_LOD1
+    4300516: barrel_LOD1
+    4300518: gunaxle_LOD1
+    4300520: frame_LOD1
+    4300522: midframe_middle
+    4300524: wedge_middle
+    4300526: chainstart_right
+    4300528: chainstart_left
+    4300530: frontaxis
+    4300532: frontwheel_LOD1
+    4300534: rearaxis
+    4300536: rearwheel_LOD1
+    4300538: chain_left_LOD0
+    4300540: chain_left_LOD1
+    4300542: barrel_LOD1
+    4300544: gunaxle_LOD1
+    4300546: frame_LOD1
+    4300548: midframe_middle
+    4300550: wedge_middle
+    4300552: chainstart_right
+    4300554: chainstart_left
+    4300556: frontaxis
+    4300558: frontwheel_LOD1
+    4300560: rearaxis
+    4300562: rearwheel_LOD1
+    4300564: chain_left_LOD0
+    4300566: chain_left_LOD1
+    4300568: barrel_LOD1
+    4300570: gunaxle_LOD1
+    4300572: frame_LOD1
+    4300574: midframe_middle
+    4300576: wedge_middle
+    4300578: chainstart_right
+    4300580: chainstart_left
+    4300582: frontaxis
+    4300584: frontwheel_LOD1
+    4300586: rearaxis
+    4300588: rearwheel_LOD1
+    4300590: chain_left_LOD0
+    4300592: chain_left_LOD1
+    4300594: barrel_LOD1
+    4300596: gunaxle_LOD1
+    4300598: frame_LOD1
+    4300600: midframe_middle
+    4300602: wedge_middle
+    4300604: chainstart_right
+    4300606: chainstart_left
+    4300608: frontaxis
+    4300610: frontwheel_LOD1
+    4300612: rearaxis
+    4300614: rearwheel_LOD1
+    4300616: chain_left_LOD0
+    4300618: chain_left_LOD1
+    4300620: barrel_LOD1
+    4300622: gunaxle_LOD1
+    4300624: frame_LOD1
+    4300626: midframe_middle
+    4300628: wedge_middle
+    4300630: chainstart_right
+    4300632: chainstart_left
+    4300634: frontaxis
+    4300636: frontwheel_LOD1
+    4300638: rearaxis
+    4300640: rearwheel_LOD1
+    4300642: chain_left_LOD0
+    4300644: chain_left_LOD1
+    4300646: barrel_LOD1
+    4300648: gunaxle_LOD1
+    4300650: polySurface197
+    4300652: polySurface198
+    4300654: polySurface196
+    4300656: polySurface194
+    4300658: frontsail_side_1
+    4300660: frontsail_side_2
+    4300662: frontsail_side_3
+    4300664: frontsail_platform_1
+    4300666: frontsail_platform_2
+    4300668: frontsail_platform_3
+    4300670: polySurface203
+    4300672: polySurface204
+    4300674: polySurface202
+    4300676: polySurface200
+    4300678: midsail_side_1
+    4300680: midsail_side_2
+    4300682: midsail_side_3
+    4300684: midsail_side_4
+    4300686: midsail_platform_1
+    4300688: midsail_platform_2
+    4300690: crowsnest_fencepost
+    4300692: crowsnest_floor
+    4300694: crowsnest_guardrail
+    4300696: ladder_beam
+    4300698: polySurface209
+    4300700: polySurface210
+    4300702: polySurface208
+    4300704: polySurface206
+    4300706: rearsail_side_1
+    4300708: rearsail_side_2
+    4300710: frontsail_platform_2
+    4300712: rearsail_platform_1
+    4300714: polySurface213
+    4300716: polySurface214
+    4300718: pCube54
+    4300720: pCube57
+    4300722: pCube56
+    4300724: pCube55
+    4300726: polySurface211
+    4300728: polySurface212
+    4300730: pPlane6
+    4300732: pPlane5
+    4300734: pPlane4
+    4300736: pPlane8
+    4300738: pPlane7
+    4300740: pPlane1
+    4300742: pPlane2
+    4300744: pPlane3
+    4300746: bighatch_frame
+    4300748: bighatch_bottom
+    4300750: bighatch_top
+    4300752: bighatch_frame
+    4300754: bighatch_bottom
+    4300756: bighatch_top
+    4300758: polySurface101
+    4300760: polySurface103
+    4300762: polySurface105
+    4300764: polySurface108
+    4300766: polySurface107
+    4300768: polySurface99
+    4300770: polySurface97
+    4300772: polySurface95
+    4300774: polySurface93
+    4300776: polySurface91
+    4300778: polySurface89
+    4300780: polySurface87
+    4300782: polySurface85
+    4300784: polySurface83
+    4300786: polySurface61
+    4300788: ship_hull_left_bot_12
+    4300790: ship_hull_left_top_12
+    4300792: polySurface167
+    4300794: polySurface109
+    4300796: pCube91
+    4300798: pCube90
+    4300800: pCube89
+    4300802: pCube88
+    4300804: pCube82
+    4300806: pCube83
+    4300808: pCube84
+    4300810: pCube85
+    4300812: pCube86
+    4300814: pCube62
+    4300816: pCube63
+    4300818: pCube64
+    4300820: polySurface34
+    4300822: polySurface1
+    4300824: polySurface36
+    4300826: polySurface245
+    4300828: polySurface246
+    4300830: polySurface250
+    4300832: polySurface251
+    4300834: pCube92
+    4300836: pCube93
+    4300838: pCube94
+    4300840: pCube95
+    4300842: pCube96
+    4300844: pCube97
+    4300846: pCube98
+    4300848: pCube99
+    4300850: pCube100
+    4300852: pCube101
+    4300854: pCube102
+    4300856: pCube103
+    4300858: polySurface270
+    4300860: polySurface271
+    4300862: polySurface32
+    4300864: polySurface3
+    4300866: polySurface38
+    4300868: polySurface64
+    4300870: polySurface166
+    4300872: polySurface165
+    4300874: polySurface112
+    4300876: ship_hull_left_top_11
+    4300878: ship_hull_left_bot_11
+    4300880: polySurface189
+    4300882: polySurface188
+    4300884: pCube73
+    4300886: pCube72
+    4300888: pCube65
+    4300890: pCube66
+    4300892: pCube67
+    4300894: cannonhatch_LOD0
+    4300896: cannonhatch_LOD1
+    4300898: cannonhatch_LOD0
+    4300900: cannonhatch_LOD1
+    4300902: polySurface248
+    4300904: polySurface252
+    4300906: pCube104
+    4300908: pCube105
+    4300910: pCube106
+    4300912: pCube107
+    4300914: polySurface255
+    4300916: pCube108
+    4300918: polySurface269
+    4300920: polySurface272
+    4300922: polySurface294
+    4300924: pCube70
+    4300926: polySurface242
+    4300928: ship_hull_left_top_10
+    4300930: ship_hull_left_bot_10
+    4300932: polySurface186
+    4300934: polySurface35
+    4300936: polySurface6
+    4300938: polySurface40
+    4300940: polySurface66
+    4300942: polySurface163
+    4300944: pCube76
+    4300946: polySurface114
+    4300948: pCube68
+    4300950: pCube69
+    4300952: cannonhatch_LOD0
+    4300954: cannonhatch_LOD1
+    4300956: cannonhatch_LOD0
+    4300958: cannonhatch_LOD1
+    4300960: polySurface249
+    4300962: polySurface253
+    4300964: pCube109
+    4300966: pCube110
+    4300968: pCube111
+    4300970: pCube112
+    4300972: polySurface268
+    4300974: polySurface273
+    4300976: polySurface293
+    4300978: polySurface116
+    4300980: ship_hull_left_top_9
+    4300982: ship_hull_left_bot_9
+    4300984: polySurface185
+    4300986: polySurface184
+    4300988: polySurface161
+    4300990: pCube80
+    4300992: pCube79
+    4300994: pCube78
+    4300996: pCube77
+    4300998: pCube75
+    4301000: polySurface29
+    4301002: polySurface7
+    4301004: polySurface42
+    4301006: polySurface68
+    4301008: cannonhatch_LOD0
+    4301010: cannonhatch_LOD1
+    4301012: cannonhatch_LOD0
+    4301014: cannonhatch_LOD1
+    4301016: polySurface247
+    4301018: polySurface254
+    4301020: pCube113
+    4301022: pCube114
+    4301024: pCube115
+    4301026: pCube116
+    4301028: pCube117
+    4301030: polySurface267
+    4301032: polySurface274
+    4301034: polySurface292
+    4301036: polySurface9
+    4301038: polySurface117
+    4301040: ship_hull_left_top_8
+    4301042: ship_hull_left_bot_8
+    4301044: polySurface183
+    4301046: polySurface182
+    4301048: polySurface44
+    4301050: polySurface70
+    4301052: cannonhatch_LOD0
+    4301054: cannonhatch_LOD1
+    4301056: cannonhatch_LOD0
+    4301058: cannonhatch_LOD1
+    4301060: polySurface239
+    4301062: polySurface266
+    4301064: polySurface275
+    4301066: polySurface291
+    4301068: ship_hull_left_bot_7
+    4301070: ship_hull_left_top_7
+    4301072: polySurface233
+    4301074: polySurface235
+    4301076: polySurface119
+    4301078: polySurface12
+    4301080: polySurface46
+    4301082: polySurface72
+    4301084: cannonhatch_LOD0
+    4301086: cannonhatch_LOD1
+    4301088: cannonhatch_LOD0
+    4301090: cannonhatch_LOD1
+    4301092: polySurface232
+    4301094: polySurface265
+    4301096: polySurface276
+    4301098: polySurface290
+    4301100: polySurface121
+    4301102: ship_hull_left_bot_6
+    4301104: ship_hull_left_top_6
+    4301106: polySurface169
+    4301108: polySurface168
+    4301110: polySurface14
+    4301112: polySurface48
+    4301114: polySurface74
+    4301116: cannonhatch_LOD0
+    4301118: cannonhatch_LOD1
+    4301120: cannonhatch_LOD2
+    4301122: cannonhatch_LOD0
+    4301124: cannonhatch_LOD1
+    4301126: polySurface234
+    4301128: polySurface264
+    4301130: polySurface277
+    4301132: polySurface289
+    4301134: polySurface16
+    4301136: ship_hull_left_bot_5
+    4301138: ship_hull_left_top_5
+    4301140: polySurface171
+    4301142: polySurface170
+    4301144: polySurface123
+    4301146: polySurface52
+    4301148: polySurface76
+    4301150: cannonhatch_LOD0
+    4301152: cannonhatch_LOD1
+    4301154: cannonhatch_LOD0
+    4301156: cannonhatch_LOD1
+    4301158: polySurface229
+    4301160: polySurface263
+    4301162: polySurface278
+    4301164: polySurface288
+    4301166: polySurface125
+    4301168: ship_hull_left_bot_4
+    4301170: ship_hull_left_top_4
+    4301172: polySurface173
+    4301174: polySurface172
+    4301176: polySurface18
+    4301178: polySurface54
+    4301180: polySurface77
+    4301182: cannonhatch_LOD0
+    4301184: cannonhatch_LOD1
+    4301186: cannonhatch_LOD0
+    4301188: cannonhatch_LOD1
+    4301190: polySurface228
+    4301192: polySurface261
+    4301194: polySurface283
+    4301196: polySurface287
+    4301198: cannonhatch_LOD0
+    4301200: cannonhatch_LOD1
+    4301202: cannonhatch_LOD0
+    4301204: cannonhatch_LOD1
+    4301206: ship_hull_left_bot_3
+    4301208: ship_hull_left_top_3
+    4301210: polySurface222
+    4301212: polySurface223
+    4301214: polySurface127
+    4301216: polySurface20
+    4301218: polySurface56
+    4301220: polySurface79
+    4301222: polySurface221
+    4301224: polySurface262
+    4301226: polySurface282
+    4301228: polySurface286
+    4301230: rearcabin_left
+    4301232: cannonhatch_LOD0
+    4301234: cannonhatch_LOD1
+    4301236: cannonhatch_LOD0
+    4301238: cannonhatch_LOD1
+    4301240: cannonhatch_LOD0
+    4301242: cannonhatch_LOD1
+    4301244: cannonhatch_LOD0
+    4301246: cannonhatch_LOD1
+    4301248: ship_hull_left_bot_2
+    4301250: ship_hull_left_top2
+    4301252: polySurface27
+    4301254: polySurface129
+    4301256: polySurface22
+    4301258: polySurface58
+    4301260: polySurface81
+    4301262: polySurface26
+    4301264: polySurface24
+    4301266: polySurface60
+    4301268: polySurface82
+    4301270: polySurface218
+    4301272: polySurface219
+    4301274: polySurface220
+    4301276: polySurface256
+    4301278: polySurface257
+    4301280: polySurface259
+    4301282: polySurface260
+    4301284: polySurface279
+    4301286: polySurface280
+    4301288: polySurface284
+    4301290: polySurface285
+    4301292: ship_hull_left_bot_1
+    4301294: ship_hull_left_top_1
+    4301296: polySurface160
+    4301298: polySurface25
+    4301300: polySurface59
+    4301302: polySurface215
+    4301304: polySurface216
+    4301306: polySurface217
+    4301308: polySurface258
+    4301310: polySurface281
+    4301312: polySurface61
+    4301314: ship_hull_left_bot_12
+    4301316: ship_hull_left_top_12
+    4301318: polySurface167
+    4301320: polySurface109
+    4301322: pCube91
+    4301324: pCube90
+    4301326: pCube89
+    4301328: pCube88
+    4301330: pCube82
+    4301332: pCube83
+    4301334: pCube84
+    4301336: pCube85
+    4301338: pCube86
+    4301340: pCube62
+    4301342: pCube63
+    4301344: pCube64
+    4301346: polySurface34
+    4301348: polySurface1
+    4301350: polySurface36
+    4301352: polySurface245
+    4301354: polySurface246
+    4301356: polySurface250
+    4301358: polySurface251
+    4301360: pCube92
+    4301362: pCube93
+    4301364: pCube94
+    4301366: pCube95
+    4301368: pCube96
+    4301370: pCube97
+    4301372: pCube98
+    4301374: pCube99
+    4301376: pCube100
+    4301378: pCube101
+    4301380: pCube102
+    4301382: pCube103
+    4301384: polySurface270
+    4301386: polySurface271
+    4301388: polySurface32
+    4301390: polySurface3
+    4301392: polySurface38
+    4301394: polySurface64
+    4301396: polySurface166
+    4301398: polySurface165
+    4301400: polySurface112
+    4301402: ship_hull_left_top_11
+    4301404: ship_hull_left_bot_11
+    4301406: polySurface189
+    4301408: polySurface188
+    4301410: pCube73
+    4301412: pCube72
+    4301414: pCube65
+    4301416: pCube66
+    4301418: pCube67
+    4301420: cannonhatch_LOD0
+    4301422: cannonhatch_LOD1
+    4301424: cannonhatch_LOD0
+    4301426: cannonhatch_LOD1
+    4301428: polySurface248
+    4301430: polySurface252
+    4301432: pCube104
+    4301434: pCube105
+    4301436: pCube106
+    4301438: pCube107
+    4301440: polySurface255
+    4301442: pCube108
+    4301444: polySurface269
+    4301446: polySurface272
+    4301448: polySurface294
+    4301450: pCube70
+    4301452: polySurface242
+    4301454: ship_hull_left_top_10
+    4301456: ship_hull_left_bot_10
+    4301458: polySurface186
+    4301460: polySurface35
+    4301462: polySurface6
+    4301464: polySurface40
+    4301466: polySurface66
+    4301468: polySurface163
+    4301470: pCube76
+    4301472: polySurface114
+    4301474: pCube68
+    4301476: pCube69
+    4301478: cannonhatch_LOD0
+    4301480: cannonhatch_LOD1
+    4301482: cannonhatch_LOD0
+    4301484: cannonhatch_LOD1
+    4301486: polySurface249
+    4301488: polySurface253
+    4301490: pCube109
+    4301492: pCube110
+    4301494: pCube111
+    4301496: pCube112
+    4301498: polySurface268
+    4301500: polySurface273
+    4301502: polySurface293
+    4301504: polySurface116
+    4301506: ship_hull_left_top_9
+    4301508: ship_hull_left_bot_9
+    4301510: polySurface185
+    4301512: polySurface184
+    4301514: polySurface161
+    4301516: pCube80
+    4301518: pCube79
+    4301520: pCube78
+    4301522: pCube77
+    4301524: pCube75
+    4301526: polySurface29
+    4301528: polySurface7
+    4301530: polySurface42
+    4301532: polySurface68
+    4301534: cannonhatch_LOD0
+    4301536: cannonhatch_LOD1
+    4301538: cannonhatch_LOD0
+    4301540: cannonhatch_LOD1
+    4301542: polySurface247
+    4301544: polySurface254
+    4301546: pCube113
+    4301548: pCube114
+    4301550: pCube115
+    4301552: pCube116
+    4301554: pCube117
+    4301556: polySurface267
+    4301558: polySurface274
+    4301560: polySurface292
+    4301562: polySurface9
+    4301564: polySurface117
+    4301566: ship_hull_left_top_8
+    4301568: ship_hull_left_bot_8
+    4301570: polySurface183
+    4301572: polySurface182
+    4301574: polySurface44
+    4301576: polySurface70
+    4301578: cannonhatch_LOD0
+    4301580: cannonhatch_LOD1
+    4301582: cannonhatch_LOD0
+    4301584: cannonhatch_LOD1
+    4301586: polySurface239
+    4301588: polySurface266
+    4301590: polySurface275
+    4301592: polySurface291
+    4301594: ship_hull_left_bot_7
+    4301596: ship_hull_left_top_7
+    4301598: polySurface233
+    4301600: polySurface235
+    4301602: polySurface119
+    4301604: polySurface12
+    4301606: polySurface46
+    4301608: polySurface72
+    4301610: cannonhatch_LOD0
+    4301612: cannonhatch_LOD1
+    4301614: cannonhatch_LOD0
+    4301616: cannonhatch_LOD1
+    4301618: polySurface232
+    4301620: polySurface265
+    4301622: polySurface276
+    4301624: polySurface290
+    4301626: polySurface121
+    4301628: ship_hull_left_bot_6
+    4301630: ship_hull_left_top_6
+    4301632: polySurface169
+    4301634: polySurface168
+    4301636: polySurface14
+    4301638: polySurface48
+    4301640: polySurface74
+    4301642: cannonhatch_LOD0
+    4301644: cannonhatch_LOD1
+    4301646: cannonhatch_LOD2
+    4301648: cannonhatch_LOD0
+    4301650: cannonhatch_LOD1
+    4301652: polySurface234
+    4301654: polySurface264
+    4301656: polySurface277
+    4301658: polySurface289
+    4301660: polySurface16
+    4301662: ship_hull_left_bot_5
+    4301664: ship_hull_left_top_5
+    4301666: polySurface171
+    4301668: polySurface170
+    4301670: polySurface123
+    4301672: polySurface52
+    4301674: polySurface76
+    4301676: cannonhatch_LOD0
+    4301678: cannonhatch_LOD1
+    4301680: cannonhatch_LOD0
+    4301682: cannonhatch_LOD1
+    4301684: polySurface229
+    4301686: polySurface263
+    4301688: polySurface278
+    4301690: polySurface288
+    4301692: polySurface125
+    4301694: ship_hull_left_bot_4
+    4301696: ship_hull_left_top_4
+    4301698: polySurface173
+    4301700: polySurface172
+    4301702: polySurface18
+    4301704: polySurface54
+    4301706: polySurface77
+    4301708: cannonhatch_LOD0
+    4301710: cannonhatch_LOD1
+    4301712: cannonhatch_LOD0
+    4301714: cannonhatch_LOD1
+    4301716: polySurface228
+    4301718: polySurface261
+    4301720: polySurface283
+    4301722: polySurface287
+    4301724: cannonhatch_LOD0
+    4301726: cannonhatch_LOD1
+    4301728: cannonhatch_LOD0
+    4301730: cannonhatch_LOD1
+    4301732: ship_hull_left_bot_3
+    4301734: ship_hull_left_top_3
+    4301736: polySurface222
+    4301738: polySurface223
+    4301740: polySurface127
+    4301742: polySurface20
+    4301744: polySurface56
+    4301746: polySurface79
+    4301748: polySurface221
+    4301750: polySurface262
+    4301752: polySurface282
+    4301754: polySurface286
+    4301756: rearcabin_left
+    4301758: cannonhatch_LOD0
+    4301760: cannonhatch_LOD1
+    4301762: cannonhatch_LOD0
+    4301764: cannonhatch_LOD1
+    4301766: cannonhatch_LOD0
+    4301768: cannonhatch_LOD1
+    4301770: cannonhatch_LOD0
+    4301772: cannonhatch_LOD1
+    4301774: ship_hull_left_bot_2
+    4301776: ship_hull_left_top2
+    4301778: polySurface27
+    4301780: polySurface129
+    4301782: polySurface22
+    4301784: polySurface58
+    4301786: polySurface81
+    4301788: polySurface26
+    4301790: polySurface24
+    4301792: polySurface60
+    4301794: polySurface82
+    4301796: polySurface218
+    4301798: polySurface219
+    4301800: polySurface220
+    4301802: polySurface256
+    4301804: polySurface257
+    4301806: polySurface259
+    4301808: polySurface260
+    4301810: polySurface279
+    4301812: polySurface280
+    4301814: polySurface284
+    4301816: polySurface285
+    4301818: ship_hull_left_bot_1
+    4301820: ship_hull_left_top_1
+    4301822: polySurface160
+    4301824: polySurface25
+    4301826: polySurface59
+    4301828: polySurface215
+    4301830: polySurface216
+    4301832: polySurface217
+    4301834: polySurface258
+    4301836: polySurface281
+    4301838: centerrib
+    4301840: rudder
+    20500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - .25
+    - .125
+    - .00999999978
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

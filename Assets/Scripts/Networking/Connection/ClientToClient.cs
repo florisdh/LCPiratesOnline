@@ -18,7 +18,7 @@ public class ClientToClient : IDisposable
 	private int _playerID;
 	private EndPoint _serverEP;
 	private byte[] _receiveBuffer;
-	private int _receiveBufferSize = 512;
+	private int _receiveBufferSize = 2048;
 	private EndPoint _receiveEP;
 
 	#endregion
@@ -71,6 +71,8 @@ public class ClientToClient : IDisposable
 	{
 		int received = _connection.EndReceiveFrom(res, ref _receiveEP);
 		EndPoint ep = _receiveEP;
+
+		Debug.Log("Received UDP of length " + received);
 
 		// Read all packages
 		int readOffset = 0;

@@ -1,0 +1,258 @@
+fileFormatVersion: 2
+guid: 4ec529ab9f1b449d193db675c4253b84
+timeCreated: 1444983774
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: barrel_LOD0
+    100002: barrel_LOD1
+    100004: barrelgroup
+    100006: chain_left
+    100008: chain_left_LOD0
+    100010: chain_left_LOD0 1
+    100012: chain_right
+    100014: chainstart_left
+    100016: chainstart_right
+    100018: frame
+    100020: frame_LOD1
+    100022: frontaxis
+    100024: frontwheel_LOD0
+    100026: frontwheel_LOD1
+    100028: frontwheels
+    100030: gunaxle_LOD0
+    100032: gunaxle_LOD1
+    100034: midframe_middle
+    100036: //RootNode
+    100038: rearaxis
+    100040: rearwheel_LOD0
+    100042: rearwheel_LOD1
+    100044: rearwheels
+    100046: wedge_middle
+    100048: barrel_LOD2
+    100050: gunaxle
+    400000: barrel_LOD0
+    400002: barrel_LOD1
+    400004: barrelgroup
+    400006: chain_left
+    400008: chain_left_LOD0
+    400010: chain_left_LOD0 1
+    400012: chain_right
+    400014: chainstart_left
+    400016: chainstart_right
+    400018: frame
+    400020: frame_LOD1
+    400022: frontaxis
+    400024: frontwheel_LOD0
+    400026: frontwheel_LOD1
+    400028: frontwheels
+    400030: gunaxle_LOD0
+    400032: gunaxle_LOD1
+    400034: midframe_middle
+    400036: //RootNode
+    400038: rearaxis
+    400040: rearwheel_LOD0
+    400042: rearwheel_LOD1
+    400044: rearwheels
+    400046: wedge_middle
+    400048: barrel_LOD2
+    400050: gunaxle
+    2300000: barrel_LOD0
+    2300002: barrel_LOD1
+    2300004: chain_left_LOD0
+    2300006: chain_left_LOD0 1
+    2300008: chainstart_left
+    2300010: chainstart_right
+    2300012: frame
+    2300014: frame_LOD1
+    2300016: frontaxis
+    2300018: frontwheel_LOD0
+    2300020: frontwheel_LOD1
+    2300022: gunaxle_LOD0
+    2300024: gunaxle_LOD1
+    2300026: midframe_middle
+    2300028: rearaxis
+    2300030: rearwheel_LOD0
+    2300032: rearwheel_LOD1
+    2300034: wedge_middle
+    2300036: barrel_LOD2
+    2300038: gunaxle
+    3300000: barrel_LOD0
+    3300002: barrel_LOD1
+    3300004: chain_left_LOD0
+    3300006: chain_left_LOD0 1
+    3300008: chainstart_left
+    3300010: chainstart_right
+    3300012: frame
+    3300014: frame_LOD1
+    3300016: frontaxis
+    3300018: frontwheel_LOD0
+    3300020: frontwheel_LOD1
+    3300022: gunaxle_LOD0
+    3300024: gunaxle_LOD1
+    3300026: midframe_middle
+    3300028: rearaxis
+    3300030: rearwheel_LOD0
+    3300032: rearwheel_LOD1
+    3300034: wedge_middle
+    3300036: barrel_LOD2
+    3300038: gunaxle
+    4300000: frame_LOD1
+    4300002: frame
+    4300004: midframe_middle
+    4300006: wedge_middle
+    4300008: chainstart_right
+    4300010: chainstart_left
+    4300012: frontwheel_LOD0
+    4300014: frontaxis
+    4300016: frontwheel_LOD1
+    4300018: rearaxis
+    4300020: rearwheel_LOD0
+    4300022: rearwheel_LOD1
+    4300024: chain_left_LOD0
+    4300026: chain_left_LOD0
+    4300028: barrel_LOD1
+    4300030: gunaxle_LOD1
+    4300032: barrel_LOD0
+    4300034: gunaxle_LOD0
+    4300036: barrel_LOD2
+    4300038: gunaxle
+    7400000: anim_cannonfire
+    9500000: //RootNode
+    11100000: //RootNode
+    20500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: anim_cannonfire
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: barrelgroup
+        weight: 1
+      - path: barrelgroup/barrel_LOD0
+        weight: 1
+      - path: barrelgroup/barrel_LOD1
+        weight: 1
+      - path: barrelgroup/gunaxle_LOD0
+        weight: 1
+      - path: barrelgroup/gunaxle_LOD1
+        weight: 1
+      - path: chain_left
+        weight: 1
+      - path: chain_left/chain_left_LOD0
+        weight: 1
+      - path: chain_right
+        weight: 1
+      - path: chain_right/chain_left_LOD0 1
+        weight: 1
+      - path: chainstart_left
+        weight: 1
+      - path: chainstart_right
+        weight: 1
+      - path: frame
+        weight: 1
+      - path: frame_LOD1
+        weight: 1
+      - path: frontwheels
+        weight: 1
+      - path: frontwheels/frontaxis
+        weight: 1
+      - path: frontwheels/frontwheel_LOD0
+        weight: 1
+      - path: frontwheels/frontwheel_LOD1
+        weight: 1
+      - path: midframe_middle
+        weight: 1
+      - path: rearwheels
+        weight: 1
+      - path: rearwheels/rearaxis
+        weight: 1
+      - path: rearwheels/rearwheel_LOD0
+        weight: 1
+      - path: rearwheels/rearwheel_LOD1
+        weight: 1
+      - path: wedge_middle
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - .25
+    - .125
+    - .00999999978
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
